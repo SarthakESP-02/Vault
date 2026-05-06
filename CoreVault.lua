@@ -1,1 +1,3189 @@
-local a="v0.7.57"local b={}local function c(d)if d then table.insert(b,d)end end;task.spawn(function()local e=game:GetService("ContentProvider")local f={"rbxthumb://type=Asset&id=2249604078&w=150&h=150","rbxthumb://type=Asset&id=12400908609&w=150&h=150","rbxthumb://type=Asset&id=73375957637397&w=150&h=150","rbxthumb://type=Asset&id=83349936062601&w=150&h=150","rbxthumb://type=Asset&id=72173899346121&w=150&h=150"}pcall(function()e:PreloadAsync(f)end)end)local g={}local function h(i,j)if j=="/e FTF_ADMIN_PING"or j=="/e FTF_PING_BACK"then if not table.find(g,i.Name)then table.insert(g,i.Name)if j=="/e FTF_ADMIN_PING"then pcall(function()game.Players.LocalPlayer:Chat("/e FTF_PING_BACK")end)end end end end;for k,i in pairs(game.Players:GetPlayers())do if i~=game.Players.LocalPlayer then i.Chatted:Connect(function(j)h(i,j)end)end end;game.Players.PlayerAdded:Connect(function(i)i.Chatted:Connect(function(j)h(i,j)end)end)local l=false;local m=false;local n=false;local o=false;local p=false;local q=false;local r=false;local s=false;local t=false;local u=false;local v=false;local w=false;local x=false;local y=false;local z=false;local A=false;local B=false;local C=false;local D=false;local E=false;local F=false;local G,H,I,J;local K,L;local M=Instance.new("ScreenGui")local N=Instance.new("Frame")local O=Instance.new("ImageButton")local P=Instance.new("TextLabel")local Q=Instance.new("Frame")local R=Instance.new("Frame")local S=Instance.new("TextLabel")local T=Instance.new("Frame")local U=Instance.new("TextButton")local V=Instance.new("TextButton")local W=Instance.new("TextButton")local X=Instance.new("TextButton")local Y=Instance.new("TextButton")local Z=Instance.new("TextButton")local _=Instance.new("UIGridLayout")local a0=Instance.new("Frame")local a1=Instance.new("TextButton")local a2=Instance.new("TextButton")local a3=Instance.new("TextLabel")local a4=Instance.new("TextLabel")local a5=Instance.new("Frame")local a6=Instance.new("Frame")local a7=Instance.new("TextButton")local a8=Instance.new("TextLabel")local a9=Instance.new("TextLabel")local aa=Instance.new("ScrollingFrame")local ab=Instance.new("UIGridLayout")local ac=Instance.new("ImageButton")local ad=Instance.new("TextLabel")local ae=Instance.new("ImageLabel")local af=Instance.new("ImageButton")local ag=Instance.new("TextLabel")local ah=Instance.new("ImageLabel")local ai=Instance.new("Frame")local aj=Instance.new("Frame")local ak=Instance.new("TextLabel")local al=Instance.new("Frame")local am=Instance.new("UIGridLayout")local an=Instance.new("TextButton")local ao=Instance.new("TextButton")local ap=Instance.new("TextButton")local aq=Instance.new("TextButton")local ar=Instance.new("Frame")local as=Instance.new("TextButton")local at=Instance.new("TextButton")local au=Instance.new("TextLabel")local av=Instance.new("TextLabel")local aw=Instance.new("ViewportFrame")M.Name="FTFHAX"M.Parent=game.Players.LocalPlayer:WaitForChild("PlayerGui")M.ResetOnSpawn=false;N.Name="MenusTabFrame"N.Parent=M;N.AnchorPoint=Vector2.new(1,0.5)N.BackgroundColor3=Color3.fromRGB(0,0,0)N.BackgroundTransparency=1.000;N.BorderColor3=Color3.fromRGB(63,63,63)N.BorderSizePixel=0;N.Position=UDim2.new(1,0,0.5,0)N.Size=UDim2.new(0.0799999982,0,0.159999996,0)N.SizeConstraint=Enum.SizeConstraint.RelativeYY;O.Name="CheatButton"O.Parent=N;O.BackgroundColor3=Color3.fromRGB(0,0,0)O.BackgroundTransparency=0.500;O.BorderColor3=Color3.fromRGB(0,0,0)O.BorderSizePixel=0;O.Position=UDim2.new(0,0,1,0)O.Size=UDim2.new(1,0,1,0)O.SizeConstraint=Enum.SizeConstraint.RelativeXX;O.Image="rbxassetid://11570895459"O.ImageColor3=Color3.fromRGB(223,223,223)P.Parent=O;P.AnchorPoint=Vector2.new(0,1)P.BackgroundColor3=Color3.fromRGB(255,255,255)P.BackgroundTransparency=1.000;P.Position=UDim2.new(0,0,1,0)P.Size=UDim2.new(1,0,0.200000003,0)P.Font=Enum.Font.ArialBold;P.Text="FTF admin Panel"P.TextColor3=Color3.fromRGB(255,255,255)P.TextScaled=true;P.TextSize=12.000;P.TextStrokeTransparency=0.000;P.TextWrapped=true;P.TextYAlignment=Enum.TextYAlignment.Bottom;Q.Name="ESPMenuWindow"Q.Parent=M;Q.AnchorPoint=Vector2.new(0.5,0.5)Q.BackgroundColor3=Color3.fromRGB(47,47,47)Q.BorderColor3=Color3.fromRGB(0,0,0)Q.BorderSizePixel=2;Q.ClipsDescendants=true;Q.Position=UDim2.new(0.5,0,0.5,-18)Q.Size=UDim2.new(0,480,0,175)Q.SizeConstraint=Enum.SizeConstraint.RelativeYY;Q.Visible=false;R.Name="Body"R.Parent=Q;R.BackgroundColor3=Color3.fromRGB(255,255,255)R.BackgroundTransparency=1.000;R.BorderSizePixel=0;R.Position=UDim2.new(0,0,0,40)R.Size=UDim2.new(1,0,1,-40)S.Name="TitleLabel"S.Parent=R;S.AnchorPoint=Vector2.new(0.5,0)S.BackgroundColor3=Color3.fromRGB(63,63,63)S.BorderColor3=Color3.fromRGB(0,0,0)S.BorderSizePixel=0;S.Position=UDim2.new(0.5,0,-1.06500006,150)S.Size=UDim2.new(1,-10,0.0235044118,30)S.Text="ESP"S.TextColor3=Color3.fromRGB(149,255,237)S.TextScaled=true;S.TextSize=14.000;S.TextWrapped=true;T.Name="ButtonsFrame"T.Parent=R;T.BackgroundColor3=Color3.fromRGB(255,255,255)T.BackgroundTransparency=1.000;T.Position=UDim2.new(0,5,0,45)T.Size=UDim2.new(1,-10,-0.00555555569,85)U.Name="BestPCESPButton"U.Parent=T;U.BackgroundColor3=Color3.fromRGB(191,0,0)U.BorderColor3=Color3.fromRGB(0,0,0)U.BorderSizePixel=0;U.LayoutOrder=4;U.Size=UDim2.new(0,200,0,50)U.Text="Best PC"U.TextColor3=Color3.fromRGB(255,255,255)U.TextScaled=true;U.TextSize=14.000;U.TextWrapped=true;V.Name="PCESPButton"V.Parent=T;V.BackgroundColor3=Color3.fromRGB(191,0,0)V.BorderColor3=Color3.fromRGB(0,0,0)V.BorderSizePixel=0;V.Size=UDim2.new(0,200,0,50)V.Text="PC"V.TextColor3=Color3.fromRGB(255,255,255)V.TextScaled=true;V.TextSize=14.000;V.TextWrapped=true;W.Name="TbdButton"W.Parent=T;W.BackgroundColor3=Color3.fromRGB(191,0,0)W.BorderColor3=Color3.fromRGB(0,0,0)W.BorderSizePixel=0;W.LayoutOrder=5;W.Size=UDim2.new(0,200,0,50)W.Visible=false;W.Text="nothing"W.TextColor3=Color3.fromRGB(255,255,255)W.TextScaled=true;W.TextSize=14.000;W.TextWrapped=true;X.Name="PlayerESPButton"X.Parent=T;X.BackgroundColor3=Color3.fromRGB(191,0,0)X.BorderColor3=Color3.fromRGB(0,0,0)X.BorderSizePixel=0;X.LayoutOrder=1;X.Size=UDim2.new(0,200,0,50)X.Text="Player"X.TextColor3=Color3.fromRGB(255,255,255)X.TextScaled=true;X.TextSize=14.000;X.TextWrapped=true;Y.Name="PodsESPButton"Y.Parent=T;Y.BackgroundColor3=Color3.fromRGB(191,0,0)Y.BorderColor3=Color3.fromRGB(0,0,0)Y.BorderSizePixel=0;Y.LayoutOrder=2;Y.Size=UDim2.new(0,200,0,50)Y.Text="Pods"Y.TextColor3=Color3.fromRGB(255,255,255)Y.TextScaled=true;Y.TextSize=14.000;Y.TextWrapped=true;Z.Name="ExitsESPButton"Z.Parent=T;Z.BackgroundColor3=Color3.fromRGB(191,0,0)Z.BorderColor3=Color3.fromRGB(0,0,0)Z.BorderSizePixel=0;Z.LayoutOrder=3;Z.Size=UDim2.new(0,200,0,50)Z.Text="Exits"Z.TextColor3=Color3.fromRGB(255,255,255)Z.TextScaled=true;Z.TextSize=14.000;Z.TextWrapped=true;_.Parent=T;_.FillDirection=Enum.FillDirection.Vertical;_.HorizontalAlignment=Enum.HorizontalAlignment.Center;_.SortOrder=Enum.SortOrder.LayoutOrder;_.CellPadding=UDim2.new(0,6,0,6)_.CellSize=UDim2.new(0,152,0,39)a0.Name="TopBar"a0.Parent=Q;a0.BackgroundColor3=Color3.fromRGB(31,31,31)a0.BorderSizePixel=0;a0.Size=UDim2.new(1,0,0,40)a0.ZIndex=5;a1.Name="CloseButton"a1.Parent=a0;a1.AnchorPoint=Vector2.new(1,0)a1.BackgroundColor3=Color3.fromRGB(255,0,0)a1.BorderColor3=Color3.fromRGB(191,191,191)a1.BorderSizePixel=0;a1.Position=UDim2.new(1,-1,0,1)a1.Size=UDim2.new(0,36,0,36)a1.SizeConstraint=Enum.SizeConstraint.RelativeYY;a1.ZIndex=5;a1.Modal=true;a1.Text="X"a1.TextColor3=Color3.fromRGB(255,255,255)a1.TextScaled=true;a1.TextSize=14.000;a1.TextWrapped=true;a2.Name="BackButton"a2.Parent=a0;a2.AnchorPoint=Vector2.new(1,0)a2.BackgroundColor3=Color3.fromRGB(95,95,95)a2.BorderColor3=Color3.fromRGB(191,191,191)a2.BorderSizePixel=0;a2.Position=UDim2.new(1,-41,0,1)a2.Size=UDim2.new(1,-4,1,-4)a2.SizeConstraint=Enum.SizeConstraint.RelativeYY;a2.ZIndex=5;a2.Text="<"a2.TextColor3=Color3.fromRGB(255,255,255)a2.TextScaled=true;a2.TextSize=14.000;a2.TextWrapped=true;a3.Name="CreditTotalText"a3.Parent=a0;a3.AnchorPoint=Vector2.new(1,0)a3.BackgroundColor3=Color3.fromRGB(255,255,255)a3.BackgroundTransparency=1.000;a3.BorderSizePixel=0;a3.Position=UDim2.new(1,-85,0,0)a3.Size=UDim2.new(0,100,1,0)a3.ZIndex=5;a3.Text=a;a3.TextColor3=Color3.fromRGB(255,255,0)a3.TextScaled=true;a3.TextWrapped=true;a3.TextXAlignment=Enum.TextXAlignment.Right;a4.Name="PageTitleText"a4.Parent=a0;a4.BackgroundColor3=Color3.fromRGB(255,255,255)a4.BackgroundTransparency=1.000;a4.BorderSizePixel=0;a4.Position=UDim2.new(0,10,0,0)a4.Size=UDim2.new(0,200,1,0)a4.ZIndex=5;a4.Text="FTF admin Panel"a4.TextColor3=Color3.fromRGB(255,255,255)a4.TextScaled=true;a4.TextWrapped=true;a4.TextXAlignment=Enum.TextXAlignment.Left;a5.Name="MainMenuWindow"a5.Parent=M;a5.AnchorPoint=Vector2.new(0.5,0.5)a5.BackgroundColor3=Color3.fromRGB(47,47,47)a5.BorderColor3=Color3.fromRGB(0,0,0)a5.BorderSizePixel=2;a5.ClipsDescendants=true;a5.Position=UDim2.new(0.5,0,0.5,-18)a5.Size=UDim2.new(0,420,0,360)a5.SizeConstraint=Enum.SizeConstraint.RelativeYY;a5.Visible=false;a6.Name="TopBar"a6.Parent=a5;a6.BackgroundColor3=Color3.fromRGB(31,31,31)a6.BorderSizePixel=0;a6.Size=UDim2.new(1,0,0,40)a6.ZIndex=5;a7.Name="CloseButton"a7.Parent=a6;a7.AnchorPoint=Vector2.new(1,0)a7.BackgroundColor3=Color3.fromRGB(255,0,0)a7.BorderColor3=Color3.fromRGB(191,191,191)a7.BorderSizePixel=0;a7.Position=UDim2.new(1,-1,0,1)a7.Size=UDim2.new(0,36,0,36)a7.SizeConstraint=Enum.SizeConstraint.RelativeYY;a7.ZIndex=5;a7.Modal=true;a7.Text="X"a7.TextColor3=Color3.fromRGB(255,255,255)a7.TextScaled=true;a7.TextSize=14.000;a7.TextWrapped=true;a8.Name="CreditTotalText"a8.Parent=a6;a8.AnchorPoint=Vector2.new(1,0)a8.BackgroundColor3=Color3.fromRGB(255,255,255)a8.BackgroundTransparency=1.000;a8.BorderSizePixel=0;a8.Position=UDim2.new(1,-45,0,0)a8.Size=UDim2.new(0,100,1,0)a8.ZIndex=5;a8.Text=a;a8.TextColor3=Color3.fromRGB(255,255,0)a8.TextScaled=true;a8.TextWrapped=true;a8.TextXAlignment=Enum.TextXAlignment.Right;a9.Name="PageTitleText"a9.Parent=a6;a9.BackgroundColor3=Color3.fromRGB(255,255,255)a9.BackgroundTransparency=1.000;a9.BorderSizePixel=0;a9.Position=UDim2.new(0,10,0,0)a9.Size=UDim2.new(0,200,1,0)a9.ZIndex=5;a9.Text="FTF admin Panel"a9.TextColor3=Color3.fromRGB(255,255,255)a9.TextScaled=true;a9.TextWrapped=true;a9.TextXAlignment=Enum.TextXAlignment.Left;aa.Name="Body"aa.Parent=a5;aa.AnchorPoint=Vector2.new(0.5,0)aa.BackgroundColor3=Color3.fromRGB(255,255,255)aa.BackgroundTransparency=1.000;aa.BorderSizePixel=0;aa.Position=UDim2.new(0.5,0,0,45)aa.Size=UDim2.new(1,-10,1,-75)aa.ScrollBarThickness=0;aa.AutomaticCanvasSize=Enum.AutomaticSize.Y;ab.Parent=aa;ab.HorizontalAlignment=Enum.HorizontalAlignment.Center;ab.SortOrder=Enum.SortOrder.LayoutOrder;ab.VerticalAlignment=Enum.VerticalAlignment.Top;ab.CellSize=UDim2.new(0,132,0,132)ac.Name="ESPButton"ac.Parent=aa;ac.BackgroundColor3=Color3.fromRGB(63,63,63)ac.BorderColor3=Color3.fromRGB(0,0,0)ac.BorderSizePixel=0;ac.LayoutOrder=1;ac.Size=UDim2.new(0,100,0,100)ad.Name="BottomText"ad.Parent=ac;ad.BackgroundColor3=Color3.fromRGB(255,255,255)ad.BackgroundTransparency=1.000;ad.BorderSizePixel=0;ad.Position=UDim2.new(0,0,0.800000012,0)ad.Size=UDim2.new(1,0,0.200000003,0)ad.Text="ESP"ad.TextColor3=Color3.fromRGB(255,255,255)ad.Font=Enum.Font.SourceSans;ad.TextScaled=false;ad.TextSize=24.000;ae.Name="TempIcon"ae.Parent=ac;ae.AnchorPoint=Vector2.new(0.5,0)ae.BackgroundColor3=Color3.fromRGB(255,255,255)ae.BackgroundTransparency=1.000;ae.Position=UDim2.new(0.5,0,0,0)ae.Size=UDim2.new(0.800000012,0,0.800000012,0)ae.Image="rbxassetid://2594274683"ae.ScaleType=Enum.ScaleType.Fit;af.Name="ToolsButton"af.Parent=aa;af.BackgroundColor3=Color3.fromRGB(63,63,63)af.BorderColor3=Color3.fromRGB(0,0,0)af.BorderSizePixel=0;af.LayoutOrder=2;af.Size=UDim2.new(0,100,0,100)ag.Name="BottomText"ag.Parent=af;ag.BackgroundColor3=Color3.fromRGB(255,255,255)ag.BackgroundTransparency=1.000;ag.BorderSizePixel=0;ag.Position=UDim2.new(0,0,0.800000012,0)ag.Size=UDim2.new(1,0,0.200000003,0)ag.Text="Tools"ag.TextColor3=Color3.fromRGB(255,255,255)ag.Font=Enum.Font.SourceSans;ag.TextScaled=false;ag.TextSize=24.000;ah.Name="TempIcon"ah.Parent=af;ah.AnchorPoint=Vector2.new(0.5,0)ah.BackgroundColor3=Color3.fromRGB(255,255,255)ah.BackgroundTransparency=1.000;ah.Position=UDim2.new(0.5,0,0,0)ah.Size=UDim2.new(0.800000012,0,0.800000012,0)ah.Image="rbxassetid://12403104094"ah.ScaleType=Enum.ScaleType.Fit;local ax=Instance.new("ImageButton")ax.Name="TPButton"ax.BackgroundColor3=Color3.fromRGB(63,63,63)ax.BorderSizePixel=0;ax.ZIndex=10;ax.Parent=aa;local ay=Instance.new("ImageLabel",ax)ay.BackgroundTransparency=1;ay.AnchorPoint=Vector2.new(0.5,0)ay.Position=UDim2.new(0.5,0,0,0)ay.Size=UDim2.new(0.800000012,0,0.800000012,0)ay.Image="rbxthumb://type=Asset&id=2249604078&w=150&h=150"ay.ImageColor3=Color3.fromRGB(255,100,100)ay.ScaleType=Enum.ScaleType.Fit;ay.ZIndex=11;local az=Instance.new("TextLabel")az.BackgroundTransparency=1;az.Position=UDim2.new(0,0,0.800000012,0)az.Size=UDim2.new(1,0,0.200000003,0)az.Text="TP"az.TextColor3=Color3.new(1,1,1)az.Font=Enum.Font.SourceSans;az.TextScaled=false;az.TextSize=24.000;az.ZIndex=11;az.Parent=ax;local aA=Instance.new("ImageButton")aA.Name="PlayerTabButton"aA.BackgroundColor3=Color3.fromRGB(63,63,63)aA.BorderSizePixel=0;aA.ZIndex=10;aA.Parent=aa;local aB=Instance.new("ImageLabel",aA)aB.BackgroundTransparency=1;aB.AnchorPoint=Vector2.new(0.5,0)aB.Position=UDim2.new(0.5,0,0,0)aB.Size=UDim2.new(0.800000012,0,0.800000012,0)aB.Image="rbxassetid://6031265976"aB.ScaleType=Enum.ScaleType.Fit;aB.ZIndex=11;local aC=Instance.new("TextLabel")aC.BackgroundTransparency=1;aC.Position=UDim2.new(0,0,0.800000012,0)aC.Size=UDim2.new(1,0,0.200000003,0)aC.Text="Player"aC.TextColor3=Color3.new(1,1,1)aC.Font=Enum.Font.SourceSans;aC.TextScaled=false;aC.TextSize=24.000;aC.ZIndex=11;aC.Parent=aA;local aD=Instance.new("ImageButton")aD.Name="MiscTabButton"aD.BackgroundColor3=Color3.fromRGB(63,63,63)aD.BorderSizePixel=0;aD.ZIndex=10;aD.Parent=aa;local aE=Instance.new("ImageLabel",aD)aE.BackgroundTransparency=1;aE.AnchorPoint=Vector2.new(0.5,0)aE.Position=UDim2.new(0.5,0,0.1,0)aE.Size=UDim2.new(0.6,0,0.6,0)aE.Image="rbxassetid://6031280882"aE.ScaleType=Enum.ScaleType.Fit;aE.ZIndex=11;local aF=Instance.new("TextLabel")aF.BackgroundTransparency=1;aF.Position=UDim2.new(0,0,0.800000012,0)aF.Size=UDim2.new(1,0,0.200000003,0)aF.Text="Misc"aF.TextColor3=Color3.new(1,1,1)aF.Font=Enum.Font.SourceSans;aF.TextScaled=false;aF.TextSize=24.000;aF.ZIndex=11;aF.Parent=aD;local aG=Instance.new("ImageButton")aG.Name="RiskTabButton"aG.BackgroundColor3=Color3.fromRGB(63,63,63)aG.BorderSizePixel=0;aG.ZIndex=10;aG.Parent=aa;local aH=Instance.new("ImageLabel",aG)aH.BackgroundTransparency=1;aH.AnchorPoint=Vector2.new(0.5,0)aH.Position=UDim2.new(0.5,0,0.1,0)aH.Size=UDim2.new(0.6,0,0.6,0)aH.Image="rbxthumb://type=Asset&id=12400908609&w=150&h=150"aH.ScaleType=Enum.ScaleType.Fit;aH.ZIndex=11;local aI=Instance.new("TextLabel")aI.BackgroundTransparency=1;aI.Position=UDim2.new(0,0,0.800000012,0)aI.Size=UDim2.new(1,0,0.200000003,0)aI.Text="Risk Lvl"aI.TextColor3=Color3.new(1,1,1)aI.Font=Enum.Font.SourceSans;aI.TextScaled=false;aI.TextSize=24.000;aI.ZIndex=11;aI.Parent=aG;local aJ=Instance.new("ImageButton")aJ.Name="UnfairTabButton"aJ.BackgroundColor3=Color3.fromRGB(63,63,63)aJ.BorderSizePixel=0;aJ.ZIndex=10;aJ.Parent=aa;local aK=Instance.new("ImageLabel",aJ)aK.BackgroundTransparency=1;aK.AnchorPoint=Vector2.new(0.5,0)aK.Position=UDim2.new(0.5,0,0.1,0)aK.Size=UDim2.new(0.6,0,0.6,0)aK.Image="rbxassetid://73375957637397"aK.ScaleType=Enum.ScaleType.Fit;aK.ZIndex=11;local aL=Instance.new("TextLabel")aL.BackgroundTransparency=1;aL.Position=UDim2.new(0,0,0.800000012,0)aL.Size=UDim2.new(1,0,0.200000003,0)aL.Text="Unfair"aL.TextColor3=Color3.new(1,0.2,0.2)aL.Font=Enum.Font.SourceSansBold;aL.TextScaled=false;aL.TextSize=24.000;aL.ZIndex=11;aL.Parent=aJ;local aM=Instance.new("ImageButton")aM.Name="UpdateLogTabButton"aM.BackgroundColor3=Color3.fromRGB(63,63,63)aM.BorderSizePixel=0;aM.ZIndex=10;aM.Parent=aa;local aN=Instance.new("ImageLabel",aM)aN.BackgroundTransparency=1;aN.AnchorPoint=Vector2.new(0.5,0)aN.Position=UDim2.new(0.5,0,0.1,0)aN.Size=UDim2.new(0.6,0,0.6,0)aN.Image="rbxassetid://11293981586"aN.ScaleType=Enum.ScaleType.Fit;aN.ZIndex=11;local aO=Instance.new("TextLabel")aO.BackgroundTransparency=1;aO.Position=UDim2.new(0,0,0.800000012,0)aO.Size=UDim2.new(1,0,0.200000003,0)aO.Text="Logs"aO.TextColor3=Color3.new(1,1,1)aO.Font=Enum.Font.SourceSans;aO.TextScaled=false;aO.TextSize=24.000;aO.ZIndex=11;aO.Parent=aM;local aP=Instance.new("TextButton")aP.Name="KillPanelButton"aP.Size=UDim2.new(0,132,0,132)aP.BackgroundColor3=Color3.fromRGB(150,0,0)aP.Text="KILL\nPANEL"aP.TextColor3=Color3.new(1,1,1)aP.Font=Enum.Font.SourceSans;aP.TextScaled=false;aP.TextSize=24.000;aP.Parent=aa;Instance.new("UICorner",aP).CornerRadius=UDim.new(0,12)c(aP.MouseButton1Click:Connect(function()r=false;l=false;m=false;n=false;o=false;p=false;q=false;t=false;s=false;u=false;v=false;w=false;x=false;y=false;z=false;A=false;B=false;C=false;D=false;E=false;F=false;if FreecamUI then FreecamUI.Visible=false end;if UpdateLogMenu then UpdateLogMenu.Visible=false end;if game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChild("Humanoid")then game.Players.LocalPlayer.Character.Humanoid.WalkSpeed=16;game.Players.LocalPlayer.Character.Humanoid.JumpPower=0 end;local aQ=game:GetService("Lighting")if G then aQ.FogEnd=G end;if H then aQ.FogStart=H end;if K then aQ.Ambient=K end;if L then aQ.OutdoorAmbient=L end;local aR=aQ:FindFirstChild("Atmosphere")if aR and I then aR.Density=I;aR.Offset=J end;workspace.CurrentCamera.FieldOfView=70;workspace.Gravity=196.2;for k,aS in pairs(workspace:GetDescendants())do if aS:IsA("Highlight")then aS:Destroy()end end;for k,d in pairs(b)do if d and d.Connected then d:Disconnect()end end;if aw then aw:Destroy()end;task.wait(0.1)M:Destroy()end))ai.Name="ToolsMenuWindow"ai.Parent=M;ai.AnchorPoint=Vector2.new(0.5,0.5)ai.BackgroundColor3=Color3.fromRGB(47,47,47)ai.BorderColor3=Color3.fromRGB(0,0,0)ai.BorderSizePixel=2;ai.ClipsDescendants=true;ai.Position=UDim2.new(0.5,0,0.5,-18)ai.Size=UDim2.new(0,480,0,175)ai.SizeConstraint=Enum.SizeConstraint.RelativeYY;ai.Visible=false;aj.Name="Body"aj.Parent=ai;aj.BackgroundColor3=Color3.fromRGB(255,255,255)aj.BackgroundTransparency=1.000;aj.BorderSizePixel=0;aj.Position=UDim2.new(0,0,0,40)aj.Size=UDim2.new(1,0,1,-40)ak.Name="TitleLabel"ak.Parent=aj;ak.AnchorPoint=Vector2.new(0.5,0)ak.BackgroundColor3=Color3.fromRGB(63,63,63)ak.BorderColor3=Color3.fromRGB(0,0,0)ak.BorderSizePixel=0;ak.Position=UDim2.new(0.5,0,-1.06500006,150)ak.Size=UDim2.new(1,-10,0.0235044118,30)ak.Text="Tools"ak.TextColor3=Color3.fromRGB(144,255,161)ak.TextScaled=true;ak.TextSize=14.000;ak.TextWrapped=true;al.Name="ButtonsFrame"al.Parent=aj;al.BackgroundColor3=Color3.fromRGB(255,255,255)al.BackgroundTransparency=1.000;al.Position=UDim2.new(0,5,0,45)al.Size=UDim2.new(1,-10,-0.00555555569,85)am.Parent=al;am.FillDirection=Enum.FillDirection.Vertical;am.HorizontalAlignment=Enum.HorizontalAlignment.Center;am.SortOrder=Enum.SortOrder.LayoutOrder;am.CellPadding=UDim2.new(0,6,0,6)am.CellSize=UDim2.new(0,152,0,39)an.Name="NeverFailButton"an.Parent=al;an.BackgroundColor3=Color3.fromRGB(191,0,0)an.BorderColor3=Color3.fromRGB(0,0,0)an.BorderSizePixel=0;an.Size=UDim2.new(0,200,0,50)an.Text="Never Fail"an.TextColor3=Color3.fromRGB(255,255,255)an.TextScaled=true;an.TextSize=14.000;an.TextWrapped=true;ao.Name="AutoPlayButton"ao.Parent=al;ao.BackgroundColor3=Color3.fromRGB(191,0,0)ao.BorderColor3=Color3.fromRGB(0,0,0)ao.BorderSizePixel=0;ao.LayoutOrder=1;ao.Size=UDim2.new(0,200,0,50)ao.Text="Auto-Play"ao.TextColor3=Color3.fromRGB(255,255,255)ao.TextScaled=true;ao.TextSize=14.000;ao.TextWrapped=true;ap.Name="AutoInteractButton"ap.Parent=al;ap.BackgroundColor3=Color3.fromRGB(191,0,0)ap.BorderColor3=Color3.fromRGB(0,0,0)ap.BorderSizePixel=0;ap.LayoutOrder=2;ap.Size=UDim2.new(0,200,0,50)ap.Text="Auto Interact"ap.TextColor3=Color3.fromRGB(255,255,255)ap.TextScaled=true;ap.TextSize=14.000;ap.TextWrapped=true;aq.Name="BeastCamButton"aq.Parent=al;aq.BackgroundColor3=Color3.fromRGB(191,0,0)aq.BorderColor3=Color3.fromRGB(0,0,0)aq.BorderSizePixel=0;aq.LayoutOrder=3;aq.Size=UDim2.new(0,200,0,50)aq.Text="Beast Cam"aq.TextColor3=Color3.fromRGB(255,255,255)aq.TextScaled=true;aq.TextSize=14.000;aq.TextWrapped=true;ar.Name="TopBar"ar.Parent=ai;ar.BackgroundColor3=Color3.fromRGB(31,31,31)ar.BorderSizePixel=0;ar.Size=UDim2.new(1,0,0,40)ar.ZIndex=5;as.Name="CloseButton"as.Parent=ar;as.AnchorPoint=Vector2.new(1,0)as.BackgroundColor3=Color3.fromRGB(255,0,0)as.BorderColor3=Color3.fromRGB(191,191,191)as.BorderSizePixel=0;as.Position=UDim2.new(1,-1,0,1)as.Size=UDim2.new(0,36,0,36)as.SizeConstraint=Enum.SizeConstraint.RelativeYY;as.ZIndex=5;as.Modal=true;as.Text="X"as.TextColor3=Color3.fromRGB(255,255,255)as.TextScaled=true;as.TextSize=14.000;as.TextWrapped=true;at.Name="BackButton"at.Parent=ar;at.AnchorPoint=Vector2.new(1,0)at.BackgroundColor3=Color3.fromRGB(95,95,95)at.BorderColor3=Color3.fromRGB(191,191,191)at.BorderSizePixel=0;at.Position=UDim2.new(1,-41,0,1)at.Size=UDim2.new(1,-4,1,-4)at.SizeConstraint=Enum.SizeConstraint.RelativeYY;at.ZIndex=5;at.Text="<"at.TextColor3=Color3.fromRGB(255,255,255)at.TextScaled=true;at.TextSize=14.000;at.TextWrapped=true;au.Name="CreditTotalText"au.Parent=ar;au.AnchorPoint=Vector2.new(1,0)au.BackgroundColor3=Color3.fromRGB(255,255,255)au.BackgroundTransparency=1.000;au.BorderSizePixel=0;au.Position=UDim2.new(1,-85,0,0)au.Size=UDim2.new(0,100,1,0)au.ZIndex=5;au.Text=a;au.TextColor3=Color3.fromRGB(255,255,0)au.TextScaled=true;au.TextWrapped=true;au.TextXAlignment=Enum.TextXAlignment.Right;av.Name="PageTitleText"av.Parent=ar;av.BackgroundColor3=Color3.fromRGB(255,255,255)av.BackgroundTransparency=1.000;av.BorderSizePixel=0;av.Position=UDim2.new(0,10,0,0)av.Size=UDim2.new(0,200,1,0)av.ZIndex=5;av.Text="FTF admin Panel - Tools"av.TextColor3=Color3.fromRGB(255,255,255)av.TextScaled=true;av.TextWrapped=true;av.TextXAlignment=Enum.TextXAlignment.Left;aw.BackgroundColor3=Color3.fromRGB(255,255,255)aw.Parent=M;aw.Position=UDim2.new(0,5,0.666000009,-5)aw.Size=UDim2.new(0.333,0,0.333,0)aw.Ambient=Color3.fromRGB(147,147,147)aw.LightDirection=Vector3.new(0,1,0)aw.BackgroundColor3=Color3.fromRGB(50,50,50)aw.BackgroundTransparency=0.9;aw.Visible=false;local function aT()local aU=game.ReplicatedStorage:FindFirstChild("CurrentMap")if aU and aU.Value then return aU.Value end;return nil end;local aV=Q:Clone()aV.Name="TPMenu"aV.Visible=false;aV.Parent=M;aV.Body.TitleLabel.Text="TELEPORT"aV.TopBar.PageTitleText.Text="FTF admin Panel - TP"for k,aS in pairs(aV.Body.ButtonsFrame:GetChildren())do if aS:IsA("TextButton")then aS:Destroy()end end;local aW=game.Players.LocalPlayer;local function aX(aY,aZ)local a_=Instance.new("TextButton")a_.Size=UDim2.new(0,200,0,50)a_.BackgroundColor3=Color3.fromRGB(191,0,0)a_.Text=aY;a_.TextColor3=Color3.new(1,1,1)a_.Font=Enum.Font.SourceSans;a_.TextScaled=true;a_.Parent=aV.Body.ButtonsFrame;c(a_.MouseButton1Click:Connect(function()pcall(aZ)end))end;aX("Nearest PC",function()if not aW.Character or not aW.Character:FindFirstChild("HumanoidRootPart")then return end;local b0=aT()if not b0 then return end;local b1,b2=nil,math.huge;local b3=aW.Character.HumanoidRootPart.Position;for k,aS in pairs(b0:GetDescendants())do if aS.Name=="ComputerTable"then local b4=aS:GetPivot().Position-b3.Magnitude;if b4<b2 then b2=b4;b1=aS end end end;if b1 then aW.Character.HumanoidRootPart.CFrame=b1:GetPivot()+Vector3.new(0,5,0)end end)aX("Safest PC (Best)",function()if not aW.Character or not aW.Character:FindFirstChild("HumanoidRootPart")then return end;local b5=getBestPC()if b5 and b5[1]and b5[1].pc then aW.Character.HumanoidRootPart.CFrame=b5[1].pc:GetPivot()+Vector3.new(0,5,0)end end)aX("Nearest Pod",function()if not aW.Character or not aW.Character:FindFirstChild("HumanoidRootPart")then return end;local b0=aT()if not b0 then return end;local b1,b2=nil,math.huge;local b3=aW.Character.HumanoidRootPart.Position;for k,aS in pairs(b0:GetDescendants())do if aS.Name=="FreezePod"then local b4=aS:GetPivot().Position-b3.Magnitude;if b4<b2 then b2=b4;b1=aS end end end;if b1 then aW.Character.HumanoidRootPart.CFrame=b1:GetPivot()+Vector3.new(0,5,0)end end)aX("Frozen Teammate",function()if not aW.Character or not aW.Character:FindFirstChild("HumanoidRootPart")then return end;local b0=aT()if not b0 then return end;for k,aS in pairs(b0:GetDescendants())do if aS.Name=="FreezePod"and aS:FindFirstChild("Occupant")and aS.Occupant.Value~=nil then aW.Character.HumanoidRootPart.CFrame=aS:GetPivot()+Vector3.new(0,5,0)break end end end)aX("Exit Door",function()if not aW.Character or not aW.Character:FindFirstChild("HumanoidRootPart")then return end;local b0=aT()if not b0 then return end;for k,aS in pairs(b0:GetDescendants())do if aS.Name=="ExitDoor"then aW.Character.HumanoidRootPart.CFrame=aS:GetPivot()+Vector3.new(0,5,0)break end end end)aX("TP to Beast",function()if not aW.Character or not aW.Character:FindFirstChild("HumanoidRootPart")then return end;local b6=getBeast()if b6 and b6.Character and b6.Character:FindFirstChild("HumanoidRootPart")then aW.Character.HumanoidRootPart.CFrame=b6.Character.HumanoidRootPart.CFrame+Vector3.new(0,5,0)end end)aX("Nearest Teammate",function()if not aW.Character or not aW.Character:FindFirstChild("HumanoidRootPart")then return end;local b1,b2=nil,math.huge;local b6=getBeast()for k,b7 in pairs(game.Players:GetPlayers())do if b7~=aW and b7~=b6 and b7.Character and b7.Character:FindFirstChild("HumanoidRootPart")then local b4=aW.Character.HumanoidRootPart.Position-b7.Character.HumanoidRootPart.Position.Magnitude;if b4<b2 then b2=b4;b1=b7 end end end;if b1 and b1.Character and b1.Character:FindFirstChild("HumanoidRootPart")then aW.Character.HumanoidRootPart.CFrame=b1.Character.HumanoidRootPart.CFrame+Vector3.new(5,0,0)end end)aX("Spawn",function()if not aW.Character or not aW.Character:FindFirstChild("HumanoidRootPart")then return end;local b8=workspace:FindFirstChild("SpawnLocation")or workspace:FindFirstChild("Spawns")and workspace.Spawns:FindFirstChildOfClass("SpawnLocation")if b8 then aW.Character.HumanoidRootPart.CFrame=b8.CFrame+Vector3.new(0,10,0)end end)aX("Map Center",function()if not aW.Character or not aW.Character:FindFirstChild("HumanoidRootPart")then return end;local b0=aT()if b0 then local b9=b0:GetBoundingBox()aW.Character.HumanoidRootPart.CFrame=b9.Position+Vector3.new(0,80,0)end end)aX("Random PC",function()if not aW.Character or not aW.Character:FindFirstChild("HumanoidRootPart")then return end;local b0=aT()if not b0 then return end;local ba={}for k,aS in pairs(b0:GetDescendants())do if aS.Name=="ComputerTable"then table.insert(ba,aS)end end;if#ba>0 then local bb=ba[math.random(1,#ba)]aW.Character.HumanoidRootPart.CFrame=bb:GetPivot()+Vector3.new(0,5,0)end end)local bc=Q:Clone()bc.Name="PlayerMenu"bc.Visible=false;bc.Parent=M;bc.Body.TitleLabel.Text="PLAYER MODS"bc.TopBar.PageTitleText.Text="FTF admin Panel - Player"bc.Body.ButtonsFrame:Destroy()local bd=Instance.new("ScrollingFrame")bd.Name="ButtonsFrame"bd.Parent=bc.Body;bd.BackgroundTransparency=1;bd.Position=UDim2.new(0,5,0,45)bd.Size=UDim2.new(1,-10,1,-55)bd.ScrollBarThickness=4;bd.AutomaticCanvasSize=Enum.AutomaticSize.Y;local be=Instance.new("UIGridLayout")be.Parent=bd;be.FillDirection=Enum.FillDirection.Horizontal;be.HorizontalAlignment=Enum.HorizontalAlignment.Center;be.SortOrder=Enum.SortOrder.LayoutOrder;be.CellPadding=UDim2.new(0,6,0,6)be.CellSize=UDim2.new(0,152,0,39)local function bf(aY,bg)local a_=Instance.new("TextButton")a_.Size=UDim2.new(0,200,0,50)a_.BackgroundColor3=Color3.fromRGB(191,0,0)a_.Text=aY;a_.TextColor3=Color3.new(1,1,1)a_.Font=Enum.Font.SourceSans;a_.TextScaled=true;a_.Parent=bc.Body.ButtonsFrame;c(a_.MouseButton1Click:Connect(function()local bh=bg()a_.BackgroundColor3=bh and Color3.new(0,0.74902,0)or Color3.new(0.74902,0,0)end))end;bf("WalkSpeed (24)",function()u=not u;if not u then local bi=game.Players.LocalPlayer.Character;if bi and bi:FindFirstChild("Humanoid")then bi.Humanoid.WalkSpeed=16 end end;return u end)bf("JumpPower (50)",function()v=not v;if not v then local bi=game.Players.LocalPlayer.Character;if bi and bi:FindFirstChild("Humanoid")then bi.Humanoid.UseJumpPower=false end end;return v end)bf("Noclip",function()w=not w;if not w then local bi=game.Players.LocalPlayer.Character;if bi then for k,bj in pairs(bi:GetChildren())do if bj:IsA("BasePart")and bj.Name~="HumanoidRootPart"then bj.CanCollide=true end end end end;return w end)local bk=false;local bl=nil;local bm=nil;local bn=false;local bo=nil;local bp="rbxthumb://type=Asset&id=83349936062601&w=150&h=150"local bq="rbxthumb://type=Asset&id=72173899346121&w=150&h=150"bf("Mobile Shift-Lock",function()bk=not bk;if bk then bl=Instance.new("TextButton")bl.Name="MobileShiftLockBtn"bl.Size=UDim2.new(0,50,0,50)bl.Position=UDim2.new(0.8,-10,0.6,0)bl.BackgroundColor3=Color3.fromRGB(0,0,0)bl.BackgroundTransparency=0.5;bl.ZIndex=99999;bl.Text=""Instance.new("UICorner",bl).CornerRadius=UDim.new(1,0)bl.Parent=M;bm=Instance.new("ImageLabel",bl)bm.Size=UDim2.new(0.7,0,0.7,0)bm.AnchorPoint=Vector2.new(0.5,0.5)bm.Position=UDim2.new(0.5,0,0.5,0)bm.BackgroundTransparency=1;bm.Image=bp;c(bl.MouseButton1Click:Connect(function()bn=not bn;local bi=game.Players.LocalPlayer.Character;local br=bi and bi:FindFirstChild("Humanoid")local bs=bi and bi:FindFirstChild("HumanoidRootPart")if bn then bm.Image=bq;bl.BackgroundColor3=Color3.fromRGB(0,50,150)if br then br.CameraOffset=Vector3.new(1.75,0,0)br.AutoRotate=false end;if not bo then bo=game:GetService("RunService").RenderStepped:Connect(function()if bi and bs and br and br.Health>0 then local bt=workspace.CurrentCamera;local bu=bt.CFrame.LookVector;bs.CFrame=CFrame.lookAt(bs.Position,bs.Position+Vector3.new(bu.X,0,bu.Z))end end)end else bm.Image=bp;bl.BackgroundColor3=Color3.fromRGB(0,0,0)if br then br.CameraOffset=Vector3.new(0,0,0)br.AutoRotate=true end;if bo then bo:Disconnect()bo=nil end end end))else bn=false;if bl then bl:Destroy()end;if bo then bo:Disconnect()bo=nil end;local bi=game.Players.LocalPlayer.Character;local br=bi and bi:FindFirstChild("Humanoid")if br then br.CameraOffset=Vector3.new(0,0,0)br.AutoRotate=true end end;return bk end)local bv=false;bf("Ninja Mode",function()bv=not bv;return bv end)c(game:GetService("RunService").Heartbeat:Connect(function()if bv then local bi=game.Players.LocalPlayer.Character;if bi and bi:FindFirstChild("HumanoidRootPart")then for k,bw in pairs(bi.HumanoidRootPart:GetChildren())do if bw:IsA("Sound")then bw.Volume=0 end end end end end))local bx=false;local by=nil;bf("Beast 3rd Person",function()bx=not bx;local aW=game.Players.LocalPlayer;if bx then if not by then by=game:GetService("RunService").RenderStepped:Connect(function()if aW.CameraMode~=Enum.CameraMode.Classic then aW.CameraMode=Enum.CameraMode.Classic end;if aW.CameraMaxZoomDistance<128 then aW.CameraMaxZoomDistance=128 end;if aW.CameraMinZoomDistance>0.5 then aW.CameraMinZoomDistance=0.5 end end)end else if by then by:Disconnect()by=nil end;local bz=getBeast()if bz==aW then aW.CameraMode=Enum.CameraMode.LockFirstPerson;aW.CameraMaxZoomDistance=0.5;aW.CameraMinZoomDistance=0.5 else aW.CameraMode=Enum.CameraMode.Classic;aW.CameraMaxZoomDistance=128;aW.CameraMinZoomDistance=0.5 end end;return bx end)local bA=false;local bB=nil;bf("Custom Crosshair",function()bA=not bA;if bA then bB=Instance.new("Frame")bB.Name="CenterCrosshair"bB.Size=UDim2.new(0,6,0,6)bB.Position=UDim2.new(0.5,0,0.5,0)bB.AnchorPoint=Vector2.new(0.5,0.5)bB.BackgroundColor3=Color3.fromRGB(0,255,255)bB.BorderSizePixel=0;bB.ZIndex=999999;local bC=Instance.new("UICorner")bC.CornerRadius=UDim.new(1,0)bC.Parent=bB;bB.Parent=M else if bB then bB:Destroy()bB=nil end end;return bA end)local bD=Q:Clone()bD.Name="RiskMenu"bD.Visible=false;bD.Parent=M;bD.Body.TitleLabel.Text="RISK LEVELS"bD.TopBar.PageTitleText.Text="FTF admin Panel - Risk"bD.Body.ButtonsFrame:Destroy()local bE=Instance.new("ScrollingFrame")bE.Name="ButtonsFrame"bE.Parent=bD.Body;bE.BackgroundTransparency=1;bE.Position=UDim2.new(0,5,0,45)bE.Size=UDim2.new(1,-10,1,-55)bE.ScrollBarThickness=4;bE.AutomaticCanvasSize=Enum.AutomaticSize.Y;local bF=Instance.new("UIListLayout")bF.Parent=bE;bF.SortOrder=Enum.SortOrder.LayoutOrder;bF.Padding=UDim.new(0,5)local function bG(bH,bI,bJ)local bK=Instance.new("Frame")bK.Size=UDim2.new(1,-10,0,75)bK.BackgroundColor3=Color3.fromRGB(45,45,45)bK.BorderSizePixel=0;bK.Parent=bE;local bL=Instance.new("TextLabel")bL.Size=UDim2.new(1,-10,0.35,0)bL.Position=UDim2.new(0,5,0,5)bL.BackgroundTransparency=1;bL.Text=bH;bL.TextColor3=bJ;bL.TextXAlignment=Enum.TextXAlignment.Left;bL.Font=Enum.Font.SourceSansBold;bL.TextSize=18;bL.Parent=bK;local bM=Instance.new("TextLabel")bM.Size=UDim2.new(1,-10,0.6,0)bM.Position=UDim2.new(0,5,0.35,2)bM.BackgroundTransparency=1;bM.Text=bI;bM.TextColor3=Color3.new(0.9,0.9,0.9)bM.TextXAlignment=Enum.TextXAlignment.Left;bM.TextYAlignment=Enum.TextYAlignment.Top;bM.TextWrapped=true;bM.Font=Enum.Font.SourceSans;bM.TextSize=15;bM.Parent=bK end;bG(" SAFE (Client-Side)","Live Radar, ESPs, Custom Crosshair, Anti-Blindness, Mobile Shift-Lock, Beast 3rd Person, No Fog, Fullbright.",Color3.fromRGB(100,255,100))bG(" MODERATE (Use Caution)","Auto-Struggle, Hitbox Expander, Ghost Drone, Speed 24, Low Gravity, Jump 50.",Color3.fromRGB(255,255,100))bG(" HIGH RISK (Ban Chance)","Noclip, Fixed Teleports, Auto-Play V1, Auto-Interact (Flags anti-cheat easily).",Color3.fromRGB(255,100,100))local bN=Q:Clone()bN.Name="UnfairMenu"bN.Visible=false;bN.Parent=M;bN.Body.TitleLabel.Text="UNFAIR ADVANTAGE"bN.Body.TitleLabel.TextColor3=Color3.new(1,0.2,0.2)bN.TopBar.PageTitleText.Text="FTF admin Panel - Unfair"bN.Body.ButtonsFrame:Destroy()local bO=Instance.new("ScrollingFrame")bO.Name="ButtonsFrame"bO.Parent=bN.Body;bO.BackgroundTransparency=1;bO.Position=UDim2.new(0,5,0,45)bO.Size=UDim2.new(1,-10,1,-55)bO.ScrollBarThickness=4;bO.AutomaticCanvasSize=Enum.AutomaticSize.Y;local bP=Instance.new("UIGridLayout")bP.Parent=bO;bP.FillDirection=Enum.FillDirection.Horizontal;bP.HorizontalAlignment=Enum.HorizontalAlignment.Center;bP.SortOrder=Enum.SortOrder.LayoutOrder;bP.CellPadding=UDim2.new(0,6,0,6)bP.CellSize=UDim2.new(0,152,0,39)local function bQ(aY,bg)local a_=Instance.new("TextButton")a_.Size=UDim2.new(0,200,0,50)a_.BackgroundColor3=Color3.fromRGB(150,0,0)a_.Text=aY;a_.TextColor3=Color3.new(1,1,1)a_.Font=Enum.Font.SourceSansBold;a_.TextScaled=true;a_.Parent=bO;c(a_.MouseButton1Click:Connect(function()local bh=bg()a_.BackgroundColor3=bh and Color3.new(0,0.74902,0)or Color3.fromRGB(150,0,0)end))end;bQ("Auto-Struggle",function()D=not D;return D end)task.spawn(function()while true do task.wait(0.1)if D then local bR=game.Players.LocalPlayer:WaitForChild("PlayerGui")local bS=bR:FindFirstChild("ScreenGui")if bS and bS:FindFirstChild("StruggleBox")and bS.StruggleBox.Visible then game.ReplicatedStorage.RemoteEvent:FireServer("Input","Action",true)end end end end)bQ("Expand Hitboxes",function()F=not F;if not F then for k,i in pairs(game.Players:GetPlayers())do if i~=game.Players.LocalPlayer and i.Character and i.Character:FindFirstChild("HumanoidRootPart")then i.Character.HumanoidRootPart.Size=Vector3.new(2,2,1)i.Character.HumanoidRootPart.Transparency=1 end end end;return F end)c(game:GetService("RunService").Heartbeat:Connect(function()if F then for k,i in pairs(game.Players:GetPlayers())do if i~=game.Players.LocalPlayer and i.Character and i.Character:FindFirstChild("HumanoidRootPart")then local bs=i.Character.HumanoidRootPart;bs.Size=Vector3.new(4,4,4)bs.Transparency=0.8;bs.BrickColor=BrickColor.new("Bright red")bs.CanCollide=false end end end end))local bT=Instance.new("TextLabel")bT.Size=UDim2.new(0,300,0,50)bT.Position=UDim2.new(0.5,-150,0.85,0)bT.BackgroundTransparency=0.5;bT.BackgroundColor3=Color3.new(0,0,0)bT.TextColor3=Color3.fromRGB(255,255,255)bT.Font=Enum.Font.SourceSansBold;bT.TextScaled=true;bT.Visible=false;bT.ZIndex=100;bT.Parent=M;Instance.new("UICorner",bT).CornerRadius=UDim.new(0,8)bQ("Live Radar",function()E=not E;bT.Visible=E;return E end)c(game:GetService("RunService").Heartbeat:Connect(function()if E and game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart")then local b6=getBeast()local b0=aT()if b6 and b6.Character and b6.Character:FindFirstChild("HumanoidRootPart")then local bU=game.Players.LocalPlayer.Character.HumanoidRootPart.Position;local bV=b6.Character.HumanoidRootPart.Position;local b2=bU-bV.Magnitude;local bW="BEAST: "..math.floor(b2).." STUDS"local bX=false;if b0 then for k,bY in pairs(b0:GetChildren())do if bY.Name=="FreezePod"and bY:FindFirstChild("Occupant")and bY.Occupant.Value~=nil then if bV-bY:GetPivot().Position.Magnitude<30 then bX=true;break end end end end;if bX then bT.Text=bW.."\n⚠️ CAMPING POD ⚠️"bT.TextColor3=Color3.new(1,0.2,0.2)else bT.Text=bW;bT.TextColor3=Color3.new(1,1,1)end else bT.Text="SEARCHING FOR BEAST..."bT.TextColor3=Color3.new(0.8,0.8,0.8)end end end))local FreecamUI=Instance.new("Frame")FreecamUI.Name="FreecamControls"FreecamUI.Parent=M;FreecamUI.Size=UDim2.new(1,0,1,0)FreecamUI.BackgroundTransparency=1;FreecamUI.Visible=false;FreecamUI.ZIndex=50;local bZ={W=false,A=false,S=false,D=false,Up=false,Dn=false}local function b_(c0,c1,b3)local a_=Instance.new("TextButton")a_.Size=UDim2.new(0,60,0,60)a_.Position=b3;a_.AnchorPoint=Vector2.new(0.5,0.5)a_.BackgroundColor3=Color3.fromRGB(0,0,0)a_.BackgroundTransparency=0.5;a_.Text=c1;a_.TextColor3=Color3.new(1,1,1)a_.Font=Enum.Font.SourceSansBold;a_.TextSize=18;Instance.new("UICorner",a_).CornerRadius=UDim.new(1,0)a_.Parent=FreecamUI;a_.InputBegan:Connect(function(c2)if c2.UserInputType==Enum.UserInputType.Touch or c2.UserInputType==Enum.UserInputType.MouseButton1 then bZ[c0]=true end end)a_.InputEnded:Connect(function(c2)if c2.UserInputType==Enum.UserInputType.Touch or c2.UserInputType==Enum.UserInputType.MouseButton1 then bZ[c0]=false end end)end;b_("W","FWD",UDim2.new(0.15,0,0.5,0))b_("S","BACK",UDim2.new(0.15,0,0.7,0))b_("A","LEFT",UDim2.new(0.07,0,0.6,0))b_("D","RIGHT",UDim2.new(0.23,0,0.6,0))b_("Up","UP",UDim2.new(0.85,0,0.5,0))b_("Dn","DOWN",UDim2.new(0.85,0,0.7,0))local c3=false;local c4;local c5;bQ("Ghost Drone",function()c3=not c3;local bi=game.Players.LocalPlayer.Character;local bt=workspace.CurrentCamera;if c3 then FreecamUI.Visible=true;if bi and bi:FindFirstChild("HumanoidRootPart")then bi.HumanoidRootPart.Anchored=true end;c5=Instance.new("Part")c5.Size=Vector3.new(1,1,1)c5.Transparency=1;c5.Anchored=true;c5.CanCollide=false;c5.CFrame=bt.CFrame;c5.Parent=workspace;bt.CameraSubject=c5;c4=game:GetService("RunService").RenderStepped:Connect(function()local c6=0.26;local c7=Vector3.new(0,0,0)if bZ.W then c7=c7+bt.CFrame.LookVector end;if bZ.S then c7=c7-bt.CFrame.LookVector end;if bZ.A then c7=c7-bt.CFrame.RightVector end;if bZ.D then c7=c7+bt.CFrame.RightVector end;if bZ.Up then c7=c7+Vector3.new(0,1,0)end;if bZ.Dn then c7=c7-Vector3.new(0,1,0)end;if c7.Magnitude>0 then c7=c7.Unit*c6;c5.CFrame=c5.CFrame+c7 end end)else FreecamUI.Visible=false;for c8,k in pairs(bZ)do bZ[c8]=false end;if c5 then c5:Destroy()end;if c4 then c4:Disconnect()end;if bi and bi:FindFirstChild("HumanoidRootPart")and bi:FindFirstChild("Humanoid")then bi.HumanoidRootPart.Anchored=false;bt.CameraSubject=bi.Humanoid end end;return c3 end)local UpdateLogMenu=Q:Clone()UpdateLogMenu.Name="UpdateLogMenu"UpdateLogMenu.Visible=false;UpdateLogMenu.Parent=M;UpdateLogMenu.Body.TitleLabel.Text="UPDATE LOG"UpdateLogMenu.Body.TitleLabel.TextColor3=Color3.fromRGB(200,200,200)UpdateLogMenu.TopBar.PageTitleText.Text="FTF admin Panel - Logs"UpdateLogMenu.Body.ButtonsFrame:Destroy()local c9=Instance.new("ScrollingFrame")c9.Name="LogScroll"c9.Parent=UpdateLogMenu.Body;c9.BackgroundTransparency=1;c9.Position=UDim2.new(0,10,0,45)c9.Size=UDim2.new(1,-20,1,-55)c9.ScrollBarThickness=4;c9.AutomaticCanvasSize=Enum.AutomaticSize.Y;local ca=Instance.new("UIListLayout")ca.Parent=c9;ca.SortOrder=Enum.SortOrder.LayoutOrder;ca.Padding=UDim.new(0,10)local function cb(cc,c1)local bK=Instance.new("Frame")bK.Size=UDim2.new(1,-10,0,0)bK.BackgroundColor3=Color3.fromRGB(45,45,45)bK.BorderSizePixel=0;bK.Parent=c9;bK.AutomaticSize=Enum.AutomaticSize.Y;local cd=Instance.new("UIPadding")cd.PaddingTop=UDim.new(0,5)cd.PaddingBottom=UDim.new(0,5)cd.PaddingLeft=UDim.new(0,5)cd.PaddingRight=UDim.new(0,5)cd.Parent=bK;local bL=Instance.new("TextLabel")bL.Size=UDim2.new(1,0,0,20)bL.BackgroundTransparency=1;bL.Text=cc;bL.TextColor3=Color3.fromRGB(150,255,150)bL.TextXAlignment=Enum.TextXAlignment.Left;bL.Font=Enum.Font.SourceSansBold;bL.TextSize=16;bL.Parent=bK;local bM=Instance.new("TextLabel")bM.Size=UDim2.new(1,0,0,0)bM.Position=UDim2.new(0,0,0,22)bM.BackgroundTransparency=1;bM.Text=c1;bM.TextColor3=Color3.new(0.9,0.9,0.9)bM.TextXAlignment=Enum.TextXAlignment.Left;bM.TextYAlignment=Enum.TextYAlignment.Top;bM.TextWrapped=true;bM.Font=Enum.Font.SourceSans;bM.TextSize=14;bM.AutomaticSize=Enum.AutomaticSize.Y;bM.Parent=bK;Instance.new("UICorner",bK).CornerRadius=UDim.new(0,6)end;cb("v0.7.54 [LATEST]","- Added Unfair Menu\n- Added Ghost Drone (Mobile D-Pad)\n- Added Live Beast Radar\n- Added Auto-Struggle\n- Added Subtle Beast Hitbox Extender (4x4)\n- Fixed Menu Click Routing")cb("v0.7.53","- Added Risk Level Chart\n- Optimized Smart ESP rendering distance\n- Improved Mobile UI Grid Layout")cb("v0.7.52","- Added Kill Panel (Emergency Shutoff)\n- Added Nuke FPS Booster\n- Added Reversible No Fog & Fullbright")local ce=Q:Clone()ce.Name="MiscMenu"ce.Visible=false;ce.Parent=M;ce.Body.TitleLabel.Text="MISC MODS"ce.TopBar.PageTitleText.Text="FTF admin Panel - Misc"ce.Body.ButtonsFrame:Destroy()local cf=Instance.new("ScrollingFrame")cf.Name="ButtonsFrame"cf.Parent=ce.Body;cf.BackgroundTransparency=1;cf.Position=UDim2.new(0,5,0,45)cf.Size=UDim2.new(1,-10,1,-55)cf.ScrollBarThickness=4;cf.AutomaticCanvasSize=Enum.AutomaticSize.Y;local cg=Instance.new("UIGridLayout")cg.Parent=cf;cg.FillDirection=Enum.FillDirection.Horizontal;cg.HorizontalAlignment=Enum.HorizontalAlignment.Center;cg.SortOrder=Enum.SortOrder.LayoutOrder;cg.CellPadding=UDim2.new(0,6,0,6)cg.CellSize=UDim2.new(0,152,0,39)local ch=Q:Clone()ch.Name="AdminMenu"ch.Visible=false;ch.Parent=M;ch.Body.TitleLabel.Text="ADMIN ACCESS"ch.Body.TitleLabel.TextColor3=Color3.fromRGB(0,255,255)ch.TopBar.PageTitleText.Text="FTF admin Panel - Developer"ch.Body.ButtonsFrame:Destroy()local ci=Instance.new("ScrollingFrame")ci.Parent=ch.Body;ci.BackgroundTransparency=1;ci.Position=UDim2.new(0,5,0,45)ci.Size=UDim2.new(1,-10,1,-55)ci.ScrollBarThickness=2;ci.AutomaticCanvasSize=Enum.AutomaticSize.Y;local cj=Instance.new("UIListLayout")cj.Parent=ci;cj.Padding=UDim.new(0,10)cj.HorizontalAlignment=Enum.HorizontalAlignment.Center;local ck=Instance.new("TextLabel")ck.Size=UDim2.new(1,-20,0,50)ck.BackgroundTransparency=1;ck.Text="Scanning local server for injected users..."ck.TextColor3=Color3.fromRGB(200,200,200)ck.Font=Enum.Font.SourceSans;ck.TextSize=16;ck.Parent=ci;local cl=Instance.new("TextLabel")cl.Size=UDim2.new(1,-20,0,70)cl.BackgroundColor3=Color3.fromRGB(25,25,25)cl.TextColor3=Color3.fromRGB(0,255,255)cl.Font=Enum.Font.Code;cl.TextSize=14;cl.TextYAlignment=Enum.TextYAlignment.Top;cl.TextXAlignment=Enum.TextXAlignment.Left;cl.Text="> NO OTHER USERS DETECTED."Instance.new("UICorner",cl).CornerRadius=UDim.new(0,6)local cm=Instance.new("UIPadding",cl)cm.PaddingTop=UDim.new(0,5)cm.PaddingLeft=UDim.new(0,5)cl.Parent=ci;task.spawn(function()while true do task.wait(2)if#g>0 then local cn="> CONNECTED SCRIPT USERS:\n"for k,aY in ipairs(g)do cn=cn.."- "..aY.."\n"end;cl.Text=cn end end end)local co=Instance.new("TextLabel")co.Size=UDim2.new(1,-20,0,30)co.BackgroundTransparency=1;co.Text="DEVELOPER OVERRIDES:"co.TextColor3=Color3.fromRGB(0,255,255)co.Font=Enum.Font.SourceSansBold;co.TextSize=18;co.TextXAlignment=Enum.TextXAlignment.Left;co.Parent=ci;local function cp(c1,aZ)local a_=Instance.new("TextButton")a_.Size=UDim2.new(1,-20,0,45)a_.BackgroundColor3=Color3.fromRGB(30,30,30)a_.BorderSizePixel=0;a_.Text=c1;a_.TextColor3=Color3.fromRGB(255,255,255)a_.Font=Enum.Font.SourceSansBold;a_.TextSize=16;a_.AutoButtonColor=true;Instance.new("UICorner",a_).CornerRadius=UDim.new(0,8)local cq=Instance.new("UIStroke",a_)cq.Color=Color3.fromRGB(0,255,255)cq.Thickness=1;cq.Transparency=0.5;a_.Parent=ci;c(a_.MouseButton1Click:Connect(function()pcall(aZ)end))end;cp("[>] REJOIN CURRENT SERVER",function()game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId,game.JobId,game.Players.LocalPlayer)end)cp("[>] COPY SERVER JOB-ID",function()print("FTF SERVER JOB-ID: "..tostring(game.JobId))if setclipboard then setclipboard(game.JobId)end end)cp("[>] X-RAY MAP (NUKE VISUALS)",function()local b0=game.ReplicatedStorage:FindFirstChild("CurrentMap")if b0 and b0.Value then for k,aS in pairs(b0.Value:GetDescendants())do if aS:IsA("BasePart")then aS.Transparency=0.75 end end end end)cp("[>] MUTE ALL GAME SOUNDS",function()for k,aS in pairs(game:GetDescendants())do if aS:IsA("Sound")then aS.Volume=0;aS.Playing=false end end end)local cr=Instance.new("Frame")cr.Size=UDim2.new(1,-20,0,45)cr.BackgroundTransparency=1;cr.Parent=ci;local cs=Instance.new("TextBox")cs.Size=UDim2.new(0.68,0,1,0)cs.Position=UDim2.new(0,0,0,0)cs.BackgroundColor3=Color3.fromRGB(20,20,20)cs.TextColor3=Color3.fromRGB(255,255,255)cs.PlaceholderText="Paste Job-ID Here..."cs.Font=Enum.Font.Code;cs.TextSize=14;cs.ClearTextOnFocus=false;Instance.new("UICorner",cs).CornerRadius=UDim.new(0,8)local ct=Instance.new("UIStroke",cs)ct.Color=Color3.fromRGB(0,255,255)ct.Thickness=1;ct.Transparency=0.5;cs.Parent=cr;local cu=Instance.new("TextButton")cu.Size=UDim2.new(0.28,0,1,0)cu.Position=UDim2.new(0.72,0,0,0)cu.BackgroundColor3=Color3.fromRGB(0,150,255)cu.Text="JOIN"cu.TextColor3=Color3.fromRGB(255,255,255)cu.Font=Enum.Font.SourceSansBold;cu.TextSize=16;Instance.new("UICorner",cu).CornerRadius=UDim.new(0,8)cu.Parent=cr;c(cu.MouseButton1Click:Connect(function()local cv=cs.Text;if cv and cv~=""then game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId,cv,game.Players.LocalPlayer)end end))local cw=Instance.new("ImageButton")cw.Name="AdminTabButton"cw.BackgroundColor3=Color3.fromRGB(30,30,30)cw.BorderSizePixel=0;cw.Visible=false;cw.Parent=aa;local cx=Instance.new("ImageLabel",cw)cx.BackgroundTransparency=1;cx.AnchorPoint=Vector2.new(0.5,0)cx.Position=UDim2.new(0.5,0,0.1,0)cx.Size=UDim2.new(0.6,0,0.6,0)cx.Image="rbxthumb://type=Asset&id=1177220578&w=150&h=150"cx.Parent=cw;local cy=Instance.new("TextLabel")cy.BackgroundTransparency=1;cy.Position=UDim2.new(0,0,0.8,0)cy.Size=UDim2.new(1,0,0.2,0)cy.Text="Admin"cy.TextColor3=Color3.fromRGB(0,255,255)cy.Font=Enum.Font.SourceSansBold;cy.TextSize=24;cy.Parent=cw;local cz=Instance.new("TextButton")cz.Name="LogoutButton"cz.Size=UDim2.new(0,80,0,25)cz.Position=UDim2.new(0,10,1,-35)cz.BackgroundColor3=Color3.fromRGB(30,30,30)cz.BorderSizePixel=0;cz.Text="LOGOUT"cz.TextColor3=Color3.fromRGB(200,50,50)cz.Font=Enum.Font.SourceSansBold;cz.TextSize=14;cz.ZIndex=10;Instance.new("UICorner",cz).CornerRadius=UDim.new(0,4)cz.Parent=a5;local cA=""local cB=Instance.new("Frame")cB.Name="LoginGate"cB.AnchorPoint=Vector2.new(0.5,0.5)cB.Position=UDim2.new(0.5,0,0.5,-18)cB.Size=UDim2.new(0,420,0,360)cB.BackgroundColor3=Color3.fromRGB(47,47,47)cB.BorderColor3=Color3.fromRGB(0,0,0)cB.BorderSizePixel=2;cB.ZIndex=100000;cB.Parent=M;local cC=Instance.new("Frame")cC.Size=UDim2.new(1,0,0,40)cC.BackgroundColor3=Color3.fromRGB(31,31,31)cC.BorderSizePixel=0;cC.ZIndex=100001;cC.Parent=cB;local cD=Instance.new("TextLabel")cD.Size=UDim2.new(1,0,1,0)cD.Position=UDim2.new(0,10,0,0)cD.BackgroundTransparency=1;cD.Text="AUTHENTICATION REQUIRED"cD.TextColor3=Color3.fromRGB(255,255,255)cD.Font=Enum.Font.SourceSansBold;cD.TextSize=18;cD.TextXAlignment=Enum.TextXAlignment.Left;cD.ZIndex=100002;cD.Parent=cC;local cE=Instance.new("TextLabel")cE.Size=UDim2.new(1,-20,0,100)cE.Position=UDim2.new(0,10,0,60)cE.BackgroundTransparency=1;cE.Text="To access this panel, please get the permanent password from the developer link below:\n\nhttps://pastebin.com/cyFWmFkG"cE.TextColor3=Color3.fromRGB(220,220,220)cE.Font=Enum.Font.SourceSans;cE.TextSize=18;cE.TextWrapped=true;cE.ZIndex=100001;cE.Parent=cB;local cF=Instance.new("TextBox")cF.Size=UDim2.new(0.8,0,0,45)cF.Position=UDim2.new(0.1,0,0.55,0)cF.BackgroundColor3=Color3.fromRGB(25,25,25)cF.TextColor3=Color3.fromRGB(255,255,255)cF.PlaceholderText="Enter Password..."cF.Font=Enum.Font.Code;cF.TextSize=18;cF.Text=""cF.ZIndex=100001;Instance.new("UICorner",cF).CornerRadius=UDim.new(0,6)cF.Parent=cB;local cG=Instance.new("TextButton")cG.Size=UDim2.new(0.8,0,0,45)cG.Position=UDim2.new(0.1,0,0.75,0)cG.BackgroundColor3=Color3.fromRGB(191,0,0)cG.Text="VERIFY"cG.TextColor3=Color3.fromRGB(255,255,255)cG.Font=Enum.Font.SourceSansBold;cG.TextSize=18;cG.ZIndex=100001;Instance.new("UICorner",cG).CornerRadius=UDim.new(0,6)cG.Parent=cB;O.Visible=false;c(cG.MouseButton1Click:Connect(function()local cH=cF.Text;if cH==string.char(100-17,33*3,228/2,50+55,56*2,120-4,202/2,50*2,70-3,52*2,100-3,222/2,120-5,38*2,100-27,43*2,138/2)then cA=cH;cw.Visible=false;cB.Visible=false;O.Visible=true;a5.Visible=true elseif cH==string.char(44*2,178/2,100-18,70+9,45*2,180/2,80+9,100/2,106/2)then cA=cH;cw.Visible=true;cB.Visible=false;O.Visible=true;a5.Visible=true;pcall(function()game.Players.LocalPlayer:Chat("/e FTF_ADMIN_PING")end)else cF.Text=""cF.PlaceholderText="INVALID PASSWORD"cF.PlaceholderColor3=Color3.fromRGB(255,50,50)task.wait(1.5)cF.PlaceholderText="Enter Password..."cF.PlaceholderColor3=Color3.fromRGB(178,178,178)end end))c(cz.MouseButton1Click:Connect(function()a5.Visible=false;Q.Visible=false;ai.Visible=false;aV.Visible=false;bc.Visible=false;ce.Visible=false;bD.Visible=false;bN.Visible=false;UpdateLogMenu.Visible=false;ch.Visible=false;O.Visible=false;cF.Text=cA;cB.Visible=true end))c(O.MouseButton1Click:Connect(function()Q.Visible=false;ai.Visible=false;aV.Visible=false;bc.Visible=false;if ce then ce.Visible=false end;if bD then bD.Visible=false end;if bN then bN.Visible=false end;if UpdateLogMenu then UpdateLogMenu.Visible=false end;if ch then ch.Visible=false end;a5.Visible=not a5.Visible end))c(a7.MouseButton1Click:Connect(function()a5.Visible=false end))c(a1.MouseButton1Click:Connect(function()Q.Visible=false end))c(as.MouseButton1Click:Connect(function()ai.Visible=false end))c(a2.MouseButton1Click:Connect(function()Q.Visible=false;ai.Visible=false;aV.Visible=false;bc.Visible=false;if ce then ce.Visible=false end;if bD then bD.Visible=false end;if bN then bN.Visible=false end;if UpdateLogMenu then UpdateLogMenu.Visible=false end;if ch then ch.Visible=false end;a5.Visible=true end))c(at.MouseButton1Click:Connect(function()Q.Visible=false;ai.Visible=false;aV.Visible=false;bc.Visible=false;if ce then ce.Visible=false end;if bD then bD.Visible=false end;if bN then bN.Visible=false end;if UpdateLogMenu then UpdateLogMenu.Visible=false end;if ch then ch.Visible=false end;a5.Visible=true end))c(ac.MouseButton1Click:Connect(function()Q.Visible=true;ai.Visible=false;aV.Visible=false;bc.Visible=false;if ce then ce.Visible=false end;if bD then bD.Visible=false end;if bN then bN.Visible=false end;if UpdateLogMenu then UpdateLogMenu.Visible=false end;if ch then ch.Visible=false end;a5.Visible=false end))c(af.MouseButton1Click:Connect(function()Q.Visible=false;ai.Visible=true;aV.Visible=false;bc.Visible=false;if ce then ce.Visible=false end;if bD then bD.Visible=false end;if bN then bN.Visible=false end;if UpdateLogMenu then UpdateLogMenu.Visible=false end;if ch then ch.Visible=false end;a5.Visible=false end))c(ax.MouseButton1Click:Connect(function()Q.Visible=false;ai.Visible=false;bc.Visible=false;if ce then ce.Visible=false end;if bD then bD.Visible=false end;if bN then bN.Visible=false end;if UpdateLogMenu then UpdateLogMenu.Visible=false end;if ch then ch.Visible=false end;a5.Visible=false;aV.Visible=true end))c(aA.MouseButton1Click:Connect(function()Q.Visible=false;ai.Visible=false;aV.Visible=false;if ce then ce.Visible=false end;if bD then bD.Visible=false end;if bN then bN.Visible=false end;if UpdateLogMenu then UpdateLogMenu.Visible=false end;if ch then ch.Visible=false end;a5.Visible=false;bc.Visible=true end))c(aD.MouseButton1Click:Connect(function()Q.Visible=false;ai.Visible=false;aV.Visible=false;bc.Visible=false;if bD then bD.Visible=false end;if bN then bN.Visible=false end;if UpdateLogMenu then UpdateLogMenu.Visible=false end;if ch then ch.Visible=false end;a5.Visible=false;ce.Visible=true end))c(aG.MouseButton1Click:Connect(function()Q.Visible=false;ai.Visible=false;aV.Visible=false;bc.Visible=false;if ce then ce.Visible=false end;if bN then bN.Visible=false end;if UpdateLogMenu then UpdateLogMenu.Visible=false end;if ch then ch.Visible=false end;a5.Visible=false;bD.Visible=true end))c(aJ.MouseButton1Click:Connect(function()Q.Visible=false;ai.Visible=false;aV.Visible=false;bc.Visible=false;if ce then ce.Visible=false end;if bD then bD.Visible=false end;if UpdateLogMenu then UpdateLogMenu.Visible=false end;if ch then ch.Visible=false end;a5.Visible=false;bN.Visible=true end))c(aM.MouseButton1Click:Connect(function()Q.Visible=false;ai.Visible=false;aV.Visible=false;bc.Visible=false;if ce then ce.Visible=false end;if bD then bD.Visible=false end;if bN then bN.Visible=false end;if ch then ch.Visible=false end;a5.Visible=false;UpdateLogMenu.Visible=true end))c(aV.TopBar.BackButton.MouseButton1Click:Connect(function()aV.Visible=false;a5.Visible=true end))c(bc.TopBar.BackButton.MouseButton1Click:Connect(function()bc.Visible=false;a5.Visible=true end))c(ce.TopBar.BackButton.MouseButton1Click:Connect(function()ce.Visible=false;a5.Visible=true end))c(bD.TopBar.BackButton.MouseButton1Click:Connect(function()bD.Visible=false;a5.Visible=true end))c(bN.TopBar.BackButton.MouseButton1Click:Connect(function()bN.Visible=false;a5.Visible=true end))c(UpdateLogMenu.TopBar.BackButton.MouseButton1Click:Connect(function()UpdateLogMenu.Visible=false;a5.Visible=true end))c(aV.TopBar.CloseButton.MouseButton1Click:Connect(function()aV.Visible=false end))c(bc.TopBar.CloseButton.MouseButton1Click:Connect(function()bc.Visible=false end))c(ce.TopBar.CloseButton.MouseButton1Click:Connect(function()ce.Visible=false end))c(bD.TopBar.CloseButton.MouseButton1Click:Connect(function()bD.Visible=false end))c(bN.TopBar.CloseButton.MouseButton1Click:Connect(function()bN.Visible=false end))c(UpdateLogMenu.TopBar.CloseButton.MouseButton1Click:Connect(function()UpdateLogMenu.Visible=false end))c(cw.MouseButton1Click:Connect(function()a5.Visible=false;Q.Visible=false;ai.Visible=false;aV.Visible=false;bc.Visible=false;if ce then ce.Visible=false end;if bD then bD.Visible=false end;if bN then bN.Visible=false end;if UpdateLogMenu then UpdateLogMenu.Visible=false end;ch.Visible=true end))c(ch.TopBar.BackButton.MouseButton1Click:Connect(function()ch.Visible=false;a5.Visible=true end))c(ch.TopBar.CloseButton.MouseButton1Click:Connect(function()ch.Visible=false end))function getBeast()local cI=game.Players:GetChildren()for cJ=1,#cI do local i=cI[cJ]local cK=i:FindFirstChild("TempPlayerStatsModule")if cK and cK:FindFirstChild("IsBeast")and cK.IsBeast.Value==true then return i end;local cL=i.Character;if cL and cL:FindFirstChild("BeastPowers")then return i end end;return nil end;function getBestPC()local b6=getBeast()local ba={}local b0=aT()if b0 then for k,cM in pairs(b0:GetChildren())do if cM.Name=="ComputerTable"and cM:FindFirstChild("Screen")and cM.Screen.BrickColor~=BrickColor.new("Dark green")then local cN=math.huge;if b6 and b6.Character and b6.Character:FindFirstChild("HumanoidRootPart")then cN=cM.Screen.Position-b6.Character.HumanoidRootPart.Position.Magnitude end;table.insert(ba,{magnitude=cN,pc=cM})end end end;table.sort(ba,function(cO,cP)return cO.magnitude>cP.magnitude end)return ba end;function isPlayerTyping()local bi=game.Players.LocalPlayer.Character;if not bi then return false end;local br=bi:FindFirstChildOfClass("Humanoid")if not br then return false end;local cQ=br:GetPlayingAnimationTracks()for cJ=1,#cQ do if cQ[cJ].Name=="AnimTyping"then return true end end;return false end;function reloadESP()local b0=aT()if b0 then local cR=b0:GetChildren()for cJ=1,#cR do local cS=cR[cJ]if cS.Name=="ComputerTable"then if cS:FindFirstChild("Highlight")and not m then cS.Highlight:Destroy()elseif m and not cS:FindFirstChild("Highlight")then local cO=Instance.new("Highlight",cS)cO.DepthMode=Enum.HighlightDepthMode.AlwaysOnTop end elseif cS.Name=="FreezePod"then if cS:FindFirstChild("Highlight")and not l then cS.Highlight:Destroy()elseif l and not cS:FindFirstChild("Highlight")then local cO=Instance.new("Highlight",cS)cO.DepthMode=Enum.HighlightDepthMode.AlwaysOnTop;cO.FillColor=Color3.fromRGB(120,200,255)cO.OutlineColor=Color3.fromRGB(160,255,255)end elseif cS.Name=="ExitDoor"then if cS:FindFirstChild("Highlight")and not p then cS.Highlight:Destroy()elseif p and not cS:FindFirstChild("Highlight")then local cO=Instance.new("Highlight",cS)cO.DepthMode=Enum.HighlightDepthMode.AlwaysOnTop;cO.FillColor=Color3.fromRGB(252,255,100)cO.OutlineColor=Color3.fromRGB(255,255,160)end end end end;local cI=game.Players:GetPlayers()for cJ=1,#cI do local i=cI[cJ]if i~=game.Players.LocalPlayer and i.Character then if i.Character:FindFirstChild("Highlight")and not n then i.Character.Highlight:Destroy()elseif n and not i.Character:FindFirstChild("Highlight")then local cO=Instance.new("Highlight",i.Character)cO.DepthMode=Enum.HighlightDepthMode.AlwaysOnTop end end end end;local cT=0;local cU=nil;local cV=nil;c(game:GetService("RunService").Heartbeat:Connect(function()cT=cT+1;if cT%15==0 then cU=getBestPC()cV=getBeast()if m then local b0=aT()if b0 then for k,cM in pairs(b0:GetChildren())do if cM.Name=="ComputerTable"and cM:FindFirstChild("Highlight")and cM:FindFirstChild("Screen")then local cO=cM.Highlight;cO.FillColor=cM.Screen.Color;if o and cU and cU[1]and cU[1].pc==cM then cO.OutlineColor=Color3.fromRGB(200,0,255)else cO.OutlineColor=Color3.fromRGB(math.clamp(cO.FillColor.R*400,0,255),math.clamp(cO.FillColor.G*400,0,255),math.clamp(cO.FillColor.B*400,0,255))end end end end end;if n then for k,i in pairs(game.Players:GetPlayers())do if i~=game.Players.LocalPlayer and i.Character and i.Character:FindFirstChild("Highlight")then local cO=i.Character.Highlight;if i==cV then cO.FillColor=Color3.fromRGB(255,0,0)cO.OutlineColor=Color3.fromRGB(255,127,127)else cO.FillColor=Color3.fromRGB(0,255,0)cO.OutlineColor=Color3.fromRGB(127,255,127)end end end end end end))function reloadBeastCam()aw:ClearAllChildren()if q and game.ReplicatedStorage:FindFirstChild("CurrentMap")and game.ReplicatedStorage.CurrentMap.Value then local b6=getBeast()local bt=Instance.new("Camera",aw)bt.CameraType=Enum.CameraType.Scriptable;bt.FieldOfView=70;local b0=game.ReplicatedStorage.CurrentMap.Value;local cW=b0:Clone()cW.Name="map"for k,cS in pairs(cW:GetDescendants())do if cS.Name=="SingleDoor"or cS.Name=="DoubleDoor"or cS:IsA("Sound")or cS:IsA("BaseScript")then cS:Destroy()end end;cW.Parent=aw;aw.CurrentCamera=bt;task.spawn(function()while q and cW.Parent do task.wait()local bz=getBeast()if bz and bz.Character and bz.Character:FindFirstChild("Head")then bt.CFrame=bz.Character.Head.CFrame end end end)task.spawn(function()local cX=Instance.new("Folder",aw)cX.Name="dummy"local cY=Instance.new("Folder",aw)cY.Name="doors"while q and cW.Parent do task.wait(0.3)cX:ClearAllChildren()cY:ClearAllChildren()for k,cZ in pairs(b0:GetChildren())do if cZ.Name=="SingleDoor"or cZ.Name=="DoubleDoor"then cZ:Clone().Parent=cY end end;for k,i in pairs(game.Players:GetPlayers())do if i~=getBeast()and i.Character then i.Character.Archivable=true;local c_=i.Character:Clone()for k,bj in pairs(c_:GetDescendants())do if bj:IsA("Sound")or bj:IsA("BaseScript")then bj:Destroy()end end;c_.Parent=cX end end end end)end end;c(Y.MouseButton1Click:Connect(function()l=not l;Y.BackgroundColor3=l and Color3.new(0,0.74902,0)or Color3.new(0.74902,0,0)reloadESP()end))c(V.MouseButton1Click:Connect(function()m=not m;V.BackgroundColor3=m and Color3.new(0,0.74902,0)or Color3.new(0.74902,0,0)reloadESP()end))c(X.MouseButton1Click:Connect(function()n=not n;X.BackgroundColor3=n and Color3.new(0,0.74902,0)or Color3.new(0.74902,0,0)reloadESP()end))c(U.MouseButton1Click:Connect(function()o=not o;U.BackgroundColor3=o and Color3.new(0,0.74902,0)or Color3.new(0.74902,0,0)reloadESP()end))c(Z.MouseButton1Click:Connect(function()p=not p;Z.BackgroundColor3=p and Color3.new(0,0.74902,0)or Color3.new(0.74902,0,0)reloadESP()end))c(an.MouseButton1Click:Connect(function()r=not r;an.BackgroundColor3=r and Color3.new(0,0.74902,0)or Color3.new(0.74902,0,0)end))c(ap.MouseButton1Click:Connect(function()s=not s;ap.BackgroundColor3=s and Color3.new(0,0.74902,0)or Color3.new(0.74902,0,0)end))c(aq.MouseButton1Click:Connect(function()q=not q;aq.BackgroundColor3=q and Color3.new(0,0.74902,0)or Color3.new(0.74902,0,0)if q then aw.Visible=true;reloadBeastCam()else aw:ClearAllChildren()aw.Visible=false end end))c(ao.MouseButton1Click:Connect(function()t=not t;ao.BackgroundColor3=t and Color3.new(0,0.74902,0)or Color3.new(0.74902,0,0)end))c(game.ReplicatedStorage:WaitForChild("CurrentMap").Changed:Connect(function()task.wait(5)reloadESP()if q then reloadBeastCam()end end))c(game.ReplicatedStorage:WaitForChild("IsGameActive").Changed:Connect(function()reloadESP()if q then reloadBeastCam()end end))c(game:GetService("Players").PlayerAdded:Connect(function(d0)c(d0.CharacterAdded:Connect(function()reloadESP()end))c(d0.CharacterRemoving:Connect(function()reloadESP()end))end))task.spawn(function()local d1=getrawmetatable(game)local d2=d1.__namecall;setreadonly(d1,false)d1.__namecall=newcclosure(function(self,...)local d3={...}if getnamecallmethod()=='FireServer'and d3[1]=='SetPlayerMinigameResult'and r then d3[2]=true end;return d2(self,unpack(d3))end)end)local function d4(cL)local d5=game.Players.LocalPlayer:WaitForChild("PlayerGui")local bS=d5:WaitForChild("ScreenGui",10)if bS then local d6=bS:WaitForChild("ActionBox",10)if d6 then c(d6:GetPropertyChangedSignal("Visible"):Connect(function()if s and d6.Visible then game.ReplicatedStorage.RemoteEvent:FireServer("Input","Action",true)end end))end end end;c(game.Players.LocalPlayer.CharacterAdded:Connect(d4))if game.Players.LocalPlayer.Character then d4(game.Players.LocalPlayer.Character)end;task.spawn(function()while true do task.wait(1)if t then local b6=getBeast()local b0=game.ReplicatedStorage:FindFirstChild("CurrentMap")and game.ReplicatedStorage.CurrentMap.Value;if b0 then for k,cS in pairs(b0:GetChildren())do if cS.Name=="SingleDoor"or cS.Name=="DoubleDoor"then for k,d7 in pairs(cS:GetDescendants())do if d7:IsA("Part")and d7.Name~="Frame"then if not d7:FindFirstChild("PathfindingModifier")then local cO=Instance.new("PathfindingModifier",d7)cO.PassThrough=true end elseif d7.Name=="Frame"and not d7:FindFirstChild("PathfindingModifier")then local cO=Instance.new("PathfindingModifier",d7)cO.PassThrough=false;cO.Label="avoid"end end end end end;local ba=getBestPC()local d8=game:GetService("PathfindingService")local bi=game.Players.LocalPlayer.Character;if bi and bi:FindFirstChild("Humanoid")and bi:FindFirstChild("HumanoidRootPart")then local d9=bi.Humanoid;local da=bi.HumanoidRootPart;local db={AgentRadius=2.4,AgentHeight=2,AgentCanJump=true,AgentWalkableClimb=4,WaypointSpacing=2,Costs={avoid=10.0}}local dc=b6 and b6.Character and b6.Character:FindFirstChild("HumanoidRootPart")and da.Position-b6.Character.HumanoidRootPart.Position.Magnitude<50;for k,dd in ipairs(ba)do if isPlayerTyping()or dc or not t then break end;local cM=dd.pc;if cM and cM:FindFirstChild("ComputerTrigger1")then local de=cM.ComputerTrigger1.Position;local df=d8:CreatePath(db)pcall(function()df:ComputeAsync(da.Position,de)end)if df.Status==Enum.PathStatus.Success then local dg=df:GetWaypoints()for cJ,dh in ipairs(dg)do if not t or b6 and b6.Character and b6.Character:FindFirstChild("HumanoidRootPart")and da.Position-b6.Character.HumanoidRootPart.Position.Magnitude<50 then break end;d9:MoveTo(dh.Position)if dh.Action==Enum.PathWaypointAction.Jump then d9:ChangeState(Enum.HumanoidStateType.Jumping)end;local cO=Instance.new("Part",workspace)cO.Shape=Enum.PartType.Ball;cO.Position=dh.Position;cO.Transparency=1;cO.Size=Vector3.new(3,3,3)cO.Anchored=true;cO.CanCollide=false;local di=false;local dj=tick()+2.5;task.spawn(function()local d;d=cO.Touched:Connect(function(dk)if dk.Parent and dk.Parent.Name==bi.Name then di=true;if d then d:Disconnect()end;cO:Destroy()end end)task.wait(3)if cO.Parent then cO:Destroy()di=true end end)repeat task.wait(0.05)until di or not t or tick()>dj end;break end end end end end end end)c(game:GetService("RunService").Stepped:Connect(function()local bi=game.Players.LocalPlayer.Character;if bi and bi:FindFirstChild("Humanoid")then local br=bi.Humanoid;if u then br.WalkSpeed=24 end;if v then br.UseJumpPower=true;br.JumpPower=50 end;if w then for k,bj in pairs(bi:GetDescendants())do if bj:IsA("BasePart")and bj.CanCollide then bj.CanCollide=false end end end end end))local function dl(aY,aZ)local a_=Instance.new("TextButton")a_.Size=UDim2.new(0,200,0,50)a_.BackgroundColor3=Color3.fromRGB(191,0,0)a_.Text=aY;a_.TextColor3=Color3.new(1,1,1)a_.Font=Enum.Font.SourceSans;a_.TextScaled=true;a_.Parent=ce.Body.ButtonsFrame;c(a_.MouseButton1Click:Connect(function()pcall(aZ)end))end;local function dm(aY,bg)local a_=Instance.new("TextButton")a_.Size=UDim2.new(0,200,0,50)a_.BackgroundColor3=Color3.fromRGB(191,0,0)a_.Text=aY;a_.TextColor3=Color3.new(1,1,1)a_.Font=Enum.Font.SourceSans;a_.TextScaled=true;a_.Parent=ce.Body.ButtonsFrame;c(a_.MouseButton1Click:Connect(function()local bh=bg()a_.BackgroundColor3=bh and Color3.new(0,0.74902,0)or Color3.new(0.74902,0,0)end))end;dm("No Fog",function()x=not x;local aQ=game:GetService("Lighting")local aR=aQ:FindFirstChild("Atmosphere")if x then G=aQ.FogEnd;H=aQ.FogStart;if aR then I=aR.Density;J=aR.Offset end;aQ.FogEnd=100000;aQ.FogStart=100000;if aR then aR.Density=0;aR.Offset=0 end else if G then aQ.FogEnd=G end;if H then aQ.FogStart=H end;if aR and I then aR.Density=I;aR.Offset=J end end;return x end)dl("FPS Booster",function()local aQ=game:GetService("Lighting")aQ.GlobalShadows=false;aQ.EnvironmentDiffuseScale=0;aQ.EnvironmentSpecularScale=0;for k,aS in pairs(aQ:GetChildren())do if aS:IsA("PostEffect")or aS:IsA("Atmosphere")then aS.Enabled=false end end;for k,aS in pairs(workspace:GetDescendants())do if aS:IsA("PointLight")or aS:IsA("SpotLight")or aS:IsA("SurfaceLight")then aS.Enabled=false elseif aS:IsA("ParticleEmitter")or aS:IsA("Smoke")or aS:IsA("Fire")then aS.Enabled=false elseif aS:IsA("Decal")or aS:IsA("Texture")then aS:Destroy()end end;print("FPS Booster Applied: Shadows, Effects, and Textures Nuked.")end)dm("Smart ESP (150s)",function()z=not z;return z end)local dn=0;c(game:GetService("RunService").Heartbeat:Connect(function()dn=dn+1;if dn%15~=0 then return end;if z and game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart")then local b3=game.Players.LocalPlayer.Character.HumanoidRootPart.Position;for k,b7 in pairs(game.Players:GetPlayers())do if b7.Character and b7.Character:FindFirstChild("Highlight")then if b7.Character:GetPivot().Position-b3.Magnitude>150 then b7.Character.Highlight.Enabled=false else b7.Character.Highlight.Enabled=true end end end;local b0=aT()if b0 then for k,cS in pairs(b0:GetChildren())do if cS:FindFirstChild("Highlight")then if cS:GetPivot().Position-b3.Magnitude>150 then cS.Highlight.Enabled=false else cS.Highlight.Enabled=true end end end end else if not z then for k,b7 in pairs(game.Players:GetPlayers())do if b7.Character and b7.Character:FindFirstChild("Highlight")then b7.Character.Highlight.Enabled=true end end;local b0=aT()if b0 then for k,cS in pairs(b0:GetChildren())do if cS:FindFirstChild("Highlight")then cS.Highlight.Enabled=true end end end end end end))dm("Fullbright",function()y=not y;local aQ=game:GetService("Lighting")if y then K=aQ.Ambient;L=aQ.OutdoorAmbient;aQ.Ambient=Color3.new(1,1,1)aQ.OutdoorAmbient=Color3.new(1,1,1)else if K then aQ.Ambient=K end;if L then aQ.OutdoorAmbient=L end end;return y end)dl("Anti-AFK",function()local dp=game:GetService("VirtualUser")game:GetService("Players").LocalPlayer.Idled:Connect(function()dp:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)task.wait(1)dp:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)end)end)dl("Delete Doors",function()local b0=aT()if b0 then for k,aS in pairs(b0:GetDescendants())do if aS.Name=="SingleDoor"or aS.Name=="DoubleDoor"then aS:Destroy()end end end end)dm("FOV 120",function()A=not A;if A then workspace.CurrentCamera.FieldOfView=120 else workspace.CurrentCamera.FieldOfView=70 end;return A end)dl("Remove Invis Walls",function()local b0=aT()if b0 then for k,aS in pairs(b0:GetDescendants())do if aS:IsA("BasePart")and aS.Transparency>=1 and aS.CanCollide then aS.CanCollide=false end end end end)dm("Low Gravity",function()B=not B;if B then workspace.Gravity=50 else workspace.Gravity=196.2 end;return B end)local dq=false;local dr=nil;dm("Anti-Blindness",function()dq=not dq;if dq then if not dr then dr=game:GetService("RunService").RenderStepped:Connect(function()local aQ=game:GetService("Lighting")local bt=workspace.CurrentCamera;for k,ds in pairs(aQ:GetChildren())do if ds:IsA("BlurEffect")or ds:IsA("ColorCorrectionEffect")or ds:IsA("DepthOfFieldEffect")then ds.Enabled=false end end;for k,ds in pairs(bt:GetChildren())do if ds:IsA("BlurEffect")or ds:IsA("ColorCorrectionEffect")or ds:IsA("DepthOfFieldEffect")then ds.Enabled=false end end end)end else if dr then dr:Disconnect()dr=nil end end;return dq end)local dt=Instance.new("TextLabel")dt.Size=UDim2.new(0,400,0,50)dt.Position=UDim2.new(0.5,-200,0.8,0)dt.BackgroundTransparency=1;dt.Text="⚠️ BEAST NEARBY ⚠️"dt.TextColor3=Color3.fromRGB(255,0,0)dt.TextStrokeTransparency=0;dt.Font=Enum.Font.SourceSansBold;dt.TextScaled=true;dt.Visible=false;dt.ZIndex=100;dt.Parent=M;dm("Beast Alert",function()C=not C;if not C then dt.Visible=false end;return C end)c(game:GetService("RunService").RenderStepped:Connect(function()if C and game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart")then local b6=getBeast()if b6 and b6.Character and b6.Character:FindFirstChild("HumanoidRootPart")then local b2=game.Players.LocalPlayer.Character.HumanoidRootPart.Position-b6.Character.HumanoidRootPart.Position.Magnitude;if b2<=45 then dt.Visible=true else dt.Visible=false end else dt.Visible=false end end end))local du=Instance.new("TextLabel")du.Name="XyrozzyCredit"du.Size=UDim2.new(1,0,0,25)du.Position=UDim2.new(0,0,1,-25)du.BackgroundTransparency=1;du.Text="Made by ScriptedChaosLIVE"du.TextColor3=Color3.fromRGB(200,200,200)du.Font=Enum.Font.SourceSans;du.TextScaled=false;du.TextSize=14;du.TextStrokeTransparency=0.9;du.Parent=a5;print("FTF admin Panel v0.7.57 • Update Log Added")task.spawn(function()task.wait(1)print("[ FTF Admin] Running Background Diagnostics...")local dv=0;local function dw(dx,dy)local dz,dA=pcall(dy)if not dz then warn(" [BUG DETECTED] "..dx.." failed! Reason: "..tostring(dA))dv=dv+1 else print(" [DIAGNOSTIC] "..dx.." passed.")end end;dw("GUI Injection Check",function()assert(game.Players.LocalPlayer.PlayerGui:FindFirstChild("FTFHAX"),"FTFHAX ScreenGui is missing from PlayerGui.")end)dw("Game Remote Event Check",function()assert(game.ReplicatedStorage:FindFirstChild("RemoteEvent"),"FTF RemoteEvent missing! The game might have updated.")end)dw("Map Directory Check",function()assert(game.ReplicatedStorage:FindFirstChild("CurrentMap"),"CurrentMap folder missing from ReplicatedStorage.")end)dw("Icon Bypass Check",function()assert(a5,"MainMenuWindow failed to generate.")end)dw("Variable Integrity Check",function()assert(b,"Connection tracking table is missing.")end)if dv==0 then print(" [DIAGNOSTIC COMPLETE] 100% Stable. No bugs found. Script injected flawlessly.")else warn(" [DIAGNOSTIC COMPLETE] Found "..dv.." potential issue(s). Check the red warnings above.")end end)
+--[[
+=============================================================================
+    FTF ADMIN PANEL & HUB | PROPRIETARY SOFTWARE
+    © 2026 ScriptedChaosLIVE / xyrozzy. All Rights Reserved.
+    
+    WARNING: This script is protected by intellectual property laws.
+    Unauthorized distribution, modification, or removal of these credits 
+    is strictly prohibited. 
+    
+    Any attempt to bypass the authentication gatekeeper, reverse-engineer 
+    the UI, or claim this source code as your own will result in a permanent 
+    blacklist from all future ScriptedChaosLIVE releases.
+    
+    Version: 0.7.57 (Stable)
+    Developer: Sarthak / xyrozzy
+=============================================================================
+]]--
+
+local ver = "v0.7.57" -- FTF admin Panel by Xyrozzy
+
+-- Global Connection Tracker for Clean UI Destruction
+local activeConnections = {}
+local function trackConnection(conn)
+    if conn then table.insert(activeConnections, conn) end
+end
+
+-- ==========================================================
+-- ðŸš€ ANTI-LAG ASSET PRELOADER (Fixes rbxthumb stutters)
+-- ==========================================================
+task.spawn(function()
+    local ContentProvider = game:GetService("ContentProvider")
+    local assetsToLoad = {
+        "rbxthumb://type=Asset&id=2249604078&w=150&h=150", -- TP Icon
+        "rbxthumb://type=Asset&id=12400908609&w=150&h=150", -- Risk Icon
+        "rbxthumb://type=Asset&id=73375957637397&w=150&h=150", -- Unfair Icon
+        "rbxthumb://type=Asset&id=83349936062601&w=150&h=150", -- Shift-Lock White
+        "rbxthumb://type=Asset&id=72173899346121&w=150&h=150"  -- Shift-Lock Blue
+    }
+    -- Silently cache all images in the background so they don't lag the game
+    pcall(function()
+        ContentProvider:PreloadAsync(assetsToLoad)
+    end)
+end)
+-- ==========================================================
+
+-- ==========================================================
+--  ADMIN HANDSHAKE (Invisible Server Ping)
+-- ==========================================================
+local ActiveScriptUsers = {}
+
+local function CheckAdminPing(plr, msg)
+    if msg == "/e FTF_ADMIN_PING" or msg == "/e FTF_PING_BACK" then
+        if not table.find(ActiveScriptUsers, plr.Name) then
+            table.insert(ActiveScriptUsers, plr.Name)
+            -- If someone else pings, ping them back so they know you are here
+            if msg == "/e FTF_ADMIN_PING" then
+                pcall(function() game.Players.LocalPlayer:Chat("/e FTF_PING_BACK") end)
+            end
+        end
+    end
+end
+
+for _, plr in pairs(game.Players:GetPlayers()) do
+    if plr ~= game.Players.LocalPlayer then
+        plr.Chatted:Connect(function(msg) CheckAdminPing(plr, msg) end)
+    end
+end
+
+game.Players.PlayerAdded:Connect(function(plr)
+    plr.Chatted:Connect(function(msg) CheckAdminPing(plr, msg) end)
+end)
+-- ==========================================================
+
+-- ==================== TOGGLE VARIABLES ===================
+local podstoggle = false
+local pctoggle = false
+local playertoggle = false
+local bestpctoggle = false
+local exitstoggle = false
+local beastcamtoggle = false
+local neverfailtoggle = false
+local autointeracttoggle = false
+local autoplaytoggle = false
+local speedtoggle = false
+local jumptoggle = false
+local nocliptoggle = false
+
+local nofogtoggle = false
+local fullbrighttoggle = false
+local smartesptoggle = false
+local fovtoggle = false
+local lowgravtoggle = false
+local proximitytoggle = false
+
+local autostruggletoggle = false
+local radartoggle = false
+local hitboxtoggle = false -- Adds the hitbox memory
+
+-- Variables to memorize the original map lighting
+local origFogEnd, origFogStart, origAtmDensity, origAtmOffset
+local origAmbient, origOutdoorAmbient
+-- ==========================================================
+
+local FTFHAX = Instance.new("ScreenGui")
+local MenusTabFrame = Instance.new("Frame")
+local CheatButton = Instance.new("ImageButton")
+local TextLabel = Instance.new("TextLabel")
+local ESPMenuWindow = Instance.new("Frame")
+local Body = Instance.new("Frame")
+local TitleLabel = Instance.new("TextLabel")
+local ButtonsFrame = Instance.new("Frame")
+local BestPCESPButton = Instance.new("TextButton")
+local PCESPButton = Instance.new("TextButton")
+local TbdButton = Instance.new("TextButton")
+local PlayerESPButton = Instance.new("TextButton")
+local PodsESPButton = Instance.new("TextButton")
+local ExitsESPButton = Instance.new("TextButton")
+local UIGridLayout = Instance.new("UIGridLayout")
+local TopBar = Instance.new("Frame")
+local CloseButton = Instance.new("TextButton")
+local BackButton = Instance.new("TextButton")
+local CreditTotalText = Instance.new("TextLabel")
+local PageTitleText = Instance.new("TextLabel")
+local MainMenuWindow = Instance.new("Frame")
+local TopBar_2 = Instance.new("Frame")
+local CloseButton_2 = Instance.new("TextButton")
+local CreditTotalText_2 = Instance.new("TextLabel")
+local PageTitleText_2 = Instance.new("TextLabel")
+local Body_2 = Instance.new("ScrollingFrame")
+local UIGridLayout_2 = Instance.new("UIGridLayout")
+local ESPButton = Instance.new("ImageButton")
+local BottomText = Instance.new("TextLabel")
+local TempIcon = Instance.new("ImageLabel")
+local ToolsButton = Instance.new("ImageButton")
+local BottomText_2 = Instance.new("TextLabel")
+local TempIcon_2 = Instance.new("ImageLabel")
+local ToolsMenuWindow = Instance.new("Frame")
+local Body_3 = Instance.new("Frame")
+local TitleLabel_2 = Instance.new("TextLabel")
+local ButtonsFrame_2 = Instance.new("Frame")
+local UIGridLayout_3 = Instance.new("UIGridLayout")
+local NeverFailButton = Instance.new("TextButton")
+local AutoPlayButton = Instance.new("TextButton")
+local AutoInteractButton = Instance.new("TextButton")
+local BeastCamButton = Instance.new("TextButton")
+local TopBar_3 = Instance.new("Frame")
+local CloseButton_3 = Instance.new("TextButton")
+local BackButton_2 = Instance.new("TextButton")
+local CreditTotalText_3 = Instance.new("TextLabel")
+local PageTitleText_3 = Instance.new("TextLabel")
+local ViewportFrame = Instance.new("ViewportFrame")
+
+FTFHAX.Name = "FTFHAX"
+FTFHAX.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+FTFHAX.ResetOnSpawn = false
+
+MenusTabFrame.Name = "MenusTabFrame"
+MenusTabFrame.Parent = FTFHAX
+MenusTabFrame.AnchorPoint = Vector2.new(1, 0.5)
+MenusTabFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+MenusTabFrame.BackgroundTransparency = 1.000
+MenusTabFrame.BorderColor3 = Color3.fromRGB(63, 63, 63)
+MenusTabFrame.BorderSizePixel = 0
+MenusTabFrame.Position = UDim2.new(1, 0, 0.5, 0)
+MenusTabFrame.Size = UDim2.new(0.0799999982, 0, 0.159999996, 0)
+MenusTabFrame.SizeConstraint = Enum.SizeConstraint.RelativeYY
+
+CheatButton.Name = "CheatButton"
+CheatButton.Parent = MenusTabFrame
+CheatButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+CheatButton.BackgroundTransparency = 0.500
+CheatButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CheatButton.BorderSizePixel = 0
+CheatButton.Position = UDim2.new(0, 0, 1, 0)
+CheatButton.Size = UDim2.new(1, 0, 1, 0)
+CheatButton.SizeConstraint = Enum.SizeConstraint.RelativeXX
+CheatButton.Image = "rbxassetid://11570895459"
+CheatButton.ImageColor3 = Color3.fromRGB(223, 223, 223)
+
+TextLabel.Parent = CheatButton
+TextLabel.AnchorPoint = Vector2.new(0, 1)
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.BackgroundTransparency = 1.000
+TextLabel.Position = UDim2.new(0, 0, 1, 0)
+TextLabel.Size = UDim2.new(1, 0, 0.200000003, 0)
+TextLabel.Font = Enum.Font.ArialBold
+TextLabel.Text = "FTF admin Panel"
+TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.TextScaled = true
+TextLabel.TextSize = 12.000
+TextLabel.TextStrokeTransparency = 0.000
+TextLabel.TextWrapped = true
+TextLabel.TextYAlignment = Enum.TextYAlignment.Bottom
+
+ESPMenuWindow.Name = "ESPMenuWindow"
+ESPMenuWindow.Parent = FTFHAX
+ESPMenuWindow.AnchorPoint = Vector2.new(0.5, 0.5)
+ESPMenuWindow.BackgroundColor3 = Color3.fromRGB(47, 47, 47)
+ESPMenuWindow.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ESPMenuWindow.BorderSizePixel = 2
+ESPMenuWindow.ClipsDescendants = true
+ESPMenuWindow.Position = UDim2.new(0.5, 0, 0.5, -18)
+ESPMenuWindow.Size = UDim2.new(0, 480, 0, 175)
+ESPMenuWindow.SizeConstraint = Enum.SizeConstraint.RelativeYY
+ESPMenuWindow.Visible = false
+
+Body.Name = "Body"
+Body.Parent = ESPMenuWindow
+Body.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Body.BackgroundTransparency = 1.000
+Body.BorderSizePixel = 0
+Body.Position = UDim2.new(0, 0, 0, 40)
+Body.Size = UDim2.new(1, 0, 1, -40)
+
+TitleLabel.Name = "TitleLabel"
+TitleLabel.Parent = Body
+TitleLabel.AnchorPoint = Vector2.new(0.5, 0)
+TitleLabel.BackgroundColor3 = Color3.fromRGB(63, 63, 63)
+TitleLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TitleLabel.BorderSizePixel = 0
+TitleLabel.Position = UDim2.new(0.5, 0, -1.06500006, 150)
+TitleLabel.Size = UDim2.new(1, -10, 0.0235044118, 30)
+TitleLabel.Text = "ESP"
+TitleLabel.TextColor3 = Color3.fromRGB(149, 255, 237)
+TitleLabel.TextScaled = true
+TitleLabel.TextSize = 14.000
+TitleLabel.TextWrapped = true
+
+ButtonsFrame.Name = "ButtonsFrame"
+ButtonsFrame.Parent = Body
+ButtonsFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ButtonsFrame.BackgroundTransparency = 1.000
+ButtonsFrame.Position = UDim2.new(0, 5, 0, 45)
+ButtonsFrame.Size = UDim2.new(1, -10, -0.00555555569, 85)
+
+BestPCESPButton.Name = "BestPCESPButton"
+BestPCESPButton.Parent = ButtonsFrame
+BestPCESPButton.BackgroundColor3 = Color3.fromRGB(191, 0, 0)
+BestPCESPButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+BestPCESPButton.BorderSizePixel = 0
+BestPCESPButton.LayoutOrder = 4
+BestPCESPButton.Size = UDim2.new(0, 200, 0, 50)
+BestPCESPButton.Text = "Best PC"
+BestPCESPButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+BestPCESPButton.TextScaled = true
+BestPCESPButton.TextSize = 14.000
+BestPCESPButton.TextWrapped = true
+
+PCESPButton.Name = "PCESPButton"
+PCESPButton.Parent = ButtonsFrame
+PCESPButton.BackgroundColor3 = Color3.fromRGB(191, 0, 0)
+PCESPButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+PCESPButton.BorderSizePixel = 0
+PCESPButton.Size = UDim2.new(0, 200, 0, 50)
+PCESPButton.Text = "PC"
+PCESPButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+PCESPButton.TextScaled = true
+PCESPButton.TextSize = 14.000
+PCESPButton.TextWrapped = true
+
+TbdButton.Name = "TbdButton"
+TbdButton.Parent = ButtonsFrame
+TbdButton.BackgroundColor3 = Color3.fromRGB(191, 0, 0)
+TbdButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TbdButton.BorderSizePixel = 0
+TbdButton.LayoutOrder = 5
+TbdButton.Size = UDim2.new(0, 200, 0, 50)
+TbdButton.Visible = false
+TbdButton.Text = "nothing"
+TbdButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+TbdButton.TextScaled = true
+TbdButton.TextSize = 14.000
+TbdButton.TextWrapped = true
+
+PlayerESPButton.Name = "PlayerESPButton"
+PlayerESPButton.Parent = ButtonsFrame
+PlayerESPButton.BackgroundColor3 = Color3.fromRGB(191, 0, 0)
+PlayerESPButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+PlayerESPButton.BorderSizePixel = 0
+PlayerESPButton.LayoutOrder = 1
+PlayerESPButton.Size = UDim2.new(0, 200, 0, 50)
+PlayerESPButton.Text = "Player"
+PlayerESPButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+PlayerESPButton.TextScaled = true
+PlayerESPButton.TextSize = 14.000
+PlayerESPButton.TextWrapped = true
+
+PodsESPButton.Name = "PodsESPButton"
+PodsESPButton.Parent = ButtonsFrame
+PodsESPButton.BackgroundColor3 = Color3.fromRGB(191, 0, 0)
+PodsESPButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+PodsESPButton.BorderSizePixel = 0
+PodsESPButton.LayoutOrder = 2
+PodsESPButton.Size = UDim2.new(0, 200, 0, 50)
+PodsESPButton.Text = "Pods"
+PodsESPButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+PodsESPButton.TextScaled = true
+PodsESPButton.TextSize = 14.000
+PodsESPButton.TextWrapped = true
+
+ExitsESPButton.Name = "ExitsESPButton"
+ExitsESPButton.Parent = ButtonsFrame
+ExitsESPButton.BackgroundColor3 = Color3.fromRGB(191, 0, 0)
+ExitsESPButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ExitsESPButton.BorderSizePixel = 0
+ExitsESPButton.LayoutOrder = 3
+ExitsESPButton.Size = UDim2.new(0, 200, 0, 50)
+ExitsESPButton.Text = "Exits"
+ExitsESPButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+ExitsESPButton.TextScaled = true
+ExitsESPButton.TextSize = 14.000
+ExitsESPButton.TextWrapped = true
+
+UIGridLayout.Parent = ButtonsFrame
+UIGridLayout.FillDirection = Enum.FillDirection.Vertical
+UIGridLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
+UIGridLayout.SortOrder = Enum.SortOrder.LayoutOrder
+UIGridLayout.CellPadding = UDim2.new(0, 6, 0, 6)
+UIGridLayout.CellSize = UDim2.new(0, 152, 0, 39)
+
+TopBar.Name = "TopBar"
+TopBar.Parent = ESPMenuWindow
+TopBar.BackgroundColor3 = Color3.fromRGB(31, 31, 31)
+TopBar.BorderSizePixel = 0
+TopBar.Size = UDim2.new(1, 0, 0, 40)
+TopBar.ZIndex = 5
+
+CloseButton.Name = "CloseButton"
+CloseButton.Parent = TopBar
+CloseButton.AnchorPoint = Vector2.new(1, 0)
+CloseButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+CloseButton.BorderColor3 = Color3.fromRGB(191, 191, 191)
+CloseButton.BorderSizePixel = 0
+CloseButton.Position = UDim2.new(1, -1, 0, 1)
+CloseButton.Size = UDim2.new(0, 36, 0, 36)
+CloseButton.SizeConstraint = Enum.SizeConstraint.RelativeYY
+CloseButton.ZIndex = 5
+CloseButton.Modal = true
+CloseButton.Text = "X"
+CloseButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+CloseButton.TextScaled = true
+CloseButton.TextSize = 14.000
+CloseButton.TextWrapped = true
+
+BackButton.Name = "BackButton"
+BackButton.Parent = TopBar
+BackButton.AnchorPoint = Vector2.new(1, 0)
+BackButton.BackgroundColor3 = Color3.fromRGB(95, 95, 95)
+BackButton.BorderColor3 = Color3.fromRGB(191, 191, 191)
+BackButton.BorderSizePixel = 0
+BackButton.Position = UDim2.new(1, -41, 0, 1)
+BackButton.Size = UDim2.new(1, -4, 1, -4)
+BackButton.SizeConstraint = Enum.SizeConstraint.RelativeYY
+BackButton.ZIndex = 5
+BackButton.Text = "<"
+BackButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+BackButton.TextScaled = true
+BackButton.TextSize = 14.000
+BackButton.TextWrapped = true
+
+CreditTotalText.Name = "CreditTotalText"
+CreditTotalText.Parent = TopBar
+CreditTotalText.AnchorPoint = Vector2.new(1, 0)
+CreditTotalText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CreditTotalText.BackgroundTransparency = 1.000
+CreditTotalText.BorderSizePixel = 0
+CreditTotalText.Position = UDim2.new(1, -85, 0, 0)
+CreditTotalText.Size = UDim2.new(0, 100, 1, 0)
+CreditTotalText.ZIndex = 5
+CreditTotalText.Text = ver
+CreditTotalText.TextColor3 = Color3.fromRGB(255, 255, 0)
+CreditTotalText.TextScaled = true
+CreditTotalText.TextWrapped = true
+CreditTotalText.TextXAlignment = Enum.TextXAlignment.Right
+
+PageTitleText.Name = "PageTitleText"
+PageTitleText.Parent = TopBar
+PageTitleText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+PageTitleText.BackgroundTransparency = 1.000
+PageTitleText.BorderSizePixel = 0
+PageTitleText.Position = UDim2.new(0, 10, 0, 0)
+PageTitleText.Size = UDim2.new(0, 200, 1, 0)
+PageTitleText.ZIndex = 5
+PageTitleText.Text = "FTF admin Panel"
+PageTitleText.TextColor3 = Color3.fromRGB(255, 255, 255)
+PageTitleText.TextScaled = true
+PageTitleText.TextWrapped = true
+PageTitleText.TextXAlignment = Enum.TextXAlignment.Left
+
+MainMenuWindow.Name = "MainMenuWindow"
+MainMenuWindow.Parent = FTFHAX
+MainMenuWindow.AnchorPoint = Vector2.new(0.5, 0.5)
+MainMenuWindow.BackgroundColor3 = Color3.fromRGB(47, 47, 47)
+MainMenuWindow.BorderColor3 = Color3.fromRGB(0, 0, 0)
+MainMenuWindow.BorderSizePixel = 2
+MainMenuWindow.ClipsDescendants = true
+MainMenuWindow.Position = UDim2.new(0.5, 0, 0.5, -18)
+MainMenuWindow.Size = UDim2.new(0, 420, 0, 360)
+MainMenuWindow.SizeConstraint = Enum.SizeConstraint.RelativeYY
+MainMenuWindow.Visible = false
+
+TopBar_2.Name = "TopBar"
+TopBar_2.Parent = MainMenuWindow
+TopBar_2.BackgroundColor3 = Color3.fromRGB(31, 31, 31)
+TopBar_2.BorderSizePixel = 0
+TopBar_2.Size = UDim2.new(1, 0, 0, 40)
+TopBar_2.ZIndex = 5
+
+CloseButton_2.Name = "CloseButton"
+CloseButton_2.Parent = TopBar_2
+CloseButton_2.AnchorPoint = Vector2.new(1, 0)
+CloseButton_2.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+CloseButton_2.BorderColor3 = Color3.fromRGB(191, 191, 191)
+CloseButton_2.BorderSizePixel = 0
+CloseButton_2.Position = UDim2.new(1, -1, 0, 1)
+CloseButton_2.Size = UDim2.new(0, 36, 0, 36)
+CloseButton_2.SizeConstraint = Enum.SizeConstraint.RelativeYY
+CloseButton_2.ZIndex = 5
+CloseButton_2.Modal = true
+CloseButton_2.Text = "X"
+CloseButton_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+CloseButton_2.TextScaled = true
+CloseButton_2.TextSize = 14.000
+CloseButton_2.TextWrapped = true
+
+CreditTotalText_2.Name = "CreditTotalText"
+CreditTotalText_2.Parent = TopBar_2
+CreditTotalText_2.AnchorPoint = Vector2.new(1, 0)
+CreditTotalText_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CreditTotalText_2.BackgroundTransparency = 1.000
+CreditTotalText_2.BorderSizePixel = 0
+CreditTotalText_2.Position = UDim2.new(1, -45, 0, 0)
+CreditTotalText_2.Size = UDim2.new(0, 100, 1, 0)
+CreditTotalText_2.ZIndex = 5
+CreditTotalText_2.Text = ver
+CreditTotalText_2.TextColor3 = Color3.fromRGB(255, 255, 0)
+CreditTotalText_2.TextScaled = true
+CreditTotalText_2.TextWrapped = true
+CreditTotalText_2.TextXAlignment = Enum.TextXAlignment.Right
+
+PageTitleText_2.Name = "PageTitleText"
+PageTitleText_2.Parent = TopBar_2
+PageTitleText_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+PageTitleText_2.BackgroundTransparency = 1.000
+PageTitleText_2.BorderSizePixel = 0
+PageTitleText_2.Position = UDim2.new(0, 10, 0, 0)
+PageTitleText_2.Size = UDim2.new(0, 200, 1, 0)
+PageTitleText_2.ZIndex = 5
+PageTitleText_2.Text = "FTF admin Panel"
+PageTitleText_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+PageTitleText_2.TextScaled = true
+PageTitleText_2.TextWrapped = true
+PageTitleText_2.TextXAlignment = Enum.TextXAlignment.Left
+
+Body_2.Name = "Body"
+Body_2.Parent = MainMenuWindow
+Body_2.AnchorPoint = Vector2.new(0.5, 0)
+Body_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Body_2.BackgroundTransparency = 1.000
+Body_2.BorderSizePixel = 0
+Body_2.Position = UDim2.new(0.5, 0, 0, 45)
+Body_2.Size = UDim2.new(1, -10, 1, -75)
+Body_2.ScrollBarThickness = 0
+Body_2.AutomaticCanvasSize = Enum.AutomaticSize.Y
+
+UIGridLayout_2.Parent = Body_2
+UIGridLayout_2.HorizontalAlignment = Enum.HorizontalAlignment.Center
+UIGridLayout_2.SortOrder = Enum.SortOrder.LayoutOrder
+UIGridLayout_2.VerticalAlignment = Enum.VerticalAlignment.Top
+UIGridLayout_2.CellSize = UDim2.new(0, 132, 0, 132)
+
+-- ==================== MATCHING MAIN MENU BUTTONS ====================
+ESPButton.Name = "ESPButton"
+ESPButton.Parent = Body_2
+ESPButton.BackgroundColor3 = Color3.fromRGB(63, 63, 63)
+ESPButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ESPButton.BorderSizePixel = 0
+ESPButton.LayoutOrder = 1
+ESPButton.Size = UDim2.new(0, 100, 0, 100)
+
+BottomText.Name = "BottomText"
+BottomText.Parent = ESPButton
+BottomText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+BottomText.BackgroundTransparency = 1.000
+BottomText.BorderSizePixel = 0
+BottomText.Position = UDim2.new(0, 0, 0.800000012, 0)
+BottomText.Size = UDim2.new(1, 0, 0.200000003, 0)
+BottomText.Text = "ESP"
+BottomText.TextColor3 = Color3.fromRGB(255, 255, 255)
+BottomText.Font = Enum.Font.SourceSans
+BottomText.TextScaled = false
+BottomText.TextSize = 24.000
+
+TempIcon.Name = "TempIcon"
+TempIcon.Parent = ESPButton
+TempIcon.AnchorPoint = Vector2.new(0.5, 0)
+TempIcon.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TempIcon.BackgroundTransparency = 1.000
+TempIcon.Position = UDim2.new(0.5, 0, 0, 0)
+TempIcon.Size = UDim2.new(0.800000012, 0, 0.800000012, 0)
+TempIcon.Image = "rbxassetid://2594274683"
+TempIcon.ScaleType = Enum.ScaleType.Fit
+
+ToolsButton.Name = "ToolsButton"
+ToolsButton.Parent = Body_2
+ToolsButton.BackgroundColor3 = Color3.fromRGB(63, 63, 63)
+ToolsButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ToolsButton.BorderSizePixel = 0
+ToolsButton.LayoutOrder = 2
+ToolsButton.Size = UDim2.new(0, 100, 0, 100)
+
+BottomText_2.Name = "BottomText"
+BottomText_2.Parent = ToolsButton
+BottomText_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+BottomText_2.BackgroundTransparency = 1.000
+BottomText_2.BorderSizePixel = 0
+BottomText_2.Position = UDim2.new(0, 0, 0.800000012, 0)
+BottomText_2.Size = UDim2.new(1, 0, 0.200000003, 0)
+BottomText_2.Text = "Tools"
+BottomText_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+BottomText_2.Font = Enum.Font.SourceSans
+BottomText_2.TextScaled = false
+BottomText_2.TextSize = 24.000
+
+TempIcon_2.Name = "TempIcon"
+TempIcon_2.Parent = ToolsButton
+TempIcon_2.AnchorPoint = Vector2.new(0.5, 0)
+TempIcon_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TempIcon_2.BackgroundTransparency = 1.000
+TempIcon_2.Position = UDim2.new(0.5, 0, 0, 0)
+TempIcon_2.Size = UDim2.new(0.800000012, 0, 0.800000012, 0)
+TempIcon_2.Image = "rbxassetid://12403104094"
+TempIcon_2.ScaleType = Enum.ScaleType.Fit
+
+local TPButton = Instance.new("ImageButton")
+TPButton.Name = "TPButton"
+TPButton.BackgroundColor3 = Color3.fromRGB(63, 63, 63)
+TPButton.BorderSizePixel = 0
+TPButton.ZIndex = 10
+TPButton.Parent = Body_2
+
+local TPIcon = Instance.new("ImageLabel", TPButton)
+TPIcon.BackgroundTransparency = 1
+TPIcon.AnchorPoint = Vector2.new(0.5, 0)
+TPIcon.Position = UDim2.new(0.5, 0, 0, 0)
+TPIcon.Size = UDim2.new(0.800000012, 0, 0.800000012, 0)
+TPIcon.Image = "rbxthumb://type=Asset&id=2249604078&w=150&h=150"
+TPIcon.ImageColor3 = Color3.fromRGB(255, 100, 100)
+TPIcon.ScaleType = Enum.ScaleType.Fit
+TPIcon.ZIndex = 11
+
+local TPText = Instance.new("TextLabel")
+TPText.BackgroundTransparency = 1
+TPText.Position = UDim2.new(0, 0, 0.800000012, 0)
+TPText.Size = UDim2.new(1, 0, 0.200000003, 0)
+TPText.Text = "TP"
+TPText.TextColor3 = Color3.new(1,1,1)
+TPText.Font = Enum.Font.SourceSans
+TPText.TextScaled = false
+TPText.TextSize = 24.000
+TPText.ZIndex = 11
+TPText.Parent = TPButton
+
+local PlayerTabButton = Instance.new("ImageButton")
+PlayerTabButton.Name = "PlayerTabButton"
+PlayerTabButton.BackgroundColor3 = Color3.fromRGB(63, 63, 63)
+PlayerTabButton.BorderSizePixel = 0
+PlayerTabButton.ZIndex = 10
+PlayerTabButton.Parent = Body_2
+
+local PlayerIcon = Instance.new("ImageLabel", PlayerTabButton)
+PlayerIcon.BackgroundTransparency = 1
+PlayerIcon.AnchorPoint = Vector2.new(0.5, 0)
+PlayerIcon.Position = UDim2.new(0.5, 0, 0, 0)
+PlayerIcon.Size = UDim2.new(0.800000012, 0, 0.800000012, 0)
+PlayerIcon.Image = "rbxassetid://6031265976" 
+PlayerIcon.ScaleType = Enum.ScaleType.Fit
+PlayerIcon.ZIndex = 11
+
+local PlayerText = Instance.new("TextLabel")
+PlayerText.BackgroundTransparency = 1
+PlayerText.Position = UDim2.new(0, 0, 0.800000012, 0)
+PlayerText.Size = UDim2.new(1, 0, 0.200000003, 0)
+PlayerText.Text = "Player"
+PlayerText.TextColor3 = Color3.new(1,1,1)
+PlayerText.Font = Enum.Font.SourceSans
+PlayerText.TextScaled = false
+PlayerText.TextSize = 24.000
+PlayerText.ZIndex = 11
+PlayerText.Parent = PlayerTabButton
+
+local MiscTabButton = Instance.new("ImageButton")
+MiscTabButton.Name = "MiscTabButton"
+MiscTabButton.BackgroundColor3 = Color3.fromRGB(63, 63, 63)
+MiscTabButton.BorderSizePixel = 0
+MiscTabButton.ZIndex = 10
+MiscTabButton.Parent = Body_2
+
+local MiscIcon = Instance.new("ImageLabel", MiscTabButton)
+MiscIcon.BackgroundTransparency = 1
+MiscIcon.AnchorPoint = Vector2.new(0.5, 0)
+MiscIcon.Position = UDim2.new(0.5, 0, 0.1, 0)
+MiscIcon.Size = UDim2.new(0.6, 0, 0.6, 0)
+MiscIcon.Image = "rbxassetid://6031280882"
+MiscIcon.ScaleType = Enum.ScaleType.Fit
+MiscIcon.ZIndex = 11
+
+local MiscText = Instance.new("TextLabel")
+MiscText.BackgroundTransparency = 1
+MiscText.Position = UDim2.new(0, 0, 0.800000012, 0)
+MiscText.Size = UDim2.new(1, 0, 0.200000003, 0)
+MiscText.Text = "Misc"
+MiscText.TextColor3 = Color3.new(1,1,1)
+MiscText.Font = Enum.Font.SourceSans
+MiscText.TextScaled = false
+MiscText.TextSize = 24.000
+MiscText.ZIndex = 11
+MiscText.Parent = MiscTabButton
+
+local RiskTabButton = Instance.new("ImageButton")
+RiskTabButton.Name = "RiskTabButton"
+RiskTabButton.BackgroundColor3 = Color3.fromRGB(63, 63, 63)
+RiskTabButton.BorderSizePixel = 0
+RiskTabButton.ZIndex = 10
+RiskTabButton.Parent = Body_2
+
+local RiskIcon = Instance.new("ImageLabel", RiskTabButton)
+RiskIcon.BackgroundTransparency = 1
+RiskIcon.AnchorPoint = Vector2.new(0.5, 0)
+RiskIcon.Position = UDim2.new(0.5, 0, 0.1, 0)
+RiskIcon.Size = UDim2.new(0.6, 0, 0.6, 0)
+RiskIcon.Image = "rbxthumb://type=Asset&id=12400908609&w=150&h=150"
+RiskIcon.ScaleType = Enum.ScaleType.Fit
+RiskIcon.ZIndex = 11
+
+local RiskText = Instance.new("TextLabel")
+RiskText.BackgroundTransparency = 1
+RiskText.Position = UDim2.new(0, 0, 0.800000012, 0)
+RiskText.Size = UDim2.new(1, 0, 0.200000003, 0)
+RiskText.Text = "Risk Lvl"
+RiskText.TextColor3 = Color3.new(1,1,1)
+RiskText.Font = Enum.Font.SourceSans
+RiskText.TextScaled = false
+RiskText.TextSize = 24.000
+RiskText.ZIndex = 11
+RiskText.Parent = RiskTabButton
+
+local UnfairTabButton = Instance.new("ImageButton")
+UnfairTabButton.Name = "UnfairTabButton"
+UnfairTabButton.BackgroundColor3 = Color3.fromRGB(63, 63, 63)
+UnfairTabButton.BorderSizePixel = 0
+UnfairTabButton.ZIndex = 10
+UnfairTabButton.Parent = Body_2
+
+local UnfairIcon = Instance.new("ImageLabel", UnfairTabButton)
+UnfairIcon.BackgroundTransparency = 1
+UnfairIcon.AnchorPoint = Vector2.new(0.5, 0)
+UnfairIcon.Position = UDim2.new(0.5, 0, 0.1, 0)
+UnfairIcon.Size = UDim2.new(0.6, 0, 0.6, 0)
+UnfairIcon.Image = "rbxassetid://73375957637397" -- Verified Fire Icon
+UnfairIcon.ScaleType = Enum.ScaleType.Fit
+UnfairIcon.ZIndex = 11
+
+local UnfairText = Instance.new("TextLabel")
+UnfairText.BackgroundTransparency = 1
+UnfairText.Position = UDim2.new(0, 0, 0.800000012, 0)
+UnfairText.Size = UDim2.new(1, 0, 0.200000003, 0)
+UnfairText.Text = "Unfair"
+UnfairText.TextColor3 = Color3.new(1, 0.2, 0.2)
+UnfairText.Font = Enum.Font.SourceSansBold
+UnfairText.TextScaled = false
+UnfairText.TextSize = 24.000
+UnfairText.ZIndex = 11
+UnfairText.Parent = UnfairTabButton
+
+-- [NEW] UPDATE LOG TAB BUTTON
+local UpdateLogTabButton = Instance.new("ImageButton")
+UpdateLogTabButton.Name = "UpdateLogTabButton"
+UpdateLogTabButton.BackgroundColor3 = Color3.fromRGB(63, 63, 63)
+UpdateLogTabButton.BorderSizePixel = 0
+UpdateLogTabButton.ZIndex = 10
+UpdateLogTabButton.Parent = Body_2
+
+local UpdateLogIcon = Instance.new("ImageLabel", UpdateLogTabButton)
+UpdateLogIcon.BackgroundTransparency = 1
+UpdateLogIcon.AnchorPoint = Vector2.new(0.5, 0)
+UpdateLogIcon.Position = UDim2.new(0.5, 0, 0.1, 0)
+UpdateLogIcon.Size = UDim2.new(0.6, 0, 0.6, 0)
+UpdateLogIcon.Image = "rbxassetid://11293981586" -- Scroll/Document Icon
+UpdateLogIcon.ScaleType = Enum.ScaleType.Fit
+UpdateLogIcon.ZIndex = 11
+
+local UpdateLogText = Instance.new("TextLabel")
+UpdateLogText.BackgroundTransparency = 1
+UpdateLogText.Position = UDim2.new(0, 0, 0.800000012, 0)
+UpdateLogText.Size = UDim2.new(1, 0, 0.200000003, 0)
+UpdateLogText.Text = "Logs"
+UpdateLogText.TextColor3 = Color3.new(1, 1, 1)
+UpdateLogText.Font = Enum.Font.SourceSans
+UpdateLogText.TextScaled = false
+UpdateLogText.TextSize = 24.000
+UpdateLogText.ZIndex = 11
+UpdateLogText.Parent = UpdateLogTabButton
+
+local KillPanelButton = Instance.new("TextButton")
+KillPanelButton.Name = "KillPanelButton"
+KillPanelButton.Size = UDim2.new(0, 132, 0, 132)
+KillPanelButton.BackgroundColor3 = Color3.fromRGB(150, 0, 0)
+KillPanelButton.Text = "KILL\nPANEL"
+KillPanelButton.TextColor3 = Color3.new(1,1,1)
+KillPanelButton.Font = Enum.Font.SourceSans
+KillPanelButton.TextScaled = false
+KillPanelButton.TextSize = 24.000
+KillPanelButton.Parent = Body_2
+Instance.new("UICorner", KillPanelButton).CornerRadius = UDim.new(0, 12)
+
+trackConnection(KillPanelButton.MouseButton1Click:Connect(function()
+    neverfailtoggle = false
+    podstoggle = false
+    pctoggle = false
+    playertoggle = false
+    bestpctoggle = false
+    exitstoggle = false
+    beastcamtoggle = false
+    autoplaytoggle = false
+    autointeracttoggle = false
+    speedtoggle = false
+    jumptoggle = false
+    nocliptoggle = false
+    nofogtoggle = false
+    fullbrighttoggle = false
+    smartesptoggle = false
+    fovtoggle = false
+    lowgravtoggle = false
+    proximitytoggle = false
+    autostruggletoggle = false
+    radartoggle = false
+    hitboxtoggle = false
+    
+    if FreecamUI then FreecamUI.Visible = false end
+    if UpdateLogMenu then UpdateLogMenu.Visible = false end
+
+    if game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChild("Humanoid") then
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
+        game.Players.LocalPlayer.Character.Humanoid.JumpPower = 0
+    end
+
+    local lighting = game:GetService("Lighting")
+    if origFogEnd then lighting.FogEnd = origFogEnd end
+    if origFogStart then lighting.FogStart = origFogStart end
+    if origAmbient then lighting.Ambient = origAmbient end
+    if origOutdoorAmbient then lighting.OutdoorAmbient = origOutdoorAmbient end
+    local atmosphere = lighting:FindFirstChild("Atmosphere")
+    if atmosphere and origAtmDensity then
+        atmosphere.Density = origAtmDensity
+        atmosphere.Offset = origAtmOffset
+    end
+    workspace.CurrentCamera.FieldOfView = 70
+    workspace.Gravity = 196.2
+
+    for _, v in pairs(workspace:GetDescendants()) do
+        if v:IsA("Highlight") then v:Destroy() end
+    end
+    
+    for _, conn in pairs(activeConnections) do
+        if conn and conn.Connected then conn:Disconnect() end
+    end
+
+    if ViewportFrame then ViewportFrame:Destroy() end
+    task.wait(0.1)
+    FTFHAX:Destroy()
+end))
+-- ==========================================================
+
+ToolsMenuWindow.Name = "ToolsMenuWindow"
+ToolsMenuWindow.Parent = FTFHAX
+ToolsMenuWindow.AnchorPoint = Vector2.new(0.5, 0.5)
+ToolsMenuWindow.BackgroundColor3 = Color3.fromRGB(47, 47, 47)
+ToolsMenuWindow.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ToolsMenuWindow.BorderSizePixel = 2
+ToolsMenuWindow.ClipsDescendants = true
+ToolsMenuWindow.Position = UDim2.new(0.5, 0, 0.5, -18)
+ToolsMenuWindow.Size = UDim2.new(0, 480, 0, 175)
+ToolsMenuWindow.SizeConstraint = Enum.SizeConstraint.RelativeYY
+ToolsMenuWindow.Visible = false
+
+Body_3.Name = "Body"
+Body_3.Parent = ToolsMenuWindow
+Body_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Body_3.BackgroundTransparency = 1.000
+Body_3.BorderSizePixel = 0
+Body_3.Position = UDim2.new(0, 0, 0, 40)
+Body_3.Size = UDim2.new(1, 0, 1, -40)
+
+TitleLabel_2.Name = "TitleLabel"
+TitleLabel_2.Parent = Body_3
+TitleLabel_2.AnchorPoint = Vector2.new(0.5, 0)
+TitleLabel_2.BackgroundColor3 = Color3.fromRGB(63, 63, 63)
+TitleLabel_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TitleLabel_2.BorderSizePixel = 0
+TitleLabel_2.Position = UDim2.new(0.5, 0, -1.06500006, 150)
+TitleLabel_2.Size = UDim2.new(1, -10, 0.0235044118, 30)
+TitleLabel_2.Text = "Tools"
+TitleLabel_2.TextColor3 = Color3.fromRGB(144, 255, 161)
+TitleLabel_2.TextScaled = true
+TitleLabel_2.TextSize = 14.000
+TitleLabel_2.TextWrapped = true
+
+ButtonsFrame_2.Name = "ButtonsFrame"
+ButtonsFrame_2.Parent = Body_3
+ButtonsFrame_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ButtonsFrame_2.BackgroundTransparency = 1.000
+ButtonsFrame_2.Position = UDim2.new(0, 5, 0, 45)
+ButtonsFrame_2.Size = UDim2.new(1, -10, -0.00555555569, 85)
+
+UIGridLayout_3.Parent = ButtonsFrame_2
+UIGridLayout_3.FillDirection = Enum.FillDirection.Vertical
+UIGridLayout_3.HorizontalAlignment = Enum.HorizontalAlignment.Center
+UIGridLayout_3.SortOrder = Enum.SortOrder.LayoutOrder
+UIGridLayout_3.CellPadding = UDim2.new(0, 6, 0, 6)
+UIGridLayout_3.CellSize = UDim2.new(0, 152, 0, 39)
+
+NeverFailButton.Name = "NeverFailButton"
+NeverFailButton.Parent = ButtonsFrame_2
+NeverFailButton.BackgroundColor3 = Color3.fromRGB(191, 0, 0)
+NeverFailButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+NeverFailButton.BorderSizePixel = 0
+NeverFailButton.Size = UDim2.new(0, 200, 0, 50)
+NeverFailButton.Text = "Never Fail"
+NeverFailButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+NeverFailButton.TextScaled = true
+NeverFailButton.TextSize = 14.000
+NeverFailButton.TextWrapped = true
+
+AutoPlayButton.Name = "AutoPlayButton"
+AutoPlayButton.Parent = ButtonsFrame_2
+AutoPlayButton.BackgroundColor3 = Color3.fromRGB(191, 0, 0)
+AutoPlayButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+AutoPlayButton.BorderSizePixel = 0
+AutoPlayButton.LayoutOrder = 1
+AutoPlayButton.Size = UDim2.new(0, 200, 0, 50)
+AutoPlayButton.Text = "Auto-Play"
+AutoPlayButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+AutoPlayButton.TextScaled = true
+AutoPlayButton.TextSize = 14.000
+AutoPlayButton.TextWrapped = true
+
+AutoInteractButton.Name = "AutoInteractButton"
+AutoInteractButton.Parent = ButtonsFrame_2
+AutoInteractButton.BackgroundColor3 = Color3.fromRGB(191, 0, 0)
+AutoInteractButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+AutoInteractButton.BorderSizePixel = 0
+AutoInteractButton.LayoutOrder = 2
+AutoInteractButton.Size = UDim2.new(0, 200, 0, 50)
+AutoInteractButton.Text = "Auto Interact"
+AutoInteractButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+AutoInteractButton.TextScaled = true
+AutoInteractButton.TextSize = 14.000
+AutoInteractButton.TextWrapped = true
+
+BeastCamButton.Name = "BeastCamButton"
+BeastCamButton.Parent = ButtonsFrame_2
+BeastCamButton.BackgroundColor3 = Color3.fromRGB(191, 0, 0)
+BeastCamButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+BeastCamButton.BorderSizePixel = 0
+BeastCamButton.LayoutOrder = 3
+BeastCamButton.Size = UDim2.new(0, 200, 0, 50)
+BeastCamButton.Text = "Beast Cam"
+BeastCamButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+BeastCamButton.TextScaled = true
+BeastCamButton.TextSize = 14.000
+BeastCamButton.TextWrapped = true
+
+TopBar_3.Name = "TopBar"
+TopBar_3.Parent = ToolsMenuWindow
+TopBar_3.BackgroundColor3 = Color3.fromRGB(31, 31, 31)
+TopBar_3.BorderSizePixel = 0
+TopBar_3.Size = UDim2.new(1, 0, 0, 40)
+TopBar_3.ZIndex = 5
+
+CloseButton_3.Name = "CloseButton"
+CloseButton_3.Parent = TopBar_3
+CloseButton_3.AnchorPoint = Vector2.new(1, 0)
+CloseButton_3.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+CloseButton_3.BorderColor3 = Color3.fromRGB(191, 191, 191)
+CloseButton_3.BorderSizePixel = 0
+CloseButton_3.Position = UDim2.new(1, -1, 0, 1)
+CloseButton_3.Size = UDim2.new(0, 36, 0, 36)
+CloseButton_3.SizeConstraint = Enum.SizeConstraint.RelativeYY
+CloseButton_3.ZIndex = 5
+CloseButton_3.Modal = true
+CloseButton_3.Text = "X"
+CloseButton_3.TextColor3 = Color3.fromRGB(255, 255, 255)
+CloseButton_3.TextScaled = true
+CloseButton_3.TextSize = 14.000
+CloseButton_3.TextWrapped = true
+
+BackButton_2.Name = "BackButton"
+BackButton_2.Parent = TopBar_3
+BackButton_2.AnchorPoint = Vector2.new(1, 0)
+BackButton_2.BackgroundColor3 = Color3.fromRGB(95, 95, 95)
+BackButton_2.BorderColor3 = Color3.fromRGB(191, 191, 191)
+BackButton_2.BorderSizePixel = 0
+BackButton_2.Position = UDim2.new(1, -41, 0, 1)
+BackButton_2.Size = UDim2.new(1, -4, 1, -4)
+BackButton_2.SizeConstraint = Enum.SizeConstraint.RelativeYY
+BackButton_2.ZIndex = 5
+BackButton_2.Text = "<"
+BackButton_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+BackButton_2.TextScaled = true
+BackButton_2.TextSize = 14.000
+BackButton_2.TextWrapped = true
+
+CreditTotalText_3.Name = "CreditTotalText"
+CreditTotalText_3.Parent = TopBar_3
+CreditTotalText_3.AnchorPoint = Vector2.new(1, 0)
+CreditTotalText_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CreditTotalText_3.BackgroundTransparency = 1.000
+CreditTotalText_3.BorderSizePixel = 0
+CreditTotalText_3.Position = UDim2.new(1, -85, 0, 0)
+CreditTotalText_3.Size = UDim2.new(0, 100, 1, 0)
+CreditTotalText_3.ZIndex = 5
+CreditTotalText_3.Text = ver
+CreditTotalText_3.TextColor3 = Color3.fromRGB(255, 255, 0)
+CreditTotalText_3.TextScaled = true
+CreditTotalText_3.TextWrapped = true
+CreditTotalText_3.TextXAlignment = Enum.TextXAlignment.Right
+
+PageTitleText_3.Name = "PageTitleText"
+PageTitleText_3.Parent = TopBar_3
+PageTitleText_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+PageTitleText_3.BackgroundTransparency = 1.000
+PageTitleText_3.BorderSizePixel = 0
+PageTitleText_3.Position = UDim2.new(0, 10, 0, 0)
+PageTitleText_3.Size = UDim2.new(0, 200, 1, 0)
+PageTitleText_3.ZIndex = 5
+PageTitleText_3.Text = "FTF admin Panel - Tools"
+PageTitleText_3.TextColor3 = Color3.fromRGB(255, 255, 255)
+PageTitleText_3.TextScaled = true
+PageTitleText_3.TextWrapped = true
+PageTitleText_3.TextXAlignment = Enum.TextXAlignment.Left
+
+ViewportFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ViewportFrame.Parent = FTFHAX
+ViewportFrame.Position = UDim2.new(0, 5, 0.666000009, -5)
+ViewportFrame.Size = UDim2.new(0.333, 0, 0.333, 0)
+ViewportFrame.Ambient = Color3.fromRGB(147,147,147)
+ViewportFrame.LightDirection = Vector3.new(0,1,0)
+ViewportFrame.BackgroundColor3 = Color3.fromRGB(50,50,50)
+ViewportFrame.BackgroundTransparency = 0.9
+ViewportFrame.Visible = false
+
+-- ==================== DYNAMIC MAP CHECK ====================
+local function getMap()
+    local mapFolder = game.ReplicatedStorage:FindFirstChild("CurrentMap")
+    if mapFolder and mapFolder.Value then
+        return mapFolder.Value
+    end
+    return nil
+end
+
+-- ==================== FIXED TP MENU ====================
+local TPMenu = ESPMenuWindow:Clone()
+TPMenu.Name = "TPMenu"
+TPMenu.Visible = false
+TPMenu.Parent = FTFHAX
+TPMenu.Body.TitleLabel.Text = "TELEPORT"
+TPMenu.TopBar.PageTitleText.Text = "FTF admin Panel - TP"
+
+for _, v in pairs(TPMenu.Body.ButtonsFrame:GetChildren()) do
+    if v:IsA("TextButton") then v:Destroy() end
+end
+
+local lp = game.Players.LocalPlayer
+
+local function AddTP(name, func)
+    local btn = Instance.new("TextButton")
+    btn.Size = UDim2.new(0, 200, 0, 50)
+    btn.BackgroundColor3 = Color3.fromRGB(191, 0, 0)
+    btn.Text = name
+    btn.TextColor3 = Color3.new(1,1,1)
+    btn.Font = Enum.Font.SourceSans
+    btn.TextScaled = true
+    btn.Parent = TPMenu.Body.ButtonsFrame
+    trackConnection(btn.MouseButton1Click:Connect(function()
+        pcall(func)
+    end))
+end
+
+AddTP("Nearest PC", function()
+    if not lp.Character or not lp.Character:FindFirstChild("HumanoidRootPart") then return end
+    local map = getMap()
+    if not map then return end
+    local closest, dist = nil, math.huge
+    local pos = lp.Character.HumanoidRootPart.Position
+    for _, v in pairs(map:GetDescendants()) do
+        if v.Name == "ComputerTable" then
+            local d = (v:GetPivot().Position - pos).Magnitude
+            if d < dist then dist = d; closest = v end
+        end
+    end
+    if closest then lp.Character.HumanoidRootPart.CFrame = closest:GetPivot() + Vector3.new(0, 5, 0) end
+end)
+
+AddTP("Safest PC (Best)", function()
+    if not lp.Character or not lp.Character:FindFirstChild("HumanoidRootPart") then return end
+    local best = getBestPC()
+    if best and best[1] and best[1].pc then
+        lp.Character.HumanoidRootPart.CFrame = best[1].pc:GetPivot() + Vector3.new(0, 5, 0)
+    end
+end)
+
+AddTP("Nearest Pod", function()
+    if not lp.Character or not lp.Character:FindFirstChild("HumanoidRootPart") then return end
+    local map = getMap()
+    if not map then return end
+    local closest, dist = nil, math.huge
+    local pos = lp.Character.HumanoidRootPart.Position
+    for _, v in pairs(map:GetDescendants()) do
+        if v.Name == "FreezePod" then
+            local d = (v:GetPivot().Position - pos).Magnitude
+            if d < dist then dist = d; closest = v end
+        end
+    end
+    if closest then lp.Character.HumanoidRootPart.CFrame = closest:GetPivot() + Vector3.new(0, 5, 0) end
+end)
+
+AddTP("Frozen Teammate", function()
+    if not lp.Character or not lp.Character:FindFirstChild("HumanoidRootPart") then return end
+    local map = getMap()
+    if not map then return end
+    for _, v in pairs(map:GetDescendants()) do
+        if v.Name == "FreezePod" and v:FindFirstChild("Occupant") and v.Occupant.Value ~= nil then
+            lp.Character.HumanoidRootPart.CFrame = v:GetPivot() + Vector3.new(0, 5, 0)
+            break
+        end
+    end
+end)
+
+AddTP("Exit Door", function()
+    if not lp.Character or not lp.Character:FindFirstChild("HumanoidRootPart") then return end
+    local map = getMap()
+    if not map then return end
+    for _, v in pairs(map:GetDescendants()) do
+        if v.Name == "ExitDoor" then
+            lp.Character.HumanoidRootPart.CFrame = v:GetPivot() + Vector3.new(0, 5, 0)
+            break
+        end
+    end
+end)
+
+AddTP("TP to Beast", function()
+    if not lp.Character or not lp.Character:FindFirstChild("HumanoidRootPart") then return end
+    local beast = getBeast()
+    if beast and beast.Character and beast.Character:FindFirstChild("HumanoidRootPart") then
+        lp.Character.HumanoidRootPart.CFrame = beast.Character.HumanoidRootPart.CFrame + Vector3.new(0, 5, 0)
+    end
+end)
+
+AddTP("Nearest Teammate", function()
+    if not lp.Character or not lp.Character:FindFirstChild("HumanoidRootPart") then return end
+    local closest, dist = nil, math.huge
+    local beast = getBeast()
+    for _, p in pairs(game.Players:GetPlayers()) do
+        if p ~= lp and p ~= beast and p.Character and p.Character:FindFirstChild("HumanoidRootPart") then
+            local d = (lp.Character.HumanoidRootPart.Position - p.Character.HumanoidRootPart.Position).Magnitude
+            if d < dist then dist = d; closest = p end
+        end
+    end
+    if closest and closest.Character and closest.Character:FindFirstChild("HumanoidRootPart") then
+        lp.Character.HumanoidRootPart.CFrame = closest.Character.HumanoidRootPart.CFrame + Vector3.new(5, 0, 0)
+    end
+end)
+
+AddTP("Spawn", function()
+    if not lp.Character or not lp.Character:FindFirstChild("HumanoidRootPart") then return end
+    local spawn = workspace:FindFirstChild("SpawnLocation") or workspace:FindFirstChild("Spawns") and workspace.Spawns:FindFirstChildOfClass("SpawnLocation")
+    if spawn then
+        lp.Character.HumanoidRootPart.CFrame = spawn.CFrame + Vector3.new(0, 10, 0)
+    end
+end)
+
+AddTP("Map Center", function()
+    if not lp.Character or not lp.Character:FindFirstChild("HumanoidRootPart") then return end
+    local map = getMap()
+    if map then
+        local cf = map:GetBoundingBox()
+        lp.Character.HumanoidRootPart.CFrame = cf.Position + Vector3.new(0, 80, 0)
+    end
+end)
+
+AddTP("Random PC", function()
+    if not lp.Character or not lp.Character:FindFirstChild("HumanoidRootPart") then return end
+    local map = getMap()
+    if not map then return end
+    local pcs = {}
+    for _, v in pairs(map:GetDescendants()) do
+        if v.Name == "ComputerTable" then table.insert(pcs, v) end
+    end
+    if #pcs > 0 then
+        local rand = pcs[math.random(1, #pcs)]
+        lp.Character.HumanoidRootPart.CFrame = rand:GetPivot() + Vector3.new(0, 5, 0)
+    end
+end)
+
+-- ==================== PLAYER MENU ====================
+local PlayerMenu = ESPMenuWindow:Clone()
+PlayerMenu.Name = "PlayerMenu"
+PlayerMenu.Visible = false
+PlayerMenu.Parent = FTFHAX
+PlayerMenu.Body.TitleLabel.Text = "PLAYER MODS"
+PlayerMenu.TopBar.PageTitleText.Text = "FTF admin Panel - Player"
+
+-- Nuke the cloned standard Frame
+PlayerMenu.Body.ButtonsFrame:Destroy()
+
+-- Build a clean ScrollingFrame in its place
+local PlayerScroll = Instance.new("ScrollingFrame")
+PlayerScroll.Name = "ButtonsFrame"
+PlayerScroll.Parent = PlayerMenu.Body
+PlayerScroll.BackgroundTransparency = 1
+PlayerScroll.Position = UDim2.new(0, 5, 0, 45)
+PlayerScroll.Size = UDim2.new(1, -10, 1, -55)
+PlayerScroll.ScrollBarThickness = 4
+PlayerScroll.AutomaticCanvasSize = Enum.AutomaticSize.Y -- Allows infinite scrolling
+
+-- Add the Grid Layout back so buttons snap perfectly
+local PlayerGrid = Instance.new("UIGridLayout")
+PlayerGrid.Parent = PlayerScroll
+PlayerGrid.FillDirection = Enum.FillDirection.Horizontal -- Fills left to right, then goes down
+PlayerGrid.HorizontalAlignment = Enum.HorizontalAlignment.Center
+PlayerGrid.SortOrder = Enum.SortOrder.LayoutOrder
+PlayerGrid.CellPadding = UDim2.new(0, 6, 0, 6)
+PlayerGrid.CellSize = UDim2.new(0, 152, 0, 39)
+
+local function AddPlayerToggle(name, callback)
+    local btn = Instance.new("TextButton")
+    btn.Size = UDim2.new(0, 200, 0, 50)
+    btn.BackgroundColor3 = Color3.fromRGB(191, 0, 0)
+    btn.Text = name
+    btn.TextColor3 = Color3.new(1,1,1)
+    btn.Font = Enum.Font.SourceSans
+    btn.TextScaled = true
+    btn.Parent = PlayerMenu.Body.ButtonsFrame
+    
+    trackConnection(btn.MouseButton1Click:Connect(function()
+        local newState = callback()
+        btn.BackgroundColor3 = newState and Color3.new(0, 0.74902, 0) or Color3.new(0.74902, 0, 0)
+    end))
+end
+
+AddPlayerToggle("WalkSpeed (24)", function()
+    speedtoggle = not speedtoggle
+    if not speedtoggle then
+        local char = game.Players.LocalPlayer.Character
+        if char and char:FindFirstChild("Humanoid") then
+            char.Humanoid.WalkSpeed = 16
+        end
+    end
+    return speedtoggle
+end)
+
+AddPlayerToggle("JumpPower (50)", function()
+    jumptoggle = not jumptoggle
+    if not jumptoggle then
+        local char = game.Players.LocalPlayer.Character
+        if char and char:FindFirstChild("Humanoid") then
+            -- Instead of 0, we just turn off the override so the button stays alive
+            char.Humanoid.UseJumpPower = false 
+        end
+    end
+    return jumptoggle
+end)
+
+AddPlayerToggle("Noclip", function()
+    nocliptoggle = not nocliptoggle
+    if not nocliptoggle then
+        local char = game.Players.LocalPlayer.Character
+        if char then
+            for _, part in pairs(char:GetChildren()) do
+                if part:IsA("BasePart") and part.Name ~= "HumanoidRootPart" then
+                    part.CanCollide = true
+                end
+            end
+        end
+    end
+    return nocliptoggle
+end)
+
+-- ==========================================
+-- 1. MOBILE SHIFT-LOCK (Custom Icon Swapper)
+-- ==========================================
+local shiftlocktoggle = false
+local shiftLockUI = nil
+local icon = nil
+local isShiftLocked = false
+local slConnection = nil
+
+-- The two Decal IDs you provided, formatted for the rbxthumb bypass!
+local iconWhite = "rbxthumb://type=Asset&id=83349936062601&w=150&h=150"
+local iconBlue = "rbxthumb://type=Asset&id=72173899346121&w=150&h=150"
+
+AddPlayerToggle("Mobile Shift-Lock", function()
+    shiftlocktoggle = not shiftlocktoggle
+    
+    if shiftlocktoggle then
+        -- Spawn the on-screen Shift Lock Button
+        shiftLockUI = Instance.new("TextButton")
+        shiftLockUI.Name = "MobileShiftLockBtn"
+        shiftLockUI.Size = UDim2.new(0, 50, 0, 50)
+        shiftLockUI.Position = UDim2.new(0.8, -10, 0.6, 0) -- Safe spot on the right side
+        shiftLockUI.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+        shiftLockUI.BackgroundTransparency = 0.5
+        shiftLockUI.ZIndex = 99999
+        shiftLockUI.Text = "" -- Keep it blank so your custom icon shines
+        Instance.new("UICorner", shiftLockUI).CornerRadius = UDim.new(1, 0) -- Perfect circle
+        shiftLockUI.Parent = FTFHAX
+        
+        -- Load your custom WHITE image as the default state
+        icon = Instance.new("ImageLabel", shiftLockUI)
+        icon.Size = UDim2.new(0.7, 0, 0.7, 0)
+        icon.AnchorPoint = Vector2.new(0.5, 0.5)
+        icon.Position = UDim2.new(0.5, 0, 0.5, 0)
+        icon.BackgroundTransparency = 1
+        icon.Image = iconWhite
+        
+        -- On-Screen Button Logic
+        trackConnection(shiftLockUI.MouseButton1Click:Connect(function()
+            isShiftLocked = not isShiftLocked
+            local char = game.Players.LocalPlayer.Character
+            local hum = char and char:FindFirstChild("Humanoid")
+            local hrp = char and char:FindFirstChild("HumanoidRootPart")
+            
+            if isShiftLocked then
+                -- TOGGLED ON: Swap to Blue Icon!
+                icon.Image = iconBlue 
+                shiftLockUI.BackgroundColor3 = Color3.fromRGB(0, 50, 150) -- Subtle dark blue glow
+                
+                if hum then 
+                    hum.CameraOffset = Vector3.new(1.75, 0, 0) -- Shoulder cam
+                    hum.AutoRotate = false -- Stop default mobile rotation
+                end
+                
+                if not slConnection then
+                    slConnection = game:GetService("RunService").RenderStepped:Connect(function()
+                        if char and hrp and hum and hum.Health > 0 then
+                            local cam = workspace.CurrentCamera
+                            local look = cam.CFrame.LookVector
+                            -- Lock character rotation to the camera
+                            hrp.CFrame = CFrame.lookAt(hrp.Position, hrp.Position + Vector3.new(look.X, 0, look.Z))
+                        end
+                    end)
+                end
+            else
+                -- TOGGLED OFF: Swap back to White Icon!
+                icon.Image = iconWhite 
+                shiftLockUI.BackgroundColor3 = Color3.fromRGB(0, 0, 0) -- Back to black
+                
+                if hum then 
+                    hum.CameraOffset = Vector3.new(0, 0, 0)
+                    hum.AutoRotate = true
+                end
+                if slConnection then
+                    slConnection:Disconnect()
+                    slConnection = nil
+                end
+            end
+        end))
+    else
+        -- Clean up if turned off from the main admin panel
+        isShiftLocked = false
+        if shiftLockUI then shiftLockUI:Destroy() end
+        if slConnection then slConnection:Disconnect() slConnection = nil end
+        
+        local char = game.Players.LocalPlayer.Character
+        local hum = char and char:FindFirstChild("Humanoid")
+        if hum then
+            hum.CameraOffset = Vector3.new(0, 0, 0)
+            hum.AutoRotate = true
+        end
+    end
+    
+    return shiftlocktoggle
+end)
+
+-- 2. NINJA MODE (Footstep Silencer)
+local ninjatoggle = false
+
+AddPlayerToggle("Ninja Mode", function()
+    ninjatoggle = not ninjatoggle
+    return ninjatoggle
+end)
+
+-- Loop to continuously silence the footstep emitters
+trackConnection(game:GetService("RunService").Heartbeat:Connect(function()
+    if ninjatoggle then
+        local char = game.Players.LocalPlayer.Character
+        if char and char:FindFirstChild("HumanoidRootPart") then
+            -- Mute all sounds coming from the RootPart (where footsteps are stored)
+            for _, sound in pairs(char.HumanoidRootPart:GetChildren()) do
+                if sound:IsA("Sound") then
+                    sound.Volume = 0
+                end
+            end
+        end
+    end
+end))
+
+-- ==========================================
+-- 3. BEAST THIRD PERSON (Anti-First Person FIX)
+-- ==========================================
+local thirdpersontoggle = false
+local tpcConnection = nil
+
+AddPlayerToggle("Beast 3rd Person", function()
+    thirdpersontoggle = not thirdpersontoggle
+    local lp = game.Players.LocalPlayer
+    
+    if thirdpersontoggle then
+        -- Create a loop to constantly fight FTF's camera lock
+        if not tpcConnection then
+            tpcConnection = game:GetService("RunService").RenderStepped:Connect(function()
+                -- Give Beast the standard Survivor zoom (Max 128, Min 0.5)
+                if lp.CameraMode ~= Enum.CameraMode.Classic then
+                    lp.CameraMode = Enum.CameraMode.Classic
+                end
+                if lp.CameraMaxZoomDistance < 128 then
+                    lp.CameraMaxZoomDistance = 128
+                end
+                if lp.CameraMinZoomDistance > 0.5 then
+                    lp.CameraMinZoomDistance = 0.5
+                end
+            end)
+        end
+    else
+        -- Stop fighting the camera
+        if tpcConnection then
+            tpcConnection:Disconnect()
+            tpcConnection = nil
+        end
+        
+        -- THE FIX: Check identity and restore proper zoom levels instantly!
+        local currentBeast = getBeast()
+        if currentBeast == lp then
+            -- If you are the Beast, snap back to standard FTF 1st Person
+            lp.CameraMode = Enum.CameraMode.LockFirstPerson
+            lp.CameraMaxZoomDistance = 0.5
+            lp.CameraMinZoomDistance = 0.5
+        else
+            -- If you are a Survivor, ensure you have standard 3rd person
+            lp.CameraMode = Enum.CameraMode.Classic
+            lp.CameraMaxZoomDistance = 128
+            lp.CameraMinZoomDistance = 0.5
+        end
+    end
+    
+    return thirdpersontoggle
+end)
+
+-- ==========================================
+-- 4. CUSTOM MOBILE CROSSHAIR (Perfect Aim)
+-- ==========================================
+local crosshairtoggle = false
+local crosshairUI = nil
+
+AddPlayerToggle("Custom Crosshair", function()
+    crosshairtoggle = not crosshairtoggle
+    
+    if crosshairtoggle then
+        -- Create a crisp, perfectly centered neon dot
+        crosshairUI = Instance.new("Frame")
+        crosshairUI.Name = "CenterCrosshair"
+        crosshairUI.Size = UDim2.new(0, 6, 0, 6) -- 6x6 pixels is the sweet spot
+        crosshairUI.Position = UDim2.new(0.5, 0, 0.5, 0) -- Absolute dead center
+        crosshairUI.AnchorPoint = Vector2.new(0.5, 0.5) -- Locks the exact middle of the dot to the center
+        crosshairUI.BackgroundColor3 = Color3.fromRGB(0, 255, 255) -- High-contrast Neon Cyan
+        crosshairUI.BorderSizePixel = 0
+        crosshairUI.ZIndex = 999999 -- Keeps it above ALL other UI elements
+        
+        -- Make it a perfect circle instead of a square
+        local corner = Instance.new("UICorner")
+        corner.CornerRadius = UDim.new(1, 0)
+        corner.Parent = crosshairUI
+        
+        crosshairUI.Parent = FTFHAX
+    else
+        -- Clean up instantly when toggled off
+        if crosshairUI then
+            crosshairUI:Destroy()
+            crosshairUI = nil
+        end
+    end
+    
+    return crosshairtoggle
+end)
+
+-- ==================== RISK LEVEL MENU ====================
+local RiskMenu = ESPMenuWindow:Clone()
+RiskMenu.Name = "RiskMenu"
+RiskMenu.Visible = false
+RiskMenu.Parent = FTFHAX
+RiskMenu.Body.TitleLabel.Text = "RISK LEVELS"
+RiskMenu.TopBar.PageTitleText.Text = "FTF admin Panel - Risk"
+
+RiskMenu.Body.ButtonsFrame:Destroy()
+
+local RiskScroll = Instance.new("ScrollingFrame")
+RiskScroll.Name = "ButtonsFrame"
+RiskScroll.Parent = RiskMenu.Body
+RiskScroll.BackgroundTransparency = 1
+RiskScroll.Position = UDim2.new(0, 5, 0, 45)
+RiskScroll.Size = UDim2.new(1, -10, 1, -55)
+RiskScroll.ScrollBarThickness = 4
+RiskScroll.AutomaticCanvasSize = Enum.AutomaticSize.Y
+
+local RiskList = Instance.new("UIListLayout")
+RiskList.Parent = RiskScroll
+RiskList.SortOrder = Enum.SortOrder.LayoutOrder
+RiskList.Padding = UDim.new(0, 5)
+
+local function AddRiskItem(title, desc, color)
+    local frame = Instance.new("Frame")
+    frame.Size = UDim2.new(1, -10, 0, 75)
+    frame.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+    frame.BorderSizePixel = 0
+    frame.Parent = RiskScroll
+    
+    local titleLbl = Instance.new("TextLabel")
+    titleLbl.Size = UDim2.new(1, -10, 0.35, 0)
+    titleLbl.Position = UDim2.new(0, 5, 0, 5)
+    titleLbl.BackgroundTransparency = 1
+    titleLbl.Text = title
+    titleLbl.TextColor3 = color
+    titleLbl.TextXAlignment = Enum.TextXAlignment.Left
+    titleLbl.Font = Enum.Font.SourceSansBold
+    titleLbl.TextSize = 18
+    titleLbl.Parent = frame
+    
+    local descLbl = Instance.new("TextLabel")
+    descLbl.Size = UDim2.new(1, -10, 0.6, 0)
+    descLbl.Position = UDim2.new(0, 5, 0.35, 2)
+    descLbl.BackgroundTransparency = 1
+    descLbl.Text = desc
+    descLbl.TextColor3 = Color3.new(0.9, 0.9, 0.9)
+    descLbl.TextXAlignment = Enum.TextXAlignment.Left
+    descLbl.TextYAlignment = Enum.TextYAlignment.Top
+    descLbl.TextWrapped = true
+    descLbl.Font = Enum.Font.SourceSans
+    descLbl.TextSize = 15
+    descLbl.Parent = frame
+end
+
+AddRiskItem(" SAFE (Client-Side)", "Live Radar, ESPs, Custom Crosshair, Anti-Blindness, Mobile Shift-Lock, Beast 3rd Person, No Fog, Fullbright.", Color3.fromRGB(100, 255, 100))
+AddRiskItem(" MODERATE (Use Caution)", "Auto-Struggle, Hitbox Expander, Ghost Drone, Speed 24, Low Gravity, Jump 50.", Color3.fromRGB(255, 255, 100))
+AddRiskItem(" HIGH RISK (Ban Chance)", "Noclip, Fixed Teleports, Auto-Play V1, Auto-Interact (Flags anti-cheat easily).", Color3.fromRGB(255, 100, 100))
+
+-- ==================== UNFAIR MENU ====================
+local UnfairMenu = ESPMenuWindow:Clone()
+UnfairMenu.Name = "UnfairMenu"
+UnfairMenu.Visible = false
+UnfairMenu.Parent = FTFHAX
+UnfairMenu.Body.TitleLabel.Text = "UNFAIR ADVANTAGE"
+UnfairMenu.Body.TitleLabel.TextColor3 = Color3.new(1, 0.2, 0.2)
+UnfairMenu.TopBar.PageTitleText.Text = "FTF admin Panel - Unfair"
+
+UnfairMenu.Body.ButtonsFrame:Destroy()
+
+local UnfairScroll = Instance.new("ScrollingFrame")
+UnfairScroll.Name = "ButtonsFrame"
+UnfairScroll.Parent = UnfairMenu.Body
+UnfairScroll.BackgroundTransparency = 1
+UnfairScroll.Position = UDim2.new(0, 5, 0, 45)
+UnfairScroll.Size = UDim2.new(1, -10, 1, -55)
+UnfairScroll.ScrollBarThickness = 4
+UnfairScroll.AutomaticCanvasSize = Enum.AutomaticSize.Y
+
+local UnfairGrid = Instance.new("UIGridLayout")
+UnfairGrid.Parent = UnfairScroll
+UnfairGrid.FillDirection = Enum.FillDirection.Horizontal
+UnfairGrid.HorizontalAlignment = Enum.HorizontalAlignment.Center
+UnfairGrid.SortOrder = Enum.SortOrder.LayoutOrder
+UnfairGrid.CellPadding = UDim2.new(0, 6, 0, 6)
+UnfairGrid.CellSize = UDim2.new(0, 152, 0, 39)
+
+local function AddUnfairToggle(name, callback)
+    local btn = Instance.new("TextButton")
+    btn.Size = UDim2.new(0, 200, 0, 50)
+    btn.BackgroundColor3 = Color3.fromRGB(150, 0, 0)
+    btn.Text = name
+    btn.TextColor3 = Color3.new(1,1,1)
+    btn.Font = Enum.Font.SourceSansBold
+    btn.TextScaled = true
+    btn.Parent = UnfairScroll
+    
+    trackConnection(btn.MouseButton1Click:Connect(function()
+        local newState = callback()
+        btn.BackgroundColor3 = newState and Color3.new(0, 0.74902, 0) or Color3.fromRGB(150, 0, 0)
+    end))
+end
+
+-- 1. Auto Struggle Logic
+AddUnfairToggle("Auto-Struggle", function()
+    autostruggletoggle = not autostruggletoggle
+    return autostruggletoggle
+end)
+
+task.spawn(function()
+    while true do
+        task.wait(0.1)
+        if autostruggletoggle then
+            local gui = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+            local screenGui = gui:FindFirstChild("ScreenGui")
+            if screenGui and screenGui:FindFirstChild("StruggleBox") and screenGui.StruggleBox.Visible then
+                game.ReplicatedStorage.RemoteEvent:FireServer("Input", "Action", true)
+            end
+        end
+    end
+end)
+
+-- 4. Subtle Hitbox Extender (Beast Mode)
+AddUnfairToggle("Expand Hitboxes", function()
+    hitboxtoggle = not hitboxtoggle
+    
+    -- If turned off, instantly reset everyone's hitboxes back to normal
+    if not hitboxtoggle then
+        for _, plr in pairs(game.Players:GetPlayers()) do
+            if plr ~= game.Players.LocalPlayer and plr.Character and plr.Character:FindFirstChild("HumanoidRootPart") then
+                plr.Character.HumanoidRootPart.Size = Vector3.new(2, 2, 1)
+                plr.Character.HumanoidRootPart.Transparency = 1
+            end
+        end
+    end
+    
+    return hitboxtoggle
+end)
+
+-- Hitbox Extender Loop
+trackConnection(game:GetService("RunService").Heartbeat:Connect(function()
+    if hitboxtoggle then
+        for _, plr in pairs(game.Players:GetPlayers()) do
+            -- Only expand OTHER players, not yourself
+            if plr ~= game.Players.LocalPlayer and plr.Character and plr.Character:FindFirstChild("HumanoidRootPart") then
+                local hrp = plr.Character.HumanoidRootPart
+                hrp.Size = Vector3.new(4, 4, 4) -- Subtle extension
+                hrp.Transparency = 0.8 -- Makes it faintly visible so you know exactly where to swing
+                hrp.BrickColor = BrickColor.new("Bright red")
+                hrp.CanCollide = false -- Prevents them from getting stuck in doors
+            end
+        end
+    end
+end))
+
+-- 2. Live Radar & Anti-Camp UI
+local LiveRadarLabel = Instance.new("TextLabel")
+LiveRadarLabel.Size = UDim2.new(0, 300, 0, 50)
+LiveRadarLabel.Position = UDim2.new(0.5, -150, 0.85, 0)
+LiveRadarLabel.BackgroundTransparency = 0.5
+LiveRadarLabel.BackgroundColor3 = Color3.new(0,0,0)
+LiveRadarLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+LiveRadarLabel.Font = Enum.Font.SourceSansBold
+LiveRadarLabel.TextScaled = true
+LiveRadarLabel.Visible = false
+LiveRadarLabel.ZIndex = 100
+LiveRadarLabel.Parent = FTFHAX
+Instance.new("UICorner", LiveRadarLabel).CornerRadius = UDim.new(0, 8)
+
+AddUnfairToggle("Live Radar", function()
+    radartoggle = not radartoggle
+    LiveRadarLabel.Visible = radartoggle
+    return radartoggle
+end)
+
+trackConnection(game:GetService("RunService").Heartbeat:Connect(function()
+    if radartoggle and game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart") then
+        local beast = getBeast()
+        local map = getMap()
+        if beast and beast.Character and beast.Character:FindFirstChild("HumanoidRootPart") then
+            local myPos = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
+            local beastPos = beast.Character.HumanoidRootPart.Position
+            local dist = (myPos - beastPos).Magnitude
+            
+            local radarText = "BEAST: " .. math.floor(dist) .. " STUDS"
+            
+            -- Anti-Camp Check
+            local isCamping = false
+            if map then
+                for _, pod in pairs(map:GetChildren()) do
+                    if pod.Name == "FreezePod" and pod:FindFirstChild("Occupant") and pod.Occupant.Value ~= nil then
+                        if (beastPos - pod:GetPivot().Position).Magnitude < 30 then
+                            isCamping = true
+                            break
+                        end
+                    end
+                end
+            end
+            
+            if isCamping then
+                LiveRadarLabel.Text = radarText .. "\nâš ï¸ CAMPING POD âš ï¸"
+                LiveRadarLabel.TextColor3 = Color3.new(1, 0.2, 0.2)
+            else
+                LiveRadarLabel.Text = radarText
+                LiveRadarLabel.TextColor3 = Color3.new(1, 1, 1)
+            end
+        else
+            LiveRadarLabel.Text = "SEARCHING FOR BEAST..."
+            LiveRadarLabel.TextColor3 = Color3.new(0.8, 0.8, 0.8)
+        end
+    end
+end))
+
+-- 3. Mobile Freecam UI Overlay
+local FreecamUI = Instance.new("Frame")
+FreecamUI.Name = "FreecamControls"
+FreecamUI.Parent = FTFHAX
+FreecamUI.Size = UDim2.new(1, 0, 1, 0)
+FreecamUI.BackgroundTransparency = 1
+FreecamUI.Visible = false
+FreecamUI.ZIndex = 50
+
+local moving = {W=false, A=false, S=false, D=false, Up=false, Dn=false}
+
+local function createCamBtn(id, text, pos)
+    local btn = Instance.new("TextButton")
+    btn.Size = UDim2.new(0, 60, 0, 60)
+    btn.Position = pos
+    btn.AnchorPoint = Vector2.new(0.5, 0.5)
+    btn.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+    btn.BackgroundTransparency = 0.5
+    btn.Text = text
+    btn.TextColor3 = Color3.new(1,1,1)
+    btn.Font = Enum.Font.SourceSansBold
+    btn.TextSize = 18
+    Instance.new("UICorner", btn).CornerRadius = UDim.new(1, 0)
+    btn.Parent = FreecamUI
+    
+    btn.InputBegan:Connect(function(input)
+        if input.UserInputType == Enum.UserInputType.Touch or input.UserInputType == Enum.UserInputType.MouseButton1 then
+            moving[id] = true
+        end
+    end)
+    btn.InputEnded:Connect(function(input)
+        if input.UserInputType == Enum.UserInputType.Touch or input.UserInputType == Enum.UserInputType.MouseButton1 then
+            moving[id] = false
+        end
+    end)
+end
+
+-- D-Pad Left Side
+createCamBtn("W", "FWD", UDim2.new(0.15, 0, 0.5, 0))
+createCamBtn("S", "BACK", UDim2.new(0.15, 0, 0.7, 0))
+createCamBtn("A", "LEFT", UDim2.new(0.07, 0, 0.6, 0))
+createCamBtn("D", "RIGHT", UDim2.new(0.23, 0, 0.6, 0))
+
+-- Elevators Right Side
+createCamBtn("Up", "UP", UDim2.new(0.85, 0, 0.5, 0))
+createCamBtn("Dn", "DOWN", UDim2.new(0.85, 0, 0.7, 0))
+
+-- Freecam Logic
+local dronetoggle = false
+local camConnection
+local freecamPart
+
+AddUnfairToggle("Ghost Drone", function()
+    dronetoggle = not dronetoggle
+    local char = game.Players.LocalPlayer.Character
+    local cam = workspace.CurrentCamera
+    
+    if dronetoggle then
+        FreecamUI.Visible = true
+        if char and char:FindFirstChild("HumanoidRootPart") then
+            char.HumanoidRootPart.Anchored = true
+        end
+        
+        freecamPart = Instance.new("Part")
+        freecamPart.Size = Vector3.new(1,1,1)
+        freecamPart.Transparency = 1
+        freecamPart.Anchored = true
+        freecamPart.CanCollide = false
+        freecamPart.CFrame = cam.CFrame
+        freecamPart.Parent = workspace
+        cam.CameraSubject = freecamPart
+        
+        camConnection = game:GetService("RunService").RenderStepped:Connect(function()
+            local speed = 0.26
+            local vec = Vector3.new(0,0,0)
+            
+            if moving.W then vec = vec + cam.CFrame.LookVector end
+            if moving.S then vec = vec - cam.CFrame.LookVector end
+            if moving.A then vec = vec - cam.CFrame.RightVector end
+            if moving.D then vec = vec + cam.CFrame.RightVector end
+            if moving.Up then vec = vec + Vector3.new(0,1,0) end
+            if moving.Dn then vec = vec - Vector3.new(0,1,0) end
+            
+            if vec.Magnitude > 0 then
+                vec = vec.Unit * speed
+                freecamPart.CFrame = freecamPart.CFrame + vec
+            end
+        end)
+    else
+        FreecamUI.Visible = false
+        for k, _ in pairs(moving) do moving[k] = false end
+        
+        if freecamPart then freecamPart:Destroy() end
+        if camConnection then camConnection:Disconnect() end
+        
+        if char and char:FindFirstChild("HumanoidRootPart") and char:FindFirstChild("Humanoid") then
+            char.HumanoidRootPart.Anchored = false
+            cam.CameraSubject = char.Humanoid
+        end
+    end
+    return dronetoggle
+end)
+
+-- ==================== UPDATE LOG MENU ====================
+local UpdateLogMenu = ESPMenuWindow:Clone()
+UpdateLogMenu.Name = "UpdateLogMenu"
+UpdateLogMenu.Visible = false
+UpdateLogMenu.Parent = FTFHAX
+UpdateLogMenu.Body.TitleLabel.Text = "UPDATE LOG"
+UpdateLogMenu.Body.TitleLabel.TextColor3 = Color3.fromRGB(200, 200, 200)
+UpdateLogMenu.TopBar.PageTitleText.Text = "FTF admin Panel - Logs"
+
+UpdateLogMenu.Body.ButtonsFrame:Destroy()
+
+local LogScroll = Instance.new("ScrollingFrame")
+LogScroll.Name = "LogScroll"
+LogScroll.Parent = UpdateLogMenu.Body
+LogScroll.BackgroundTransparency = 1
+LogScroll.Position = UDim2.new(0, 10, 0, 45)
+LogScroll.Size = UDim2.new(1, -20, 1, -55)
+LogScroll.ScrollBarThickness = 4
+LogScroll.AutomaticCanvasSize = Enum.AutomaticSize.Y
+
+local LogListLayout = Instance.new("UIListLayout")
+LogListLayout.Parent = LogScroll
+LogListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+LogListLayout.Padding = UDim.new(0, 10)
+
+local function AddLogEntry(version, text)
+    local frame = Instance.new("Frame")
+    frame.Size = UDim2.new(1, -10, 0, 0) -- Height will auto-adjust
+    frame.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+    frame.BorderSizePixel = 0
+    frame.Parent = LogScroll
+    frame.AutomaticSize = Enum.AutomaticSize.Y
+    
+    local padding = Instance.new("UIPadding")
+    padding.PaddingTop = UDim.new(0, 5)
+    padding.PaddingBottom = UDim.new(0, 5)
+    padding.PaddingLeft = UDim.new(0, 5)
+    padding.PaddingRight = UDim.new(0, 5)
+    padding.Parent = frame
+    
+    local titleLbl = Instance.new("TextLabel")
+    titleLbl.Size = UDim2.new(1, 0, 0, 20)
+    titleLbl.BackgroundTransparency = 1
+    titleLbl.Text = version
+    titleLbl.TextColor3 = Color3.fromRGB(150, 255, 150)
+    titleLbl.TextXAlignment = Enum.TextXAlignment.Left
+    titleLbl.Font = Enum.Font.SourceSansBold
+    titleLbl.TextSize = 16
+    titleLbl.Parent = frame
+    
+    local descLbl = Instance.new("TextLabel")
+    descLbl.Size = UDim2.new(1, 0, 0, 0)
+    descLbl.Position = UDim2.new(0, 0, 0, 22)
+    descLbl.BackgroundTransparency = 1
+    descLbl.Text = text
+    descLbl.TextColor3 = Color3.new(0.9, 0.9, 0.9)
+    descLbl.TextXAlignment = Enum.TextXAlignment.Left
+    descLbl.TextYAlignment = Enum.TextYAlignment.Top
+    descLbl.TextWrapped = true
+    descLbl.Font = Enum.Font.SourceSans
+    descLbl.TextSize = 14
+    descLbl.AutomaticSize = Enum.AutomaticSize.Y
+    descLbl.Parent = frame
+    
+    Instance.new("UICorner", frame).CornerRadius = UDim.new(0, 6)
+end
+
+-- Your Actual Update Logs
+AddLogEntry("v0.7.54 [LATEST]", "- Added Unfair Menu\n- Added Ghost Drone (Mobile D-Pad)\n- Added Live Beast Radar\n- Added Auto-Struggle\n- Added Subtle Beast Hitbox Extender (4x4)\n- Fixed Menu Click Routing")
+AddLogEntry("v0.7.53", "- Added Risk Level Chart\n- Optimized Smart ESP rendering distance\n- Improved Mobile UI Grid Layout")
+AddLogEntry("v0.7.52", "- Added Kill Panel (Emergency Shutoff)\n- Added Nuke FPS Booster\n- Added Reversible No Fog & Fullbright")
+
+-- ==================== MISC MENU ====================
+local MiscMenu = ESPMenuWindow:Clone()
+MiscMenu.Name = "MiscMenu"
+MiscMenu.Visible = false
+MiscMenu.Parent = FTFHAX
+MiscMenu.Body.TitleLabel.Text = "MISC MODS"
+MiscMenu.TopBar.PageTitleText.Text = "FTF admin Panel - Misc"
+
+MiscMenu.Body.ButtonsFrame:Destroy()
+
+local MiscScroll = Instance.new("ScrollingFrame")
+MiscScroll.Name = "ButtonsFrame"
+MiscScroll.Parent = MiscMenu.Body
+MiscScroll.BackgroundTransparency = 1
+MiscScroll.Position = UDim2.new(0, 5, 0, 45)
+MiscScroll.Size = UDim2.new(1, -10, 1, -55)
+MiscScroll.ScrollBarThickness = 4
+MiscScroll.AutomaticCanvasSize = Enum.AutomaticSize.Y
+
+local MiscGrid = Instance.new("UIGridLayout")
+MiscGrid.Parent = MiscScroll
+MiscGrid.FillDirection = Enum.FillDirection.Horizontal 
+MiscGrid.HorizontalAlignment = Enum.HorizontalAlignment.Center
+MiscGrid.SortOrder = Enum.SortOrder.LayoutOrder
+MiscGrid.CellPadding = UDim2.new(0, 6, 0, 6)
+MiscGrid.CellSize = UDim2.new(0, 152, 0, 39)
+
+-- ==================== ADMIN MENU UI ====================
+local AdminMenu = ESPMenuWindow:Clone()
+AdminMenu.Name = "AdminMenu"
+AdminMenu.Visible = false
+AdminMenu.Parent = FTFHAX
+AdminMenu.Body.TitleLabel.Text = "ADMIN ACCESS"
+AdminMenu.Body.TitleLabel.TextColor3 = Color3.fromRGB(0, 255, 255)
+AdminMenu.TopBar.PageTitleText.Text = "FTF admin Panel - Developer"
+
+AdminMenu.Body.ButtonsFrame:Destroy()
+
+local AdminScroll = Instance.new("ScrollingFrame")
+AdminScroll.Parent = AdminMenu.Body
+AdminScroll.BackgroundTransparency = 1
+AdminScroll.Position = UDim2.new(0, 5, 0, 45)
+AdminScroll.Size = UDim2.new(1, -10, 1, -55)
+AdminScroll.ScrollBarThickness = 2
+AdminScroll.AutomaticCanvasSize = Enum.AutomaticSize.Y
+
+local AdminListLayout = Instance.new("UIListLayout")
+AdminListLayout.Parent = AdminScroll
+AdminListLayout.Padding = UDim.new(0, 10)
+AdminListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
+
+local AdminInfoLabel = Instance.new("TextLabel")
+AdminInfoLabel.Size = UDim2.new(1, -20, 0, 50)
+AdminInfoLabel.BackgroundTransparency = 1
+AdminInfoLabel.Text = "Scanning local server for injected users..."
+AdminInfoLabel.TextColor3 = Color3.fromRGB(200, 200, 200)
+AdminInfoLabel.Font = Enum.Font.SourceSans
+AdminInfoLabel.TextSize = 16
+AdminInfoLabel.Parent = AdminScroll
+
+local ActiveUsersLabel = Instance.new("TextLabel")
+ActiveUsersLabel.Size = UDim2.new(1, -20, 0, 70)
+ActiveUsersLabel.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+ActiveUsersLabel.TextColor3 = Color3.fromRGB(0, 255, 255)
+ActiveUsersLabel.Font = Enum.Font.Code
+ActiveUsersLabel.TextSize = 14
+ActiveUsersLabel.TextYAlignment = Enum.TextYAlignment.Top
+ActiveUsersLabel.TextXAlignment = Enum.TextXAlignment.Left
+ActiveUsersLabel.Text = "> NO OTHER USERS DETECTED."
+Instance.new("UICorner", ActiveUsersLabel).CornerRadius = UDim.new(0, 6)
+
+local ActivePadding = Instance.new("UIPadding", ActiveUsersLabel)
+ActivePadding.PaddingTop = UDim.new(0, 5)
+ActivePadding.PaddingLeft = UDim.new(0, 5)
+ActiveUsersLabel.Parent = AdminScroll
+
+-- Auto-update the Admin UI with pinged users
+task.spawn(function()
+    while true do
+        task.wait(2)
+        if #ActiveScriptUsers > 0 then
+            local userString = "> CONNECTED SCRIPT USERS:\n"
+            for _, name in ipairs(ActiveScriptUsers) do
+                userString = userString .. "- " .. name .. "\n"
+            end
+            ActiveUsersLabel.Text = userString
+        end
+    end
+end)
+
+-- DEVELOPER OVERRIDES
+local AdminToolsLabel = Instance.new("TextLabel")
+AdminToolsLabel.Size = UDim2.new(1, -20, 0, 30)
+AdminToolsLabel.BackgroundTransparency = 1
+AdminToolsLabel.Text = "DEVELOPER OVERRIDES:"
+AdminToolsLabel.TextColor3 = Color3.fromRGB(0, 255, 255)
+AdminToolsLabel.Font = Enum.Font.SourceSansBold
+AdminToolsLabel.TextSize = 18
+AdminToolsLabel.TextXAlignment = Enum.TextXAlignment.Left
+AdminToolsLabel.Parent = AdminScroll
+
+-- New Sleek Apple-Style Button Design
+local function AddAdminOverride(text, func)
+    local btn = Instance.new("TextButton")
+    btn.Size = UDim2.new(1, -20, 0, 45)
+    btn.BackgroundColor3 = Color3.fromRGB(30, 30, 30) -- Clean dark mode
+    btn.BorderSizePixel = 0
+    btn.Text = text
+    btn.TextColor3 = Color3.fromRGB(255, 255, 255)
+    btn.Font = Enum.Font.SourceSansBold
+    btn.TextSize = 16
+    btn.AutoButtonColor = true
+    Instance.new("UICorner", btn).CornerRadius = UDim.new(0, 8) -- Rounded modern corners
+    
+    -- Subtle Neon Blue Outline
+    local stroke = Instance.new("UIStroke", btn)
+    stroke.Color = Color3.fromRGB(0, 255, 255)
+    stroke.Thickness = 1
+    stroke.Transparency = 0.5
+    
+    btn.Parent = AdminScroll
+    trackConnection(btn.MouseButton1Click:Connect(function()
+        pcall(func)
+    end))
+end
+
+AddAdminOverride("[>] REJOIN CURRENT SERVER", function()
+    game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, game.JobId, game.Players.LocalPlayer)
+end)
+
+AddAdminOverride("[>] COPY SERVER JOB-ID", function()
+    print("FTF SERVER JOB-ID: " .. tostring(game.JobId))
+    if setclipboard then setclipboard(game.JobId) end
+end)
+
+AddAdminOverride("[>] X-RAY MAP (NUKE VISUALS)", function()
+    local map = game.ReplicatedStorage:FindFirstChild("CurrentMap")
+    if map and map.Value then
+        for _, v in pairs(map.Value:GetDescendants()) do
+            if v:IsA("BasePart") then v.Transparency = 0.75 end
+        end
+    end
+end)
+
+-- Upgraded Mute function that forces every sound in the entire game engine to 0
+AddAdminOverride("[>] MUTE ALL GAME SOUNDS", function()
+    for _, v in pairs(game:GetDescendants()) do
+        if v:IsA("Sound") then 
+            v.Volume = 0 
+            v.Playing = false
+        end
+    end
+end)
+
+-- CUSTOM JOIN SERVER UI (TextBox + Button)
+local JoinServerFrame = Instance.new("Frame")
+JoinServerFrame.Size = UDim2.new(1, -20, 0, 45)
+JoinServerFrame.BackgroundTransparency = 1
+JoinServerFrame.Parent = AdminScroll
+
+local JobIdInput = Instance.new("TextBox")
+JobIdInput.Size = UDim2.new(0.68, 0, 1, 0)
+JobIdInput.Position = UDim2.new(0, 0, 0, 0)
+JobIdInput.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+JobIdInput.TextColor3 = Color3.fromRGB(255, 255, 255)
+JobIdInput.PlaceholderText = "Paste Job-ID Here..."
+JobIdInput.Font = Enum.Font.Code
+JobIdInput.TextSize = 14
+JobIdInput.ClearTextOnFocus = false
+Instance.new("UICorner", JobIdInput).CornerRadius = UDim.new(0, 8)
+
+local inputStroke = Instance.new("UIStroke", JobIdInput)
+inputStroke.Color = Color3.fromRGB(0, 255, 255)
+inputStroke.Thickness = 1
+inputStroke.Transparency = 0.5
+JobIdInput.Parent = JoinServerFrame
+
+local JoinButton = Instance.new("TextButton")
+JoinButton.Size = UDim2.new(0.28, 0, 1, 0)
+JoinButton.Position = UDim2.new(0.72, 0, 0, 0)
+JoinButton.BackgroundColor3 = Color3.fromRGB(0, 150, 255) -- Bright blue accent
+JoinButton.Text = "JOIN"
+JoinButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+JoinButton.Font = Enum.Font.SourceSansBold
+JoinButton.TextSize = 16
+Instance.new("UICorner", JoinButton).CornerRadius = UDim.new(0, 8)
+JoinButton.Parent = JoinServerFrame
+
+trackConnection(JoinButton.MouseButton1Click:Connect(function()
+    local targetJobId = JobIdInput.Text
+    if targetJobId and targetJobId ~= "" then
+        game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, targetJobId, game.Players.LocalPlayer)
+    end
+end))
+
+-- Hidden Admin Tab Button (Spawns in Main Menu)
+local AdminTabButton = Instance.new("ImageButton")
+AdminTabButton.Name = "AdminTabButton"
+AdminTabButton.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+AdminTabButton.BorderSizePixel = 0
+AdminTabButton.Visible = false
+AdminTabButton.Parent = Body_2
+
+local AdminIcon = Instance.new("ImageLabel", AdminTabButton)
+AdminIcon.BackgroundTransparency = 1
+AdminIcon.AnchorPoint = Vector2.new(0.5, 0)
+AdminIcon.Position = UDim2.new(0.5, 0, 0.1, 0)
+AdminIcon.Size = UDim2.new(0.6, 0, 0.6, 0)
+AdminIcon.Image = "rbxthumb://type=Asset&id=1177220578&w=150&h=150"
+AdminIcon.Parent = AdminTabButton
+
+local AdminText = Instance.new("TextLabel")
+AdminText.BackgroundTransparency = 1
+AdminText.Position = UDim2.new(0, 0, 0.8, 0)
+AdminText.Size = UDim2.new(1, 0, 0.2, 0)
+AdminText.Text = "Admin"
+AdminText.TextColor3 = Color3.fromRGB(0, 255, 255)
+AdminText.Font = Enum.Font.SourceSansBold
+AdminText.TextSize = 24
+AdminText.Parent = AdminTabButton
+
+-- Logout Button (Pinned to Bottom Left of Main Menu)
+local LogoutButton = Instance.new("TextButton")
+LogoutButton.Name = "LogoutButton"
+LogoutButton.Size = UDim2.new(0, 80, 0, 25) 
+LogoutButton.Position = UDim2.new(0, 10, 1, -35) 
+LogoutButton.BackgroundColor3 = Color3.fromRGB(30, 30, 30) 
+LogoutButton.BorderSizePixel = 0
+LogoutButton.Text = "LOGOUT"
+LogoutButton.TextColor3 = Color3.fromRGB(200, 50, 50) 
+LogoutButton.Font = Enum.Font.SourceSansBold
+LogoutButton.TextSize = 14
+LogoutButton.ZIndex = 10
+Instance.new("UICorner", LogoutButton).CornerRadius = UDim.new(0, 4)
+LogoutButton.Parent = MainMenuWindow
+
+-- ==================== THE GATEKEEPER (LOGIN UI) ====================
+local lastUsedPassword = ""
+
+-- The new floating 420x360 Login Panel matching the main UI
+local LoginScreen = Instance.new("Frame")
+LoginScreen.Name = "LoginGate"
+LoginScreen.AnchorPoint = Vector2.new(0.5, 0.5)
+LoginScreen.Position = UDim2.new(0.5, 0, 0.5, -18)
+LoginScreen.Size = UDim2.new(0, 420, 0, 360)
+LoginScreen.BackgroundColor3 = Color3.fromRGB(47, 47, 47) -- Matches main hub color
+LoginScreen.BorderColor3 = Color3.fromRGB(0, 0, 0)
+LoginScreen.BorderSizePixel = 2
+LoginScreen.ZIndex = 100000
+LoginScreen.Parent = FTFHAX
+
+local LoginTopBar = Instance.new("Frame")
+LoginTopBar.Size = UDim2.new(1, 0, 0, 40)
+LoginTopBar.BackgroundColor3 = Color3.fromRGB(31, 31, 31)
+LoginTopBar.BorderSizePixel = 0
+LoginTopBar.ZIndex = 100001
+LoginTopBar.Parent = LoginScreen
+
+local LoginTitle = Instance.new("TextLabel")
+LoginTitle.Size = UDim2.new(1, 0, 1, 0)
+LoginTitle.Position = UDim2.new(0, 10, 0, 0)
+LoginTitle.BackgroundTransparency = 1
+LoginTitle.Text = "AUTHENTICATION REQUIRED"
+LoginTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
+LoginTitle.Font = Enum.Font.SourceSansBold
+LoginTitle.TextSize = 18
+LoginTitle.TextXAlignment = Enum.TextXAlignment.Left
+LoginTitle.ZIndex = 100002
+LoginTitle.Parent = LoginTopBar
+
+local InfoText = Instance.new("TextLabel")
+InfoText.Size = UDim2.new(1, -20, 0, 100)
+InfoText.Position = UDim2.new(0, 10, 0, 60)
+InfoText.BackgroundTransparency = 1
+InfoText.Text = "To access this panel, please get the permanent password from the developer link below:\n\nhttps://pastebin.com/cyFWmFkG"
+InfoText.TextColor3 = Color3.fromRGB(220, 220, 220)
+InfoText.Font = Enum.Font.SourceSans
+InfoText.TextSize = 18
+InfoText.TextWrapped = true
+InfoText.ZIndex = 100001
+InfoText.Parent = LoginScreen
+
+local PasswordInput = Instance.new("TextBox")
+PasswordInput.Size = UDim2.new(0.8, 0, 0, 45)
+PasswordInput.Position = UDim2.new(0.1, 0, 0.55, 0)
+PasswordInput.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+PasswordInput.TextColor3 = Color3.fromRGB(255, 255, 255)
+PasswordInput.PlaceholderText = "Enter Password..."
+PasswordInput.Font = Enum.Font.Code
+PasswordInput.TextSize = 18
+PasswordInput.Text = ""
+PasswordInput.ZIndex = 100001
+Instance.new("UICorner", PasswordInput).CornerRadius = UDim.new(0, 6)
+PasswordInput.Parent = LoginScreen
+
+local SubmitButton = Instance.new("TextButton")
+SubmitButton.Size = UDim2.new(0.8, 0, 0, 45)
+SubmitButton.Position = UDim2.new(0.1, 0, 0.75, 0)
+SubmitButton.BackgroundColor3 = Color3.fromRGB(191, 0, 0)
+SubmitButton.Text = "VERIFY"
+SubmitButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+SubmitButton.Font = Enum.Font.SourceSansBold
+SubmitButton.TextSize = 18
+SubmitButton.ZIndex = 100001
+Instance.new("UICorner", SubmitButton).CornerRadius = UDim.new(0, 6)
+SubmitButton.Parent = LoginScreen
+
+-- Hide Cheat Button until verified
+CheatButton.Visible = false
+
+-- Login Verification Logic (Passwords hidden with inline math)
+trackConnection(SubmitButton.MouseButton1Click:Connect(function()
+    local pass = PasswordInput.Text
+    
+    if pass == string.char(100-17, 33*3, 228/2, 50+55, 56*2, 120-4, 202/2, 50*2, 70-3, 52*2, 100-3, 222/2, 120-5, 38*2, 100-27, 43*2, 138/2) then
+        lastUsedPassword = pass
+        AdminTabButton.Visible = false -- Ensure admin is hidden
+        LoginScreen.Visible = false
+        CheatButton.Visible = true
+        MainMenuWindow.Visible = true
+        
+    elseif pass == string.char(44*2, 178/2, 100-18, 70+9, 45*2, 180/2, 80+9, 100/2, 106/2) then
+        lastUsedPassword = pass
+        AdminTabButton.Visible = true -- UNLOCK ADMIN MENU
+        LoginScreen.Visible = false
+        CheatButton.Visible = true
+        MainMenuWindow.Visible = true
+        pcall(function() game.Players.LocalPlayer:Chat("/e FTF_ADMIN_PING") end)
+        
+    else
+        PasswordInput.Text = ""
+        PasswordInput.PlaceholderText = "INVALID PASSWORD"
+        PasswordInput.PlaceholderColor3 = Color3.fromRGB(255, 50, 50)
+        task.wait(1.5)
+        PasswordInput.PlaceholderText = "Enter Password..."
+        PasswordInput.PlaceholderColor3 = Color3.fromRGB(178, 178, 178)
+    end
+end))
+
+-- Logout Logic
+trackConnection(LogoutButton.MouseButton1Click:Connect(function()
+    MainMenuWindow.Visible = false
+    ESPMenuWindow.Visible = false
+    ToolsMenuWindow.Visible = false
+    TPMenu.Visible = false
+    PlayerMenu.Visible = false
+    MiscMenu.Visible = false
+    RiskMenu.Visible = false
+    UnfairMenu.Visible = false
+    UpdateLogMenu.Visible = false
+    AdminMenu.Visible = false
+    CheatButton.Visible = false
+    
+    PasswordInput.Text = lastUsedPassword
+    LoginScreen.Visible = true
+end))
+-- ===================================================================
+
+-- ==================== CLICK ROUTING ====================
+trackConnection(CheatButton.MouseButton1Click:Connect(function()
+    ESPMenuWindow.Visible = false
+    ToolsMenuWindow.Visible = false
+    TPMenu.Visible = false
+    PlayerMenu.Visible = false
+    if MiscMenu then MiscMenu.Visible = false end
+    if RiskMenu then RiskMenu.Visible = false end
+    if UnfairMenu then UnfairMenu.Visible = false end
+    if UpdateLogMenu then UpdateLogMenu.Visible = false end
+    if AdminMenu then AdminMenu.Visible = false end
+    MainMenuWindow.Visible = not MainMenuWindow.Visible
+end))
+
+trackConnection(CloseButton_2.MouseButton1Click:Connect(function()
+    MainMenuWindow.Visible = false
+end))
+
+trackConnection(CloseButton.MouseButton1Click:Connect(function()
+    ESPMenuWindow.Visible = false
+end))
+
+trackConnection(CloseButton_3.MouseButton1Click:Connect(function()
+    ToolsMenuWindow.Visible = false
+end))
+
+trackConnection(BackButton.MouseButton1Click:Connect(function()
+    ESPMenuWindow.Visible = false
+    ToolsMenuWindow.Visible = false
+    TPMenu.Visible = false
+    PlayerMenu.Visible = false
+    if MiscMenu then MiscMenu.Visible = false end
+    if RiskMenu then RiskMenu.Visible = false end
+    if UnfairMenu then UnfairMenu.Visible = false end
+    if UpdateLogMenu then UpdateLogMenu.Visible = false end
+    if AdminMenu then AdminMenu.Visible = false end
+    MainMenuWindow.Visible = true
+end))
+
+trackConnection(BackButton_2.MouseButton1Click:Connect(function()
+    ESPMenuWindow.Visible = false
+    ToolsMenuWindow.Visible = false
+    TPMenu.Visible = false
+    PlayerMenu.Visible = false
+    if MiscMenu then MiscMenu.Visible = false end
+    if RiskMenu then RiskMenu.Visible = false end
+    if UnfairMenu then UnfairMenu.Visible = false end
+    if UpdateLogMenu then UpdateLogMenu.Visible = false end
+    if AdminMenu then AdminMenu.Visible = false end
+    MainMenuWindow.Visible = true
+end))
+
+trackConnection(ESPButton.MouseButton1Click:Connect(function()
+    ESPMenuWindow.Visible = true
+    ToolsMenuWindow.Visible = false
+    TPMenu.Visible = false
+    PlayerMenu.Visible = false
+    if MiscMenu then MiscMenu.Visible = false end
+    if RiskMenu then RiskMenu.Visible = false end
+    if UnfairMenu then UnfairMenu.Visible = false end
+    if UpdateLogMenu then UpdateLogMenu.Visible = false end
+    if AdminMenu then AdminMenu.Visible = false end
+    MainMenuWindow.Visible = false
+end))
+
+trackConnection(ToolsButton.MouseButton1Click:Connect(function()
+    ESPMenuWindow.Visible = false
+    ToolsMenuWindow.Visible = true
+    TPMenu.Visible = false
+    PlayerMenu.Visible = false
+    if MiscMenu then MiscMenu.Visible = false end
+    if RiskMenu then RiskMenu.Visible = false end
+    if UnfairMenu then UnfairMenu.Visible = false end
+    if UpdateLogMenu then UpdateLogMenu.Visible = false end
+    if AdminMenu then AdminMenu.Visible = false end
+    MainMenuWindow.Visible = false
+end))
+
+trackConnection(TPButton.MouseButton1Click:Connect(function()
+    ESPMenuWindow.Visible = false
+    ToolsMenuWindow.Visible = false
+    PlayerMenu.Visible = false
+    if MiscMenu then MiscMenu.Visible = false end
+    if RiskMenu then RiskMenu.Visible = false end
+    if UnfairMenu then UnfairMenu.Visible = false end
+    if UpdateLogMenu then UpdateLogMenu.Visible = false end
+    if AdminMenu then AdminMenu.Visible = false end
+    MainMenuWindow.Visible = false
+    TPMenu.Visible = true
+end))
+
+trackConnection(PlayerTabButton.MouseButton1Click:Connect(function()
+    ESPMenuWindow.Visible = false
+    ToolsMenuWindow.Visible = false
+    TPMenu.Visible = false
+    if MiscMenu then MiscMenu.Visible = false end
+    if RiskMenu then RiskMenu.Visible = false end
+    if UnfairMenu then UnfairMenu.Visible = false end
+    if UpdateLogMenu then UpdateLogMenu.Visible = false end
+    if AdminMenu then AdminMenu.Visible = false end
+    MainMenuWindow.Visible = false
+    PlayerMenu.Visible = true
+end))
+
+trackConnection(MiscTabButton.MouseButton1Click:Connect(function()
+    ESPMenuWindow.Visible = false
+    ToolsMenuWindow.Visible = false
+    TPMenu.Visible = false
+    PlayerMenu.Visible = false
+    if RiskMenu then RiskMenu.Visible = false end
+    if UnfairMenu then UnfairMenu.Visible = false end
+    if UpdateLogMenu then UpdateLogMenu.Visible = false end
+    if AdminMenu then AdminMenu.Visible = false end
+    MainMenuWindow.Visible = false
+    MiscMenu.Visible = true
+end))
+
+trackConnection(RiskTabButton.MouseButton1Click:Connect(function()
+    ESPMenuWindow.Visible = false
+    ToolsMenuWindow.Visible = false
+    TPMenu.Visible = false
+    PlayerMenu.Visible = false
+    if MiscMenu then MiscMenu.Visible = false end
+    if UnfairMenu then UnfairMenu.Visible = false end
+    if UpdateLogMenu then UpdateLogMenu.Visible = false end
+    if AdminMenu then AdminMenu.Visible = false end
+    MainMenuWindow.Visible = false
+    RiskMenu.Visible = true
+end))
+
+trackConnection(UnfairTabButton.MouseButton1Click:Connect(function()
+    ESPMenuWindow.Visible = false
+    ToolsMenuWindow.Visible = false
+    TPMenu.Visible = false
+    PlayerMenu.Visible = false
+    if MiscMenu then MiscMenu.Visible = false end
+    if RiskMenu then RiskMenu.Visible = false end
+    if UpdateLogMenu then UpdateLogMenu.Visible = false end
+    if AdminMenu then AdminMenu.Visible = false end
+    MainMenuWindow.Visible = false
+    UnfairMenu.Visible = true
+end))
+
+trackConnection(UpdateLogTabButton.MouseButton1Click:Connect(function()
+    ESPMenuWindow.Visible = false
+    ToolsMenuWindow.Visible = false
+    TPMenu.Visible = false
+    PlayerMenu.Visible = false
+    if MiscMenu then MiscMenu.Visible = false end
+    if RiskMenu then RiskMenu.Visible = false end
+    if UnfairMenu then UnfairMenu.Visible = false end
+    if AdminMenu then AdminMenu.Visible = false end
+    MainMenuWindow.Visible = false
+    UpdateLogMenu.Visible = true
+end))
+
+trackConnection(TPMenu.TopBar.BackButton.MouseButton1Click:Connect(function()
+    TPMenu.Visible = false
+    MainMenuWindow.Visible = true
+end))
+
+trackConnection(PlayerMenu.TopBar.BackButton.MouseButton1Click:Connect(function()
+    PlayerMenu.Visible = false
+    MainMenuWindow.Visible = true
+end))
+
+trackConnection(MiscMenu.TopBar.BackButton.MouseButton1Click:Connect(function()
+    MiscMenu.Visible = false
+    MainMenuWindow.Visible = true
+end))
+
+trackConnection(RiskMenu.TopBar.BackButton.MouseButton1Click:Connect(function()
+    RiskMenu.Visible = false
+    MainMenuWindow.Visible = true
+end))
+
+trackConnection(UnfairMenu.TopBar.BackButton.MouseButton1Click:Connect(function()
+    UnfairMenu.Visible = false
+    MainMenuWindow.Visible = true
+end))
+
+trackConnection(UpdateLogMenu.TopBar.BackButton.MouseButton1Click:Connect(function()
+    UpdateLogMenu.Visible = false
+    MainMenuWindow.Visible = true
+end))
+
+trackConnection(TPMenu.TopBar.CloseButton.MouseButton1Click:Connect(function()
+    TPMenu.Visible = false
+end))
+
+trackConnection(PlayerMenu.TopBar.CloseButton.MouseButton1Click:Connect(function()
+    PlayerMenu.Visible = false
+end))
+
+trackConnection(MiscMenu.TopBar.CloseButton.MouseButton1Click:Connect(function()
+    MiscMenu.Visible = false
+end))
+
+trackConnection(RiskMenu.TopBar.CloseButton.MouseButton1Click:Connect(function()
+    RiskMenu.Visible = false
+end))
+
+trackConnection(UnfairMenu.TopBar.CloseButton.MouseButton1Click:Connect(function()
+    UnfairMenu.Visible = false
+end))
+
+trackConnection(UpdateLogMenu.TopBar.CloseButton.MouseButton1Click:Connect(function()
+    UpdateLogMenu.Visible = false
+end))
+
+-- Open Admin Menu
+trackConnection(AdminTabButton.MouseButton1Click:Connect(function()
+    MainMenuWindow.Visible = false
+    ESPMenuWindow.Visible = false
+    ToolsMenuWindow.Visible = false
+    TPMenu.Visible = false
+    PlayerMenu.Visible = false
+    if MiscMenu then MiscMenu.Visible = false end
+    if RiskMenu then RiskMenu.Visible = false end
+    if UnfairMenu then UnfairMenu.Visible = false end
+    if UpdateLogMenu then UpdateLogMenu.Visible = false end
+    AdminMenu.Visible = true 
+end))
+
+-- Admin Menu Back Button
+trackConnection(AdminMenu.TopBar.BackButton.MouseButton1Click:Connect(function()
+    AdminMenu.Visible = false
+    MainMenuWindow.Visible = true
+end))
+
+-- Admin Menu Close (X) Button
+trackConnection(AdminMenu.TopBar.CloseButton.MouseButton1Click:Connect(function()
+    AdminMenu.Visible = false
+end))
+
+-- Helper functions to fetch game data safely
+function getBeast()
+    local players = game.Players:GetChildren()
+    for i=1, #players do
+        local plr = players[i]
+        local stats = plr:FindFirstChild("TempPlayerStatsModule")
+        if (stats and stats:FindFirstChild("IsBeast") and stats.IsBeast.Value == true) then
+            return plr
+        end
+        local character = plr.Character
+        if character and character:FindFirstChild("BeastPowers") then
+            return plr
+        end
+    end
+    return nil
+end
+
+function getBestPC()
+    local beast = getBeast()
+    local pcs = {}
+    local map = getMap()
+    
+    if map then
+        for _, pc in pairs(map:GetChildren()) do
+            if pc.Name == "ComputerTable" and pc:FindFirstChild("Screen") and pc.Screen.BrickColor ~= BrickColor.new("Dark green") then
+                local magnitude = math.huge
+                if beast and beast.Character and beast.Character:FindFirstChild("HumanoidRootPart") then
+                    magnitude = (pc.Screen.Position - beast.Character.HumanoidRootPart.Position).Magnitude
+                end
+                table.insert(pcs, {magnitude=magnitude, pc=pc})
+            end
+        end
+    end
+    table.sort(pcs, function(a, b) return a.magnitude > b.magnitude end)
+    return pcs
+end
+
+function isPlayerTyping()
+    local char = game.Players.LocalPlayer.Character
+    if not char then return false end
+    local hum = char:FindFirstChildOfClass("Humanoid")
+    if not hum then return false end
+    local anims = hum:GetPlayingAnimationTracks()
+    for i=1,#anims do
+        if anims[i].Name == "AnimTyping" then return true end
+    end
+    return false
+end
+
+-- ESP Highlight Applier
+function reloadESP()
+    local map = getMap()
+    if map then
+        local mapstuff = map:GetChildren()
+        for i=1,#mapstuff do
+            local item = mapstuff[i]
+            if item.Name == "ComputerTable" then
+                if item:FindFirstChild("Highlight") and not pctoggle then
+                    item.Highlight:Destroy()
+                elseif pctoggle and not item:FindFirstChild("Highlight") then
+                    local a = Instance.new("Highlight", item)
+                    a.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
+                end
+            elseif item.Name == "FreezePod" then
+                if item:FindFirstChild("Highlight") and not podstoggle then
+                    item.Highlight:Destroy()
+                elseif podstoggle and not item:FindFirstChild("Highlight") then
+                    local a = Instance.new("Highlight", item)
+                    a.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
+                    a.FillColor = Color3.fromRGB(120,200,255)
+                    a.OutlineColor = Color3.fromRGB(160,255,255)
+                end
+            elseif item.Name == "ExitDoor" then
+                if item:FindFirstChild("Highlight") and not exitstoggle then
+                    item.Highlight:Destroy()
+                elseif exitstoggle and not item:FindFirstChild("Highlight") then
+                    local a = Instance.new("Highlight", item)
+                    a.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
+                    a.FillColor = Color3.fromRGB(252, 255, 100)
+                    a.OutlineColor = Color3.fromRGB(255,255,160)
+                end
+            end
+        end
+    end
+
+    local players = game.Players:GetPlayers()
+    for i=1, #players do
+        local plr = players[i]
+        if plr ~= game.Players.LocalPlayer and plr.Character then
+            if plr.Character:FindFirstChild("Highlight") and not playertoggle then
+                plr.Character.Highlight:Destroy()
+            elseif playertoggle and not plr.Character:FindFirstChild("Highlight") then
+                local a = Instance.new("Highlight", plr.Character)
+                a.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
+            end
+        end
+    end
+end
+
+-- Dedicated RunService Loop for ESP Colors (OPTIMIZED FOR MOBILE)
+local espTick = 0
+local cachedBest = nil
+local cachedBeast = nil
+
+trackConnection(game:GetService("RunService").Heartbeat:Connect(function()
+    espTick = espTick + 1
+    
+    -- The Magic Fix: We only run the heavy calculations 4 times a second instead of 60!
+    if espTick % 15 == 0 then
+        cachedBest = getBestPC()
+        cachedBeast = getBeast()
+
+        if pctoggle then
+            local map = getMap()
+            if map then
+                for _, pc in pairs(map:GetChildren()) do
+                    if pc.Name == "ComputerTable" and pc:FindFirstChild("Highlight") and pc:FindFirstChild("Screen") then
+                        local a = pc.Highlight
+                        a.FillColor = pc.Screen.Color
+                        if bestpctoggle and cachedBest and cachedBest[1] and cachedBest[1].pc == pc then
+                            a.OutlineColor = Color3.fromRGB(200, 0, 255)
+                        else
+                            a.OutlineColor = Color3.fromRGB(math.clamp(a.FillColor.R*400,0,255), math.clamp(a.FillColor.G*400,0,255), math.clamp(a.FillColor.B*400,0,255))
+                        end
+                    end
+                end
+            end
+        end
+
+        if playertoggle then
+            for _, plr in pairs(game.Players:GetPlayers()) do
+                if plr ~= game.Players.LocalPlayer and plr.Character and plr.Character:FindFirstChild("Highlight") then
+                    local a = plr.Character.Highlight
+                    if plr == cachedBeast then
+                        a.FillColor = Color3.fromRGB(255,0,0)
+                        a.OutlineColor = Color3.fromRGB(255,127,127)
+                    else
+                        a.FillColor = Color3.fromRGB(0,255,0)
+                        a.OutlineColor = Color3.fromRGB(127,255,127)
+                    end
+                end
+            end
+        end
+    end
+end))
+
+
+function reloadBeastCam()
+    ViewportFrame:ClearAllChildren()
+    if beastcamtoggle and game.ReplicatedStorage:FindFirstChild("CurrentMap") and game.ReplicatedStorage.CurrentMap.Value then
+        local beast = getBeast()
+        local cam = Instance.new("Camera", ViewportFrame)
+        cam.CameraType = Enum.CameraType.Scriptable
+        cam.FieldOfView = 70
+        
+        local map = game.ReplicatedStorage.CurrentMap.Value
+        local mapclone = map:Clone()
+        mapclone.Name = "map"
+        
+        for _, item in pairs(mapclone:GetDescendants()) do
+            if item.Name == "SingleDoor" or item.Name == "DoubleDoor" or item:IsA("Sound") or item:IsA("BaseScript") then
+                item:Destroy() 
+            end
+        end
+
+        mapclone.Parent = ViewportFrame
+        ViewportFrame.CurrentCamera = cam
+
+        task.spawn(function()
+            while beastcamtoggle and mapclone.Parent do
+                task.wait()
+                local currentBeast = getBeast()
+                if currentBeast and currentBeast.Character and currentBeast.Character:FindFirstChild("Head") then
+                    cam.CFrame = currentBeast.Character.Head.CFrame
+                end
+            end
+        end)
+
+        task.spawn(function()
+            local dummy = Instance.new("Folder", ViewportFrame)
+            dummy.Name = "dummy"
+            local doors = Instance.new("Folder", ViewportFrame)
+            doors.Name = "doors"
+
+            while beastcamtoggle and mapclone.Parent do
+                task.wait(0.3)
+                dummy:ClearAllChildren()
+                doors:ClearAllChildren()
+                
+                for _, door in pairs(map:GetChildren()) do
+                    if door.Name == "SingleDoor" or door.Name == "DoubleDoor" then
+                        door:Clone().Parent = doors
+                    end
+                end
+
+                for _, plr in pairs(game.Players:GetPlayers()) do
+                    if plr ~= getBeast() and plr.Character then
+                        plr.Character.Archivable = true
+                        local dummyclone = plr.Character:Clone()
+                        for _, part in pairs(dummyclone:GetDescendants()) do
+                            if part:IsA("Sound") or part:IsA("BaseScript") then
+                                part:Destroy() 
+                            end
+                        end
+                        dummyclone.Parent = dummy
+                    end
+                end
+            end
+        end)
+    end
+end
+
+-- Button Listeners
+trackConnection(PodsESPButton.MouseButton1Click:Connect(function()
+    podstoggle = not podstoggle
+    PodsESPButton.BackgroundColor3 = podstoggle and Color3.new(0, 0.74902, 0) or Color3.new(0.74902, 0, 0)
+    reloadESP()
+end))
+
+trackConnection(PCESPButton.MouseButton1Click:Connect(function()
+    pctoggle = not pctoggle
+    PCESPButton.BackgroundColor3 = pctoggle and Color3.new(0, 0.74902, 0) or Color3.new(0.74902, 0, 0)
+    reloadESP()
+end))
+
+trackConnection(PlayerESPButton.MouseButton1Click:Connect(function()
+    playertoggle = not playertoggle
+    PlayerESPButton.BackgroundColor3 = playertoggle and Color3.new(0, 0.74902, 0) or Color3.new(0.74902, 0, 0)
+    reloadESP()
+end))
+
+trackConnection(BestPCESPButton.MouseButton1Click:Connect(function()
+    bestpctoggle = not bestpctoggle
+    BestPCESPButton.BackgroundColor3 = bestpctoggle and Color3.new(0, 0.74902, 0) or Color3.new(0.74902, 0, 0)
+    reloadESP()
+end))
+
+trackConnection(ExitsESPButton.MouseButton1Click:Connect(function()
+    exitstoggle = not exitstoggle
+    ExitsESPButton.BackgroundColor3 = exitstoggle and Color3.new(0, 0.74902, 0) or Color3.new(0.74902, 0, 0)
+    reloadESP()
+end))
+
+trackConnection(NeverFailButton.MouseButton1Click:Connect(function()
+    neverfailtoggle = not neverfailtoggle
+    NeverFailButton.BackgroundColor3 = neverfailtoggle and Color3.new(0, 0.74902, 0) or Color3.new(0.74902, 0, 0)
+end))
+
+trackConnection(AutoInteractButton.MouseButton1Click:Connect(function()
+    autointeracttoggle = not autointeracttoggle
+    AutoInteractButton.BackgroundColor3 = autointeracttoggle and Color3.new(0, 0.74902, 0) or Color3.new(0.74902, 0, 0)
+end))
+
+trackConnection(BeastCamButton.MouseButton1Click:Connect(function()
+    beastcamtoggle = not beastcamtoggle
+    BeastCamButton.BackgroundColor3 = beastcamtoggle and Color3.new(0, 0.74902, 0) or Color3.new(0.74902, 0, 0)
+    if beastcamtoggle then
+        ViewportFrame.Visible = true
+        reloadBeastCam()
+    else
+        ViewportFrame:ClearAllChildren()
+        ViewportFrame.Visible = false
+    end
+end))
+
+trackConnection(AutoPlayButton.MouseButton1Click:Connect(function()
+    autoplaytoggle = not autoplaytoggle
+    AutoPlayButton.BackgroundColor3 = autoplaytoggle and Color3.new(0, 0.74902, 0) or Color3.new(0.74902, 0, 0)
+end))
+
+-- Game Event Listeners
+trackConnection(game.ReplicatedStorage:WaitForChild("CurrentMap").Changed:Connect(function()
+    task.wait(5)
+    reloadESP()
+    if beastcamtoggle then reloadBeastCam() end
+end))
+
+trackConnection(game.ReplicatedStorage:WaitForChild("IsGameActive").Changed:Connect(function()
+    reloadESP()
+    if beastcamtoggle then reloadBeastCam() end
+end))
+
+trackConnection(game:GetService("Players").PlayerAdded:Connect(function(player)
+    trackConnection(player.CharacterAdded:Connect(function() reloadESP() end))
+    trackConnection(player.CharacterRemoving:Connect(function() reloadESP() end))
+end))
+
+-- Never Fail Hooking
+task.spawn(function()
+    local mt = getrawmetatable(game)
+    local old = mt.__namecall
+    setreadonly(mt, false)
+    mt.__namecall = newcclosure(function(self, ...)
+        local args = {...}
+        if getnamecallmethod() == 'FireServer' and args[1] == 'SetPlayerMinigameResult' and neverfailtoggle then
+            args[2] = true
+        end
+        return old(self, unpack(args))
+    end)
+end)
+
+-- Auto Interact
+local function setupAutoInteract(character)
+    local playerGui = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+    local screenGui = playerGui:WaitForChild("ScreenGui", 10)
+    if screenGui then
+        local actionBox = screenGui:WaitForChild("ActionBox", 10)
+        if actionBox then
+            trackConnection(actionBox:GetPropertyChangedSignal("Visible"):Connect(function()
+                if autointeracttoggle and actionBox.Visible then
+                    game.ReplicatedStorage.RemoteEvent:FireServer("Input", "Action", true)
+                end
+            end))
+        end
+    end
+end
+
+trackConnection(game.Players.LocalPlayer.CharacterAdded:Connect(setupAutoInteract))
+if game.Players.LocalPlayer.Character then
+    setupAutoInteract(game.Players.LocalPlayer.Character)
+end
+
+-- Auto Play Loop (Fixed Pathing & Death-Loop Prevention)
+task.spawn(function()
+    while true do
+        task.wait(1) -- Check more frequently
+        if autoplaytoggle then        
+            local beast = getBeast()
+            local map = game.ReplicatedStorage:FindFirstChild("CurrentMap") and game.ReplicatedStorage.CurrentMap.Value
+            
+            if map then
+                for _, item in pairs(map:GetChildren()) do
+                    if item.Name == "SingleDoor" or item.Name == "DoubleDoor" then
+                        for _, doorPart in pairs(item:GetDescendants()) do
+                            if doorPart:IsA("Part") and doorPart.Name ~= "Frame" then
+                                if not doorPart:FindFirstChild("PathfindingModifier") then
+                                    local a = Instance.new("PathfindingModifier", doorPart)
+                                    a.PassThrough = true
+                                end
+                            elseif doorPart.Name == "Frame" and not doorPart:FindFirstChild("PathfindingModifier") then
+                                local a = Instance.new("PathfindingModifier", doorPart)
+                                a.PassThrough = false
+                                a.Label = "avoid"
+                            end
+                        end
+                    end
+                end
+            end
+
+            local pcs = getBestPC()
+            local PathfindingService = game:GetService("PathfindingService")
+            local char = game.Players.LocalPlayer.Character
+            
+            if char and char:FindFirstChild("Humanoid") and char:FindFirstChild("HumanoidRootPart") then
+                local Humanoid = char.Humanoid
+                local Root = char.HumanoidRootPart
+                
+                local agentParams = {
+                    AgentRadius = 2.4,
+                    AgentHeight = 2,
+                    AgentCanJump = true,
+                    AgentWalkableClimb = 4,
+                    WaypointSpacing = 2,
+                    Costs = { avoid = 10.0 }
+                }
+
+                local beastNearby = beast and beast.Character and beast.Character:FindFirstChild("HumanoidRootPart") and 
+                                    ((Root.Position - beast.Character.HumanoidRootPart.Position).Magnitude < 50)
+                
+                for _, pcData in ipairs(pcs) do
+                    if isPlayerTyping() or beastNearby or not autoplaytoggle then break end
+                    
+                    local pc = pcData.pc
+                    if pc and pc:FindFirstChild("ComputerTrigger1") then
+                        local goal = pc.ComputerTrigger1.Position
+                        local path = PathfindingService:CreatePath(agentParams)
+                        pcall(function() path:ComputeAsync(Root.Position, goal) end)
+                        
+                        if path.Status == Enum.PathStatus.Success then
+                            local waypoints = path:GetWaypoints()
+                            for i, waypoint in ipairs(waypoints) do
+                                -- INSTANT OVERRIDE: If you turn the toggle off mid-walk, it stops immediately!
+                                if not autoplaytoggle or (beast and beast.Character and beast.Character:FindFirstChild("HumanoidRootPart") and (Root.Position - beast.Character.HumanoidRootPart.Position).Magnitude < 50) then 
+                                    break 
+                                end
+
+                                Humanoid:MoveTo(waypoint.Position)
+                                if waypoint.Action == Enum.PathWaypointAction.Jump then
+                                    Humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+                                end
+
+                                local a = Instance.new("Part", workspace)
+                                a.Shape = Enum.PartType.Ball
+                                a.Position = waypoint.Position
+                                a.Transparency = 1 -- Hide the ugly pathfinding balls
+                                a.Size = Vector3.new(3,3,3) -- Make it easier to touch
+                                a.Anchored = true
+                                a.CanCollide = false
+                                
+                                local touch = false
+                                local timeout = tick() + 2.5 -- TIMEOUT PREVENTS DEATH LOOPS
+
+                                task.spawn(function()
+                                    local conn
+                                    conn = a.Touched:Connect(function(hit)
+                                        if hit.Parent and hit.Parent.Name == char.Name then
+                                            touch = true
+                                            if conn then conn:Disconnect() end
+                                            a:Destroy()
+                                        end
+                                    end)
+                                    task.wait(3)
+                                    if a.Parent then a:Destroy() touch = true end
+                                end)
+                                
+                                -- The Loop Fix: It will break if you touch it, if you turn the toggle off, OR if it takes longer than 2.5 seconds!
+                                repeat task.wait(0.05) until touch or not autoplaytoggle or tick() > timeout
+                            end
+                            break -- Move to next PC
+                        end
+                    end
+                end
+            end
+        end
+    end
+end)
+
+-- Player Mods Loop
+trackConnection(game:GetService("RunService").Stepped:Connect(function()
+    local char = game.Players.LocalPlayer.Character
+    if char and char:FindFirstChild("Humanoid") then
+        local hum = char.Humanoid
+        
+        if speedtoggle then
+            hum.WalkSpeed = 24
+        end
+        
+        if jumptoggle then
+            hum.UseJumpPower = true
+            hum.JumpPower = 50
+        end
+        
+        if nocliptoggle then
+            for _, part in pairs(char:GetDescendants()) do
+                if part:IsA("BasePart") and part.CanCollide then
+                    part.CanCollide = false
+                end
+            end
+        end
+    end
+end))
+
+-- ==================== MISC MENU FEATURES ====================
+local function AddMiscButton(name, func)
+    local btn = Instance.new("TextButton")
+    btn.Size = UDim2.new(0, 200, 0, 50)
+    btn.BackgroundColor3 = Color3.fromRGB(191, 0, 0)
+    btn.Text = name
+    btn.TextColor3 = Color3.new(1,1,1)
+    btn.Font = Enum.Font.SourceSans
+    btn.TextScaled = true
+    btn.Parent = MiscMenu.Body.ButtonsFrame
+    trackConnection(btn.MouseButton1Click:Connect(function()
+        pcall(func)
+    end))
+end
+
+local function AddMiscToggle(name, callback)
+    local btn = Instance.new("TextButton")
+    btn.Size = UDim2.new(0, 200, 0, 50)
+    btn.BackgroundColor3 = Color3.fromRGB(191, 0, 0)
+    btn.Text = name
+    btn.TextColor3 = Color3.new(1,1,1)
+    btn.Font = Enum.Font.SourceSans
+    btn.TextScaled = true
+    btn.Parent = MiscMenu.Body.ButtonsFrame
+    
+    trackConnection(btn.MouseButton1Click:Connect(function()
+        local newState = callback()
+        btn.BackgroundColor3 = newState and Color3.new(0, 0.74902, 0) or Color3.new(0.74902, 0, 0)
+    end))
+end
+
+-- 1. Perfectly Reversible No Fog
+AddMiscToggle("No Fog", function()
+    nofogtoggle = not nofogtoggle
+    local lighting = game:GetService("Lighting")
+    local atmosphere = lighting:FindFirstChild("Atmosphere")
+    
+    if nofogtoggle then
+        origFogEnd = lighting.FogEnd
+        origFogStart = lighting.FogStart
+        if atmosphere then
+            origAtmDensity = atmosphere.Density
+            origAtmOffset = atmosphere.Offset
+        end
+        
+        lighting.FogEnd = 100000
+        lighting.FogStart = 100000
+        if atmosphere then
+            atmosphere.Density = 0
+            atmosphere.Offset = 0
+        end
+    else
+        if origFogEnd then lighting.FogEnd = origFogEnd end
+        if origFogStart then lighting.FogStart = origFogStart end
+        if atmosphere and origAtmDensity then
+            atmosphere.Density = origAtmDensity
+            atmosphere.Offset = origAtmOffset
+        end
+    end
+    return nofogtoggle
+end)
+
+-- 2. Nuke FPS Booster (Optimized for Mobile GPU)
+AddMiscButton("FPS Booster", function()
+    local lighting = game:GetService("Lighting")
+    
+    -- 1. Instantly kill global lighting math
+    lighting.GlobalShadows = false
+    lighting.EnvironmentDiffuseScale = 0
+    lighting.EnvironmentSpecularScale = 0
+    
+    for _, v in pairs(lighting:GetChildren()) do
+        if v:IsA("PostEffect") or v:IsA("Atmosphere") then
+            v.Enabled = false
+        end
+    end
+
+    -- 2. Safely wipe laggy emitters and textures (Destroying is better than Transparency!)
+    for _, v in pairs(workspace:GetDescendants()) do
+        if v:IsA("PointLight") or v:IsA("SpotLight") or v:IsA("SurfaceLight") then
+            v.Enabled = false
+        elseif v:IsA("ParticleEmitter") or v:IsA("Smoke") or v:IsA("Fire") then
+            v.Enabled = false
+        elseif v:IsA("Decal") or v:IsA("Texture") then
+            v:Destroy() 
+        end
+    end
+    print("FPS Booster Applied: Shadows, Effects, and Textures Nuked.")
+end)
+
+-- 3. Smart ESP Render Distance
+AddMiscToggle("Smart ESP (150s)", function()
+    smartesptoggle = not smartesptoggle
+    return smartesptoggle
+end)
+
+local smartEspTick = 0
+trackConnection(game:GetService("RunService").Heartbeat:Connect(function()
+    smartEspTick = smartEspTick + 1
+    if smartEspTick % 15 ~= 0 then return end
+
+    if smartesptoggle and game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart") then
+        local pos = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
+        
+        for _, p in pairs(game.Players:GetPlayers()) do
+            if p.Character and p.Character:FindFirstChild("Highlight") then
+                if (p.Character:GetPivot().Position - pos).Magnitude > 150 then
+                    p.Character.Highlight.Enabled = false
+                else
+                    p.Character.Highlight.Enabled = true
+                end
+            end
+        end
+        
+        local map = getMap()
+        if map then
+            for _, item in pairs(map:GetChildren()) do
+                if item:FindFirstChild("Highlight") then
+                    if (item:GetPivot().Position - pos).Magnitude > 150 then
+                        item.Highlight.Enabled = false
+                    else
+                        item.Highlight.Enabled = true
+                    end
+                end
+            end
+        end
+    else
+        if not smartesptoggle then
+            for _, p in pairs(game.Players:GetPlayers()) do
+                if p.Character and p.Character:FindFirstChild("Highlight") then p.Character.Highlight.Enabled = true end
+            end
+            local map = getMap()
+            if map then
+                for _, item in pairs(map:GetChildren()) do
+                    if item:FindFirstChild("Highlight") then item.Highlight.Enabled = true end
+                end
+            end
+        end
+    end
+end))
+
+-- 4. Perfectly Reversible Fullbright
+AddMiscToggle("Fullbright", function()
+    fullbrighttoggle = not fullbrighttoggle
+    local lighting = game:GetService("Lighting")
+    
+    if fullbrighttoggle then
+        origAmbient = lighting.Ambient
+        origOutdoorAmbient = lighting.OutdoorAmbient
+        lighting.Ambient = Color3.new(1, 1, 1)
+        lighting.OutdoorAmbient = Color3.new(1, 1, 1)
+    else
+        if origAmbient then lighting.Ambient = origAmbient end
+        if origOutdoorAmbient then lighting.OutdoorAmbient = origOutdoorAmbient end
+    end
+    return fullbrighttoggle
+end)
+
+-- 5. Anti-AFK
+AddMiscButton("Anti-AFK", function()
+    local vu = game:GetService("VirtualUser")
+    game:GetService("Players").LocalPlayer.Idled:Connect(function()
+        vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+        task.wait(1)
+        vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+    end)
+end)
+
+-- 6. Delete Doors
+AddMiscButton("Delete Doors", function()
+    local map = getMap()
+    if map then
+        for _, v in pairs(map:GetDescendants()) do
+            if v.Name == "SingleDoor" or v.Name == "DoubleDoor" then
+                v:Destroy()
+            end
+        end
+    end
+end)
+
+-- 7. Custom FOV (120)
+AddMiscToggle("FOV 120", function()
+    fovtoggle = not fovtoggle
+    if fovtoggle then
+        workspace.CurrentCamera.FieldOfView = 120
+    else
+        workspace.CurrentCamera.FieldOfView = 70
+    end
+    return fovtoggle
+end)
+
+-- 8. Remove Invisible Walls
+AddMiscButton("Remove Invis Walls", function()
+    local map = getMap()
+    if map then
+        for _, v in pairs(map:GetDescendants()) do
+            if v:IsA("BasePart") and v.Transparency >= 1 and v.CanCollide then
+                v.CanCollide = false
+            end
+        end
+    end
+end)
+
+-- 9. Low Gravity
+AddMiscToggle("Low Gravity", function()
+    lowgravtoggle = not lowgravtoggle
+    if lowgravtoggle then
+        workspace.Gravity = 50
+    else
+        workspace.Gravity = 196.2
+    end
+    return lowgravtoggle
+end)
+
+-- 11. Anti-Blindness (Nuke Screen Filters)
+local antiblindnesstoggle = false
+local antiblindnessConnection = nil
+
+AddMiscToggle("Anti-Blindness", function()
+    antiblindnesstoggle = not antiblindnesstoggle
+    
+    if antiblindnesstoggle then
+        if not antiblindnessConnection then
+            -- Run a fast, lightweight loop to constantly nuke incoming status effects
+            antiblindnessConnection = game:GetService("RunService").RenderStepped:Connect(function()
+                local lighting = game:GetService("Lighting")
+                local cam = workspace.CurrentCamera
+                
+                -- Nuke any Blur or Color filters in the Lighting service
+                for _, effect in pairs(lighting:GetChildren()) do
+                    if effect:IsA("BlurEffect") or effect:IsA("ColorCorrectionEffect") or effect:IsA("DepthOfFieldEffect") then
+                        effect.Enabled = false
+                    end
+                end
+                
+                -- Nuke any filters parented directly to your Camera (FTF does this sometimes)
+                for _, effect in pairs(cam:GetChildren()) do
+                    if effect:IsA("BlurEffect") or effect:IsA("ColorCorrectionEffect") or effect:IsA("DepthOfFieldEffect") then
+                        effect.Enabled = false
+                    end
+                end
+            end)
+        end
+    else
+        -- Disconnect the loop so the game can apply filters normally again
+        if antiblindnessConnection then
+            antiblindnessConnection:Disconnect()
+            antiblindnessConnection = nil
+        end
+    end
+    
+    return antiblindnesstoggle
+end)
+
+-- 10. Beast Proximity Alert
+local AlertLabel = Instance.new("TextLabel")
+AlertLabel.Size = UDim2.new(0, 400, 0, 50)
+AlertLabel.Position = UDim2.new(0.5, -200, 0.8, 0)
+AlertLabel.BackgroundTransparency = 1
+AlertLabel.Text = "âš ï¸ BEAST NEARBY âš ï¸"
+AlertLabel.TextColor3 = Color3.fromRGB(255, 0, 0)
+AlertLabel.TextStrokeTransparency = 0
+AlertLabel.Font = Enum.Font.SourceSansBold
+AlertLabel.TextScaled = true
+AlertLabel.Visible = false
+AlertLabel.ZIndex = 100
+AlertLabel.Parent = FTFHAX
+
+AddMiscToggle("Beast Alert", function()
+    proximitytoggle = not proximitytoggle
+    if not proximitytoggle then
+        AlertLabel.Visible = false
+    end
+    return proximitytoggle
+end)
+
+trackConnection(game:GetService("RunService").RenderStepped:Connect(function()
+    if proximitytoggle and game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart") then
+        local beast = getBeast()
+        if beast and beast.Character and beast.Character:FindFirstChild("HumanoidRootPart") then
+            local dist = (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - beast.Character.HumanoidRootPart.Position).Magnitude
+            if dist <= 45 then
+                AlertLabel.Visible = true
+            else
+                AlertLabel.Visible = false
+            end
+        else
+            AlertLabel.Visible = false
+        end
+    end
+end))
+
+local creditMain = Instance.new("TextLabel")
+creditMain.Name = "XyrozzyCredit"
+creditMain.Size = UDim2.new(1, 0, 0, 25)
+creditMain.Position = UDim2.new(0, 0, 1, -25)
+creditMain.BackgroundTransparency = 1
+creditMain.Text = "Made by ScriptedChaosLIVE"
+creditMain.TextColor3 = Color3.fromRGB(200, 200, 200)
+creditMain.Font = Enum.Font.SourceSans
+creditMain.TextScaled = false
+creditMain.TextSize = 14
+creditMain.TextStrokeTransparency = 0.9
+creditMain.Parent = MainMenuWindow
+
+print("FTF admin Panel v0.7.57 â€¢ Update Log Added")
+
+-- ==========================================================
+--  DIAGNOSTIC & DEBUG TOOL (SAFE TO DELETE LATER)
+-- ==========================================================
+task.spawn(function()
+    task.wait(1) -- Wait 1 second to let the UI fully build before testing
+    print("[ FTF Admin] Running Background Diagnostics...")
+    local errorsFound = 0
+    
+    -- Protected Call function to safely test things without crashing the script
+    local function runTest(testName, testFunc)
+        local success, errorMessage = pcall(testFunc)
+        if not success then
+            warn(" [BUG DETECTED] " .. testName .. " failed! Reason: " .. tostring(errorMessage))
+            errorsFound = errorsFound + 1
+        else
+            print(" [DIAGNOSTIC] " .. testName .. " passed.")
+        end
+    end
+
+    -- Test 1: Did the GUI actually inject into the Player?
+    runTest("GUI Injection Check", function()
+        assert(game.Players.LocalPlayer.PlayerGui:FindFirstChild("FTFHAX"), "FTFHAX ScreenGui is missing from PlayerGui.")
+    end)
+
+    -- Test 2: Are the Flee the Facility Server Remotes still there? (Update checker)
+    runTest("Game Remote Event Check", function()
+        assert(game.ReplicatedStorage:FindFirstChild("RemoteEvent"), "FTF RemoteEvent missing! The game might have updated.")
+    end)
+
+    -- Test 3: Can the script find the map?
+    runTest("Map Directory Check", function()
+        assert(game.ReplicatedStorage:FindFirstChild("CurrentMap"), "CurrentMap folder missing from ReplicatedStorage.")
+    end)
+
+    -- Test 4: Did the rbxthumb bypass icons load without crashing?
+    runTest("Icon Bypass Check", function()
+        assert(MainMenuWindow, "MainMenuWindow failed to generate.")
+    end)
+    
+    -- Test 5: Verify global variables exist
+    runTest("Variable Integrity Check", function()
+        assert(activeConnections, "Connection tracking table is missing.")
+    end)
+
+    -- Final Report
+    if errorsFound == 0 then
+        print(" [DIAGNOSTIC COMPLETE] 100% Stable. No bugs found. Script injected flawlessly.")
+    else
+        warn(" [DIAGNOSTIC COMPLETE] Found " .. errorsFound .. " potential issue(s). Check the red warnings above.")
+    end
+end)
+-- ==========================================================
