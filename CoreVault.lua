@@ -2274,25 +2274,24 @@ trackConnection(SubmitButton.MouseButton1Click:Connect(function()
     SubmitButton.Text = "PLEASE WAIT..."
     
     task.spawn(function()
-        -- 1. Check for Spies (HttpStealers)
+        -- 1. Check for Spies
         if DetectSnooping() then
-            pcall(function()
-                request({
-                    Url = AuthURL,
-                    Method = "POST",
-                    Headers = {["Content-Type"] = "application/json"},
-                    Body = game:GetService("HttpService"):JSONEncode({
-                        action = "flag_spy", hwid = HWID, user = game.Players.LocalPlayer.Name, reason = "HttpSpy Detected"
-                    })
-                })
-            end)
             game.Players.LocalPlayer:Kick("🛡️ Security Violation: Unauthorized network monitoring detected.")
             return
         end
 
-        -- 2. Check Database for Ban
+        -- 2. Fallback for Executors (Delta usually uses 'request')
+        local reqFunc = request or http_request or (http and http.request)
+        if not reqFunc then
+            PasswordInput.PlaceholderText = "EXECUTOR UNSUPPORTED"
+            SubmitButton.Text = "ERROR"
+            if setclipboard then setclipboard("CRASH: Executor is missing the HTTP request function.") end
+            return
+        end
+
+        -- 3. Ping Vercel
         local success, response = pcall(function()
-            return request({
+            return reqFunc({
                 Url = AuthURL,
                 Method = "POST",
                 Headers = {["Content-Type"] = "application/json"},
@@ -2302,23 +2301,42 @@ trackConnection(SubmitButton.MouseButton1Click:Connect(function()
             })
         end)
 
-        if success and response and response.StatusCode == 200 then
-            local data = game:GetService("HttpService"):JSONDecode(response.Body)
-            
-            if data.status == "BANNED" then
-                -- ENFORCE THE BAN INSTANTLY
-                game.Players.LocalPlayer:Kick("⛔ You are blacklisted from this script.\nReason: " .. tostring(data.reason))
-            elseif data.status == "APPROVED" then
-                -- ✅ HWID APPROVED! UNLOCK THE PANEL (Full Admin Access)
-                AdminTabButton.Visible = true 
-                LoginScreen.Visible = false
-                CheatButton.Visible = true
-                MainMenuWindow.Visible = true
-                pcall(function() game.Players.LocalPlayer:Chat("/e FTF_ADMIN_PING") end)
+        -- 4. Handle Execution Crashes
+        if not success then
+            PasswordInput.PlaceholderText = "CRASH DETECTED"
+            SubmitButton.Text = "ERROR"
+            if setclipboard then setclipboard("DELTA CRASH: " .. tostring(response)) end
+            return
+        end
+
+        -- 5. Handle Server Response
+        if response and response.StatusCode == 200 then
+            local decodeSuccess, data = pcall(function()
+                return game:GetService("HttpService"):JSONDecode(response.Body)
+            end)
+
+            if decodeSuccess and data then
+                if data.status == "BANNED" then
+                    game.Players.LocalPlayer:Kick("⛔ You are blacklisted from this script.\nReason: " .. tostring(data.reason))
+                elseif data.status == "APPROVED" then
+                    AdminTabButton.Visible = true 
+                    LoginScreen.Visible = false
+                    CheatButton.Visible = true
+                    MainMenuWindow.Visible = true
+                    pcall(function() game.Players.LocalPlayer:Chat("/e FTF_ADMIN_PING") end)
+                end
+            else
+                PasswordInput.PlaceholderText = "JSON ERROR"
+                SubmitButton.Text = "ERROR"
+                if setclipboard then setclipboard("JSON DECODE ERROR: " .. tostring(response.Body)) end
             end
         else
-            PasswordInput.PlaceholderText = "SERVER OFFLINE"
+            local code = response and response.StatusCode or "NIL"
+            PasswordInput.PlaceholderText = "SERVER ERROR: " .. tostring(code)
             SubmitButton.Text = "RETRY"
+            if setclipboard then 
+                setclipboard("SERVER ERROR | CODE: " .. tostring(code) .. " | BODY: " .. tostring(response and response.Body)) 
+            end
         end
     end)
 end))
