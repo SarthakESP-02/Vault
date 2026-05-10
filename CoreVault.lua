@@ -702,6 +702,35 @@ UpdateLogText.TextSize = 24.000
 UpdateLogText.ZIndex = 11
 UpdateLogText.Parent = UpdateLogTabButton
 
+-- ==================== CHAT TAB BUTTON ====================
+local ChatTabButton = Instance.new("ImageButton")
+ChatTabButton.Name = "ChatTabButton"
+ChatTabButton.BackgroundColor3 = Color3.fromRGB(63, 63, 63)
+ChatTabButton.BorderSizePixel = 0
+ChatTabButton.ZIndex = 10
+ChatTabButton.Parent = Body_2
+
+local ChatIcon = Instance.new("ImageLabel", ChatTabButton)
+ChatIcon.BackgroundTransparency = 1
+ChatIcon.AnchorPoint = Vector2.new(0.5, 0)
+ChatIcon.Position = UDim2.new(0.5, 0, 0.1, 0)
+ChatIcon.Size = UDim2.new(0.6, 0, 0.6, 0)
+ChatIcon.Image = "rbxassetid://6031302821" -- Clean chat bubble icon
+ChatIcon.ScaleType = Enum.ScaleType.Fit
+ChatIcon.ZIndex = 11
+
+local ChatText = Instance.new("TextLabel")
+ChatText.BackgroundTransparency = 1
+ChatText.Position = UDim2.new(0, 0, 0.800000012, 0)
+ChatText.Size = UDim2.new(1, 0, 0.200000003, 0)
+ChatText.Text = "Chat"
+ChatText.TextColor3 = Color3.new(1, 1, 1)
+ChatText.Font = Enum.Font.SourceSans
+ChatText.TextScaled = false
+ChatText.TextSize = 24.000
+ChatText.ZIndex = 11
+ChatText.Parent = ChatTabButton
+
 local KillPanelButton = Instance.new("TextButton")
 KillPanelButton.Name = "KillPanelButton"
 KillPanelButton.Size = UDim2.new(0, 132, 0, 132)
@@ -1810,6 +1839,139 @@ MiscGrid.SortOrder = Enum.SortOrder.LayoutOrder
 MiscGrid.CellPadding = UDim2.new(0, 6, 0, 6)
 MiscGrid.CellSize = UDim2.new(0, 152, 0, 39)
 
+-- ==================== CHAT SHORTCUTS MENU ====================
+local ChatMenu = ESPMenuWindow:Clone()
+ChatMenu.Name = "ChatMenu"
+ChatMenu.Visible = false
+ChatMenu.Parent = FTFHAX
+ChatMenu.Body.TitleLabel.Text = "CHAT SHORTCUTS"
+ChatMenu.Body.TitleLabel.TextColor3 = Color3.fromRGB(255, 150, 50)
+ChatMenu.TopBar.PageTitleText.Text = "FTF admin Panel - Chat"
+
+ChatMenu.Body.ButtonsFrame:Destroy()
+
+local ChatScroll = Instance.new("ScrollingFrame")
+ChatScroll.Name = "ButtonsFrame"
+ChatScroll.Parent = ChatMenu.Body
+ChatScroll.BackgroundTransparency = 1
+ChatScroll.Position = UDim2.new(0, 5, 0, 85) -- Shifted down for the input box
+ChatScroll.Size = UDim2.new(1, -10, 1, -90)
+ChatScroll.ScrollBarThickness = 4
+ChatScroll.AutomaticCanvasSize = Enum.AutomaticSize.Y
+
+local ChatGrid = Instance.new("UIGridLayout")
+ChatGrid.Parent = ChatScroll
+ChatGrid.FillDirection = Enum.FillDirection.Horizontal
+ChatGrid.HorizontalAlignment = Enum.HorizontalAlignment.Center
+ChatGrid.SortOrder = Enum.SortOrder.LayoutOrder
+ChatGrid.CellPadding = UDim2.new(0, 6, 0, 6)
+ChatGrid.CellSize = UDim2.new(0, 152, 0, 39)
+
+-- Risk Warning Label
+local ChatWarning = Instance.new("TextLabel")
+ChatWarning.Size = UDim2.new(1, -10, 0, 20)
+ChatWarning.Position = UDim2.new(0, 5, 0, 30)
+ChatWarning.BackgroundTransparency = 1
+ChatWarning.Text = " RISK: SAFE (Emotes) | HIGH (Spamming Custom Text = Kick/Ban)"
+ChatWarning.TextColor3 = Color3.fromRGB(255, 80, 80)
+ChatWarning.Font = Enum.Font.SourceSansBold
+ChatWarning.TextSize = 14
+ChatWarning.Parent = ChatMenu.Body
+
+-- Custom Input UI (+ Button)
+local ChatInputBox = Instance.new("TextBox")
+ChatInputBox.Size = UDim2.new(0, 300, 0, 30)
+ChatInputBox.Position = UDim2.new(0.5, -175, 0, 50)
+ChatInputBox.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+ChatInputBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+ChatInputBox.PlaceholderText = "Type custom message..."
+ChatInputBox.Font = Enum.Font.SourceSans
+ChatInputBox.TextSize = 16
+ChatInputBox.ClearTextOnFocus = false
+Instance.new("UICorner", ChatInputBox).CornerRadius = UDim.new(0, 6)
+ChatInputBox.Parent = ChatMenu.Body
+
+local AddChatBtn = Instance.new("TextButton")
+AddChatBtn.Size = UDim2.new(0, 40, 0, 30)
+AddChatBtn.Position = UDim2.new(0.5, 135, 0, 50)
+AddChatBtn.BackgroundColor3 = Color3.fromRGB(0, 150, 0)
+AddChatBtn.Text = "+"
+AddChatBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
+AddChatBtn.Font = Enum.Font.SourceSansBold
+AddChatBtn.TextSize = 20
+Instance.new("UICorner", AddChatBtn).CornerRadius = UDim.new(0, 6)
+AddChatBtn.Parent = ChatMenu.Body
+
+-- Chat Sending Logic (Bypasses new and legacy chat systems)
+local function SendChatMessage(msg)
+    pcall(function()
+        local legacyChat = game:GetService("ReplicatedStorage"):FindFirstChild("DefaultChatSystemChatEvents")
+        if legacyChat then
+            legacyChat.SayMessageRequest:FireServer(msg, "All")
+        else
+            game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync(msg)
+        end
+    end)
+end
+
+-- Button Creator
+local function CreateChatButton(msg, isCustom)
+    local btn = Instance.new("TextButton")
+    btn.Size = UDim2.new(0, 200, 0, 50)
+    btn.BackgroundColor3 = isCustom and Color3.fromRGB(0, 100, 150) or Color3.fromRGB(150, 0, 150)
+    btn.Text = msg
+    btn.TextColor3 = Color3.new(1,1,1)
+    btn.Font = Enum.Font.SourceSansBold
+    btn.TextScaled = true
+    btn.Parent = ChatScroll
+    
+    trackConnection(btn.MouseButton1Click:Connect(function()
+        SendChatMessage(msg)
+        btn.BackgroundColor3 = Color3.fromRGB(0, 200, 0) -- Flashes green when sent
+        task.wait(0.2)
+        btn.BackgroundColor3 = isCustom and Color3.fromRGB(0, 100, 150) or Color3.fromRGB(150, 0, 150)
+    end))
+end
+
+-- Default R6 Emotes (Safe)
+CreateChatButton("/e dance", false)
+CreateChatButton("/e wave", false)
+CreateChatButton("/e cheer", false)
+CreateChatButton("/e laugh", false)
+CreateChatButton("/e point", false)
+
+-- Local File Saving Logic
+local ChatFileName = "FTF_CustomChats.txt"
+
+local function LoadCustomChats()
+    if isfile and isfile(ChatFileName) then
+        local data = readfile(ChatFileName)
+        for _, msg in ipairs(string.split(data, "\n")) do
+            if msg ~= "" then CreateChatButton(msg, true) end
+        end
+    end
+end
+
+local function SaveCustomChat(msg)
+    if writefile then
+        local currentData = ""
+        if isfile and isfile(ChatFileName) then currentData = readfile(ChatFileName) end
+        writefile(ChatFileName, currentData .. msg .. "\n")
+    end
+end
+
+LoadCustomChats()
+
+trackConnection(AddChatBtn.MouseButton1Click:Connect(function()
+    local newMsg = ChatInputBox.Text
+    if newMsg ~= "" then
+        CreateChatButton(newMsg, true)
+        SaveCustomChat(newMsg)
+        ChatInputBox.Text = "" -- Clear box after adding
+    end
+end))
+-- =============================================================
+
 -- ==================== ADMIN MENU UI ====================
 local AdminMenu = ESPMenuWindow:Clone()
 AdminMenu.Name = "AdminMenu"
@@ -2093,34 +2255,82 @@ SubmitButton.Parent = LoginScreen
 -- Hide Cheat Button until verified
 CheatButton.Visible = false
 
--- Login Verification Logic (Passwords hidden with inline math)
+-- ==========================================================
+-- 🛡️ CLOUD AUTHENTICATION & ANTI-SPY SYSTEM
+-- ==========================================================
+local HWID = gethwid and gethwid() or "UNKNOWN_HWID"
+-- 🛑 PUT YOUR VERCEL URL HERE:
+local AuthURL = "ftf-auth-backend.vercel.app/api/verify" 
+
+-- Anti-HttpSpy Detector
+local function DetectSnooping()
+    if ishooked and (ishooked(game.HttpGet) or ishooked(request)) then return true end
+    return false
+end
+
 trackConnection(SubmitButton.MouseButton1Click:Connect(function()
-    local pass = PasswordInput.Text
+    PasswordInput.Text = ""
+    PasswordInput.PlaceholderText = "AUTHENTICATING HWID..."
+    SubmitButton.Text = "PLEASE WAIT..."
     
-    if pass == string.char(100-17, 33*3, 228/2, 50+55, 56*2, 120-4, 202/2, 50*2, 70-3, 52*2, 100-3, 222/2, 120-5, 38*2, 100-27, 43*2, 138/2) then
-        lastUsedPassword = pass
-        AdminTabButton.Visible = false -- Ensure admin is hidden
-        LoginScreen.Visible = false
-        CheatButton.Visible = true
-        MainMenuWindow.Visible = true
-        
-    elseif pass == string.char(44*2, 178/2, 100-18, 70+9, 45*2, 180/2, 80+9, 100/2, 106/2) then
-        lastUsedPassword = pass
-        AdminTabButton.Visible = true -- UNLOCK ADMIN MENU
-        LoginScreen.Visible = false
-        CheatButton.Visible = true
-        MainMenuWindow.Visible = true
-        pcall(function() game.Players.LocalPlayer:Chat("/e FTF_ADMIN_PING") end)
-        
-    else
-        PasswordInput.Text = ""
-        PasswordInput.PlaceholderText = "INVALID PASSWORD"
-        PasswordInput.PlaceholderColor3 = Color3.fromRGB(255, 50, 50)
-        task.wait(1.5)
-        PasswordInput.PlaceholderText = "Enter Password..."
-        PasswordInput.PlaceholderColor3 = Color3.fromRGB(178, 178, 178)
-    end
+    task.spawn(function()
+        -- 1. Check for Spies (HttpStealers)
+        if DetectSnooping() then
+            pcall(function()
+                request({
+                    Url = AuthURL,
+                    Method = "POST",
+                    Headers = {["Content-Type"] = "application/json"},
+                    Body = game:GetService("HttpService"):JSONEncode({
+                        action = "flag_spy", hwid = HWID, user = game.Players.LocalPlayer.Name, reason = "HttpSpy Detected"
+                    })
+                })
+            end)
+            game.Players.LocalPlayer:Kick("🛡️ Security Violation: Unauthorized network monitoring detected.")
+            return
+        end
+
+        -- 2. Check Database for Ban
+        local success, response = pcall(function()
+            return request({
+                Url = AuthURL,
+                Method = "POST",
+                Headers = {["Content-Type"] = "application/json"},
+                Body = game:GetService("HttpService"):JSONEncode({
+                    action = "login", hwid = HWID, user = game.Players.LocalPlayer.Name
+                })
+            })
+        end)
+
+        if success and response and response.StatusCode == 200 then
+            local data = game:GetService("HttpService"):JSONDecode(response.Body)
+            
+            if data.status == "BANNED" then
+                -- ENFORCE THE BAN INSTANTLY
+                game.Players.LocalPlayer:Kick("⛔ You are blacklisted from this script.\nReason: " .. tostring(data.reason))
+            elseif data.status == "APPROVED" then
+                -- ✅ HWID APPROVED! UNLOCK THE PANEL (Full Admin Access)
+                AdminTabButton.Visible = true 
+                LoginScreen.Visible = false
+                CheatButton.Visible = true
+                MainMenuWindow.Visible = true
+                pcall(function() game.Players.LocalPlayer:Chat("/e FTF_ADMIN_PING") end)
+            end
+        else
+            PasswordInput.PlaceholderText = "SERVER OFFLINE"
+            SubmitButton.Text = "RETRY"
+        end
+    end)
 end))
+
+-- Background Spy Scan (Runs every 3 seconds to catch them mid-game)
+task.spawn(function()
+    while task.wait(3) do
+        if DetectSnooping() then
+            game.Players.LocalPlayer:Kick("🛡️ Security Violation: Network manipulation detected.")
+        end
+    end
+end)
 
 -- Logout Logic
 trackConnection(LogoutButton.MouseButton1Click:Connect(function()
@@ -2142,7 +2352,7 @@ end))
 -- ===================================================================
 
 -- ==================== CLICK ROUTING ====================
-trackConnection(CheatButton.MouseButton1Click:Connect(function()
+local function HideAllMenus()
     ESPMenuWindow.Visible = false
     ToolsMenuWindow.Visible = false
     TPMenu.Visible = false
@@ -2152,229 +2362,55 @@ trackConnection(CheatButton.MouseButton1Click:Connect(function()
     if UnfairMenu then UnfairMenu.Visible = false end
     if UpdateLogMenu then UpdateLogMenu.Visible = false end
     if AdminMenu then AdminMenu.Visible = false end
+    if ChatMenu then ChatMenu.Visible = false end
+end
+
+trackConnection(CheatButton.MouseButton1Click:Connect(function()
+    HideAllMenus()
     MainMenuWindow.Visible = not MainMenuWindow.Visible
 end))
 
-trackConnection(CloseButton_2.MouseButton1Click:Connect(function()
-    MainMenuWindow.Visible = false
-end))
-
-trackConnection(CloseButton.MouseButton1Click:Connect(function()
-    ESPMenuWindow.Visible = false
-end))
-
-trackConnection(CloseButton_3.MouseButton1Click:Connect(function()
-    ToolsMenuWindow.Visible = false
-end))
+trackConnection(CloseButton_2.MouseButton1Click:Connect(function() MainMenuWindow.Visible = false end))
+trackConnection(CloseButton.MouseButton1Click:Connect(function() ESPMenuWindow.Visible = false end))
+trackConnection(CloseButton_3.MouseButton1Click:Connect(function() ToolsMenuWindow.Visible = false end))
 
 trackConnection(BackButton.MouseButton1Click:Connect(function()
-    ESPMenuWindow.Visible = false
-    ToolsMenuWindow.Visible = false
-    TPMenu.Visible = false
-    PlayerMenu.Visible = false
-    if MiscMenu then MiscMenu.Visible = false end
-    if RiskMenu then RiskMenu.Visible = false end
-    if UnfairMenu then UnfairMenu.Visible = false end
-    if UpdateLogMenu then UpdateLogMenu.Visible = false end
-    if AdminMenu then AdminMenu.Visible = false end
+    HideAllMenus()
     MainMenuWindow.Visible = true
 end))
 
 trackConnection(BackButton_2.MouseButton1Click:Connect(function()
-    ESPMenuWindow.Visible = false
-    ToolsMenuWindow.Visible = false
-    TPMenu.Visible = false
-    PlayerMenu.Visible = false
-    if MiscMenu then MiscMenu.Visible = false end
-    if RiskMenu then RiskMenu.Visible = false end
-    if UnfairMenu then UnfairMenu.Visible = false end
-    if UpdateLogMenu then UpdateLogMenu.Visible = false end
-    if AdminMenu then AdminMenu.Visible = false end
+    HideAllMenus()
     MainMenuWindow.Visible = true
 end))
 
-trackConnection(ESPButton.MouseButton1Click:Connect(function()
-    ESPMenuWindow.Visible = true
-    ToolsMenuWindow.Visible = false
-    TPMenu.Visible = false
-    PlayerMenu.Visible = false
-    if MiscMenu then MiscMenu.Visible = false end
-    if RiskMenu then RiskMenu.Visible = false end
-    if UnfairMenu then UnfairMenu.Visible = false end
-    if UpdateLogMenu then UpdateLogMenu.Visible = false end
-    if AdminMenu then AdminMenu.Visible = false end
-    MainMenuWindow.Visible = false
-end))
+-- Menu Opening Hooks
+trackConnection(ESPButton.MouseButton1Click:Connect(function() HideAllMenus() MainMenuWindow.Visible = false ESPMenuWindow.Visible = true end))
+trackConnection(ToolsButton.MouseButton1Click:Connect(function() HideAllMenus() MainMenuWindow.Visible = false ToolsMenuWindow.Visible = true end))
+trackConnection(TPButton.MouseButton1Click:Connect(function() HideAllMenus() MainMenuWindow.Visible = false TPMenu.Visible = true end))
+trackConnection(PlayerTabButton.MouseButton1Click:Connect(function() HideAllMenus() MainMenuWindow.Visible = false PlayerMenu.Visible = true end))
+trackConnection(MiscTabButton.MouseButton1Click:Connect(function() HideAllMenus() MainMenuWindow.Visible = false MiscMenu.Visible = true end))
+trackConnection(RiskTabButton.MouseButton1Click:Connect(function() HideAllMenus() MainMenuWindow.Visible = false RiskMenu.Visible = true end))
+trackConnection(UnfairTabButton.MouseButton1Click:Connect(function() HideAllMenus() MainMenuWindow.Visible = false UnfairMenu.Visible = true end))
+trackConnection(UpdateLogTabButton.MouseButton1Click:Connect(function() HideAllMenus() MainMenuWindow.Visible = false UpdateLogMenu.Visible = true end))
+trackConnection(ChatTabButton.MouseButton1Click:Connect(function() HideAllMenus() MainMenuWindow.Visible = false ChatMenu.Visible = true end))
+if AdminTabButton then
+    trackConnection(AdminTabButton.MouseButton1Click:Connect(function() HideAllMenus() MainMenuWindow.Visible = false AdminMenu.Visible = true end))
+end
 
-trackConnection(ToolsButton.MouseButton1Click:Connect(function()
-    ESPMenuWindow.Visible = false
-    ToolsMenuWindow.Visible = true
-    TPMenu.Visible = false
-    PlayerMenu.Visible = false
-    if MiscMenu then MiscMenu.Visible = false end
-    if RiskMenu then RiskMenu.Visible = false end
-    if UnfairMenu then UnfairMenu.Visible = false end
-    if UpdateLogMenu then UpdateLogMenu.Visible = false end
-    if AdminMenu then AdminMenu.Visible = false end
-    MainMenuWindow.Visible = false
-end))
-
-trackConnection(TPButton.MouseButton1Click:Connect(function()
-    ESPMenuWindow.Visible = false
-    ToolsMenuWindow.Visible = false
-    PlayerMenu.Visible = false
-    if MiscMenu then MiscMenu.Visible = false end
-    if RiskMenu then RiskMenu.Visible = false end
-    if UnfairMenu then UnfairMenu.Visible = false end
-    if UpdateLogMenu then UpdateLogMenu.Visible = false end
-    if AdminMenu then AdminMenu.Visible = false end
-    MainMenuWindow.Visible = false
-    TPMenu.Visible = true
-end))
-
-trackConnection(PlayerTabButton.MouseButton1Click:Connect(function()
-    ESPMenuWindow.Visible = false
-    ToolsMenuWindow.Visible = false
-    TPMenu.Visible = false
-    if MiscMenu then MiscMenu.Visible = false end
-    if RiskMenu then RiskMenu.Visible = false end
-    if UnfairMenu then UnfairMenu.Visible = false end
-    if UpdateLogMenu then UpdateLogMenu.Visible = false end
-    if AdminMenu then AdminMenu.Visible = false end
-    MainMenuWindow.Visible = false
-    PlayerMenu.Visible = true
-end))
-
-trackConnection(MiscTabButton.MouseButton1Click:Connect(function()
-    ESPMenuWindow.Visible = false
-    ToolsMenuWindow.Visible = false
-    TPMenu.Visible = false
-    PlayerMenu.Visible = false
-    if RiskMenu then RiskMenu.Visible = false end
-    if UnfairMenu then UnfairMenu.Visible = false end
-    if UpdateLogMenu then UpdateLogMenu.Visible = false end
-    if AdminMenu then AdminMenu.Visible = false end
-    MainMenuWindow.Visible = false
-    MiscMenu.Visible = true
-end))
-
-trackConnection(RiskTabButton.MouseButton1Click:Connect(function()
-    ESPMenuWindow.Visible = false
-    ToolsMenuWindow.Visible = false
-    TPMenu.Visible = false
-    PlayerMenu.Visible = false
-    if MiscMenu then MiscMenu.Visible = false end
-    if UnfairMenu then UnfairMenu.Visible = false end
-    if UpdateLogMenu then UpdateLogMenu.Visible = false end
-    if AdminMenu then AdminMenu.Visible = false end
-    MainMenuWindow.Visible = false
-    RiskMenu.Visible = true
-end))
-
-trackConnection(UnfairTabButton.MouseButton1Click:Connect(function()
-    ESPMenuWindow.Visible = false
-    ToolsMenuWindow.Visible = false
-    TPMenu.Visible = false
-    PlayerMenu.Visible = false
-    if MiscMenu then MiscMenu.Visible = false end
-    if RiskMenu then RiskMenu.Visible = false end
-    if UpdateLogMenu then UpdateLogMenu.Visible = false end
-    if AdminMenu then AdminMenu.Visible = false end
-    MainMenuWindow.Visible = false
-    UnfairMenu.Visible = true
-end))
-
-trackConnection(UpdateLogTabButton.MouseButton1Click:Connect(function()
-    ESPMenuWindow.Visible = false
-    ToolsMenuWindow.Visible = false
-    TPMenu.Visible = false
-    PlayerMenu.Visible = false
-    if MiscMenu then MiscMenu.Visible = false end
-    if RiskMenu then RiskMenu.Visible = false end
-    if UnfairMenu then UnfairMenu.Visible = false end
-    if AdminMenu then AdminMenu.Visible = false end
-    MainMenuWindow.Visible = false
-    UpdateLogMenu.Visible = true
-end))
-
-trackConnection(TPMenu.TopBar.BackButton.MouseButton1Click:Connect(function()
-    TPMenu.Visible = false
-    MainMenuWindow.Visible = true
-end))
-
-trackConnection(PlayerMenu.TopBar.BackButton.MouseButton1Click:Connect(function()
-    PlayerMenu.Visible = false
-    MainMenuWindow.Visible = true
-end))
-
-trackConnection(MiscMenu.TopBar.BackButton.MouseButton1Click:Connect(function()
-    MiscMenu.Visible = false
-    MainMenuWindow.Visible = true
-end))
-
-trackConnection(RiskMenu.TopBar.BackButton.MouseButton1Click:Connect(function()
-    RiskMenu.Visible = false
-    MainMenuWindow.Visible = true
-end))
-
-trackConnection(UnfairMenu.TopBar.BackButton.MouseButton1Click:Connect(function()
-    UnfairMenu.Visible = false
-    MainMenuWindow.Visible = true
-end))
-
-trackConnection(UpdateLogMenu.TopBar.BackButton.MouseButton1Click:Connect(function()
-    UpdateLogMenu.Visible = false
-    MainMenuWindow.Visible = true
-end))
-
-trackConnection(TPMenu.TopBar.CloseButton.MouseButton1Click:Connect(function()
-    TPMenu.Visible = false
-end))
-
-trackConnection(PlayerMenu.TopBar.CloseButton.MouseButton1Click:Connect(function()
-    PlayerMenu.Visible = false
-end))
-
-trackConnection(MiscMenu.TopBar.CloseButton.MouseButton1Click:Connect(function()
-    MiscMenu.Visible = false
-end))
-
-trackConnection(RiskMenu.TopBar.CloseButton.MouseButton1Click:Connect(function()
-    RiskMenu.Visible = false
-end))
-
-trackConnection(UnfairMenu.TopBar.CloseButton.MouseButton1Click:Connect(function()
-    UnfairMenu.Visible = false
-end))
-
-trackConnection(UpdateLogMenu.TopBar.CloseButton.MouseButton1Click:Connect(function()
-    UpdateLogMenu.Visible = false
-end))
-
--- Open Admin Menu
-trackConnection(AdminTabButton.MouseButton1Click:Connect(function()
-    MainMenuWindow.Visible = false
-    ESPMenuWindow.Visible = false
-    ToolsMenuWindow.Visible = false
-    TPMenu.Visible = false
-    PlayerMenu.Visible = false
-    if MiscMenu then MiscMenu.Visible = false end
-    if RiskMenu then RiskMenu.Visible = false end
-    if UnfairMenu then UnfairMenu.Visible = false end
-    if UpdateLogMenu then UpdateLogMenu.Visible = false end
-    AdminMenu.Visible = true 
-end))
-
--- Admin Menu Back Button
-trackConnection(AdminMenu.TopBar.BackButton.MouseButton1Click:Connect(function()
-    AdminMenu.Visible = false
-    MainMenuWindow.Visible = true
-end))
-
--- Admin Menu Close (X) Button
-trackConnection(AdminMenu.TopBar.CloseButton.MouseButton1Click:Connect(function()
-    AdminMenu.Visible = false
-end))
+-- Back & Close Button Hooks for dynamic windows
+local windows = {TPMenu, PlayerMenu, MiscMenu, RiskMenu, UnfairMenu, UpdateLogMenu, ChatMenu, AdminMenu}
+for _, win in ipairs(windows) do
+    if win and win:FindFirstChild("TopBar") then
+        trackConnection(win.TopBar.BackButton.MouseButton1Click:Connect(function()
+            win.Visible = false
+            MainMenuWindow.Visible = true
+        end))
+        trackConnection(win.TopBar.CloseButton.MouseButton1Click:Connect(function()
+            win.Visible = false
+        end))
+    end
+end
 
 -- Helper functions to fetch game data safely
 function getBeast()
