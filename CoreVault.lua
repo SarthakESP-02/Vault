@@ -2260,7 +2260,7 @@ CheatButton.Visible = false
 -- ==========================================================
 local HWID = gethwid and gethwid() or "UNKNOWN_HWID"
 -- 🛑 PUT YOUR VERCEL URL HERE:
-local AuthURL = "ftf-auth-backend.vercel.app/api/verify" 
+local AuthURL = "https://ftf-auth-backend.vercel.app/api/verify" 
 
 -- Anti-HttpSpy Detector
 local function DetectSnooping()
