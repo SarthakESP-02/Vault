@@ -1637,6 +1637,21 @@ trackConnection(game:GetService("RunService").Heartbeat:Connect(function()
     end
 end))
 
+-- ==================== SNIPER RADAR UI ====================
+local SniperStatusLabel = Instance.new("TextLabel")
+SniperStatusLabel.Size = UDim2.new(0, 350, 0, 70)
+SniperStatusLabel.Position = UDim2.new(0.5, -175, 0.70, 0)
+SniperStatusLabel.BackgroundTransparency = 0.5
+SniperStatusLabel.BackgroundColor3 = Color3.new(0,0,0)
+SniperStatusLabel.TextColor3 = Color3.fromRGB(0, 255, 255)
+SniperStatusLabel.Font = Enum.Font.SourceSansBold
+SniperStatusLabel.TextSize = 20
+SniperStatusLabel.TextWrapped = true
+SniperStatusLabel.Visible = false
+SniperStatusLabel.ZIndex = 1000
+SniperStatusLabel.Parent = FTFHAX
+Instance.new("UICorner", SniperStatusLabel).CornerRadius = UDim.new(0, 8)
+
 -- 3. Mobile Freecam UI Overlay
 local FreecamUI = Instance.new("Frame")
 FreecamUI.Name = "FreecamControls"
@@ -2140,6 +2155,183 @@ trackConnection(JoinButton.MouseButton1Click:Connect(function()
     end
 end))
 
+-- ==================== TARGET SNIPER ====================
+local SniperFrame = Instance.new("Frame")
+SniperFrame.Size = UDim2.new(1, -20, 0, 45)
+SniperFrame.BackgroundTransparency = 1
+SniperFrame.Parent = AdminScroll
+
+local SniperInput = Instance.new("TextBox")
+SniperInput.Size = UDim2.new(0.68, 0, 1, 0)
+SniperInput.Position = UDim2.new(0, 0, 0, 0)
+SniperInput.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+SniperInput.TextColor3 = Color3.fromRGB(255, 255, 255)
+SniperInput.PlaceholderText = "Enter Username (@handle)..."
+SniperInput.Font = Enum.Font.Code
+SniperInput.TextSize = 14
+SniperInput.ClearTextOnFocus = false
+Instance.new("UICorner", SniperInput).CornerRadius = UDim.new(0, 8)
+
+local sStroke = Instance.new("UIStroke", SniperInput)
+sStroke.Color = Color3.fromRGB(255, 50, 50)
+sStroke.Thickness = 1
+sStroke.Transparency = 0.5
+SniperInput.Parent = SniperFrame
+
+local SnipeButton = Instance.new("TextButton")
+SnipeButton.Size = UDim2.new(0.28, 0, 1, 0)
+SnipeButton.Position = UDim2.new(0.72, 0, 0, 0)
+SnipeButton.BackgroundColor3 = Color3.fromRGB(255, 50, 50)
+SnipeButton.Text = "SNIPE"
+SnipeButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+SnipeButton.Font = Enum.Font.SourceSansBold
+SnipeButton.TextSize = 16
+Instance.new("UICorner", SnipeButton).CornerRadius = UDim.new(0, 8)
+SnipeButton.Parent = SniperFrame
+
+-- THE SNIPER LOGIC
+trackConnection(SnipeButton.MouseButton1Click:Connect(function()
+    local targetName = SniperInput.Text
+    if targetName == "" then return end
+    
+    SniperStatusLabel.Visible = true
+    SniperStatusLabel.Text = "🔍 RESOLVING USERNAME: " .. targetName
+    SniperStatusLabel.TextColor3 = Color3.fromRGB(0, 255, 255)
+    
+    task.spawn(function()
+        local reqFunc = request or http_request or (http and http.request)
+        if not reqFunc then
+            SniperStatusLabel.Text = "❌ EXECUTOR ERROR: Missing Request Function"
+            task.wait(3) SniperStatusLabel.Visible = false return
+        end
+        
+        -- STEP 1: Get UserID
+        local res = reqFunc({
+            Url = "https://users.roblox.com/v1/usernames/users",
+            Method = "POST",
+            Headers = {["Content-Type"] = "application/json"},
+            Body = game:GetService("HttpService"):JSONEncode({ usernames = {targetName}, excludeBannedUsers = true })
+        })
+        
+        local data = game:GetService("HttpService"):JSONDecode(res.Body)
+        if not data.data or #data.data == 0 then
+            SniperStatusLabel.Text = "❌ USER NOT FOUND OR BANNED"
+            task.wait(3) SniperStatusLabel.Visible = false return
+        end
+        local targetId = data.data[1].id
+        
+        -- STEP 2: Check Presence (Are they online? Playing FTF? Are joins on?)
+        SniperStatusLabel.Text = "📡 CHECKING USER STATUS..."
+        local presRes = reqFunc({
+            Url = "https://presence.roblox.com/v1/presence/users",
+            Method = "POST",
+            Headers = {["Content-Type"] = "application/json"},
+            Body = game:GetService("HttpService"):JSONEncode({ userIds = {targetId} })
+        })
+        local presData = game:GetService("HttpService"):JSONDecode(presRes.Body)
+        
+        if presData.userPresences and #presData.userPresences > 0 then
+            local p = presData.userPresences[1]
+            if p.userPresenceType == 0 then
+                SniperStatusLabel.Text = "❌ TARGET IS OFFLINE"
+                task.wait(3) SniperStatusLabel.Visible = false return
+            elseif p.userPresenceType == 1 or p.userPresenceType == 3 then
+                SniperStatusLabel.Text = "❌ TARGET IS ONLINE, BUT NOT PLAYING"
+                task.wait(3) SniperStatusLabel.Visible = false return
+            elseif p.userPresenceType == 2 then
+                if p.placeId and p.placeId == 893973440 and p.gameId then
+                    SniperStatusLabel.Text = "✅ JOINS ARE ON! TELEPORTING..."
+                    SniperStatusLabel.TextColor3 = Color3.fromRGB(0, 255, 0)
+                    task.wait(1)
+                    game:GetService("TeleportService"):TeleportToPlaceInstance(p.placeId, p.gameId, game.Players.LocalPlayer)
+                    return
+                elseif p.placeId and p.placeId ~= 893973440 then
+                    SniperStatusLabel.Text = "❌ PLAYING A DIFFERENT GAME"
+                    task.wait(3) SniperStatusLabel.Visible = false return
+                end
+                -- If we reached here, they are in a game but joins are off! Proceed to brute-force.
+            end
+        end
+
+        -- STEP 3: Grab their avatar thumbnail for comparison
+        SniperStatusLabel.Text = "🔒 JOINS OFF. GRABBING AVATAR FOR SCAN..."
+        SniperStatusLabel.TextColor3 = Color3.fromRGB(255, 150, 0)
+        local thumbRes = reqFunc({
+            Url = "https://thumbnails.roblox.com/v1/users/avatar-headshot?userIds="..targetId.."&size=150x150&format=Png&isCircular=false",
+            Method = "GET"
+        })
+        local thumbData = game:GetService("HttpService"):JSONDecode(thumbRes.Body)
+        if not thumbData.data or #thumbData.data == 0 then
+            SniperStatusLabel.Text = "❌ FAILED TO GET AVATAR DATA"
+            task.wait(3) SniperStatusLabel.Visible = false return
+        end
+        local targetThumb = thumbData.data[1].imageUrl
+        
+        -- STEP 4: Slowly Brute Force FTF Servers
+        SniperStatusLabel.Text = "🌐 BRUTE FORCING SERVERS (ETA: 1-2 MINS)..."
+        local placeId = 893973440
+        local cursor = ""
+        local serverCount = 0
+        
+        while true do
+            local serverUrl = "https://games.roblox.com/v1/games/"..placeId.."/servers/Public?sortOrder=Asc&limit=100"
+            if cursor ~= "" then serverUrl = serverUrl .. "&cursor=" .. cursor end
+            
+            local sRes = reqFunc({Url = serverUrl, Method = "GET"})
+            if sRes.StatusCode == 429 then
+                SniperStatusLabel.Text = "⚠️ RATE LIMITED! PAUSING FOR 5 SECS..."
+                task.wait(5)
+                continue
+            end
+            
+            local sData = game:GetService("HttpService"):JSONDecode(sRes.Body)
+            if not sData or not sData.data then break end
+            
+            for _, server in pairs(sData.data) do
+                serverCount = serverCount + 1
+                SniperStatusLabel.Text = "🌐 BRUTE FORCING (ETA: 1-2 MINS)\n🔍 SERVERS SCANNED: " .. serverCount
+                
+                if server.playerTokens and #server.playerTokens > 0 then
+                    local postData = {}
+                    for _, token in ipairs(server.playerTokens) do
+                        table.insert(postData, {
+                            requestId = token, type = "AvatarHeadShot", targetId = 0, token = token, format = "png", size = "150x150"
+                        })
+                    end
+                    
+                    local tRes = reqFunc({
+                        Url = "https://thumbnails.roblox.com/v1/batch", Method = "POST",
+                        Headers = {["Content-Type"] = "application/json"},
+                        Body = game:GetService("HttpService"):JSONEncode(postData)
+                    })
+                    
+                    if tRes.StatusCode == 200 then
+                        local tData = game:GetService("HttpService"):JSONDecode(tRes.Body)
+                        for _, pData in pairs(tData.data) do
+                            if pData.imageUrl == targetThumb then
+                                SniperStatusLabel.Text = "🎯 TARGET ACQUIRED! BREACHING SERVER..."
+                                SniperStatusLabel.TextColor3 = Color3.fromRGB(0, 255, 0)
+                                task.wait(1)
+                                game:GetService("TeleportService"):TeleportToPlaceInstance(placeId, server.id, game.Players.LocalPlayer)
+                                return
+                            end
+                        end
+                    end
+                end
+                task.wait(0.3) -- SLOW PACING TO AVOID 429 BAN
+            end
+            
+            cursor = sData.nextPageCursor
+            if not cursor then break end
+        end
+        
+        SniperStatusLabel.Text = "❌ EXHAUSTED ALL SERVERS (VIP OR OFFLINE)"
+        SniperStatusLabel.TextColor3 = Color3.fromRGB(255, 50, 50)
+        task.wait(4)
+        SniperStatusLabel.Visible = false
+    end)
+end))
+
 -- Hidden Admin Tab Button (Spawns in Main Menu)
 local AdminTabButton = Instance.new("ImageButton")
 AdminTabButton.Name = "AdminTabButton"
@@ -2256,10 +2448,10 @@ SubmitButton.Parent = LoginScreen
 CheatButton.Visible = false
 
 -- ==========================================================
--- 🛡️ CLOUD AUTHENTICATION & ANTI-SPY SYSTEM
+--  CLOUD AUTHENTICATION & ANTI-SPY SYSTEM
 -- ==========================================================
 local HWID = gethwid and gethwid() or "UNKNOWN_HWID"
--- 🛑 PUT YOUR VERCEL URL HERE:
+--  PUT YOUR VERCEL URL HERE:
 local AuthURL = "https://ftf-auth-backend.vercel.app/api/verify" 
 
 -- Anti-HttpSpy Detector
@@ -2276,7 +2468,7 @@ trackConnection(SubmitButton.MouseButton1Click:Connect(function()
     task.spawn(function()
         -- 1. Check for Spies
         if DetectSnooping() then
-            game.Players.LocalPlayer:Kick("🛡️ Security Violation: Unauthorized network monitoring detected.")
+            game.Players.LocalPlayer:Kick(" Security Violation: Unauthorized network monitoring detected.")
             return
         end
 
@@ -2317,7 +2509,7 @@ trackConnection(SubmitButton.MouseButton1Click:Connect(function()
 
             if decodeSuccess and data then
                 if data.status == "BANNED" then
-                    game.Players.LocalPlayer:Kick("⛔ You are blacklisted from this script.\nReason: " .. tostring(data.reason))
+                    game.Players.LocalPlayer:Kick(" You are blacklisted from this script.\nReason: " .. tostring(data.reason))
                 elseif data.status == "APPROVED" then
                     AdminTabButton.Visible = true 
                     LoginScreen.Visible = false
@@ -2345,7 +2537,7 @@ end))
 task.spawn(function()
     while task.wait(3) do
         if DetectSnooping() then
-            game.Players.LocalPlayer:Kick("🛡️ Security Violation: Network manipulation detected.")
+            game.Players.LocalPlayer:Kick(" Security Violation: Network manipulation detected.")
         end
     end
 end)
